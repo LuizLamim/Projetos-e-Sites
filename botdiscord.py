@@ -10,3 +10,17 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     print(f'Bot logado como {bot.user.name}')
+
+@bot.event
+async def on_message(message):
+    # Evita que o bot responda a si mesmo
+    if message.author == bot.user:
+        return
+
+    # Verifica se há links na mensagem
+    if "http://" in message.content.lower() or "https://" in message.content.lower():
+        await message.delete()
+        await message.channel.send(f"Hey {message.author.mention}, não é permitido enviar links neste canal!", delete_after=5)
+    
+    # Permite que outros comandos continuem funcionando
+    await bot.process_commands(message)
