@@ -24,3 +24,6 @@ async def on_message(message):
     
     # Permite que outros comandos continuem funcionando
     await bot.process_commands(message)
+
+# SEU_TOKEN_AQUI' 
+bot.run('SEU_TOKEN_AQUI')
