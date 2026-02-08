@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperação Judicial Prática - Dr. Adelino Neto | ABAJUD</title>
+  <meta name="description" content="Domine Processos de Recuperação Judicial e acesse honorários de R$ 250 mil. Curso prático com Dr. Adelino Neto, Presidente da ABAJUD.">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+   <style>
+    /* ============================================
+   VARIÁVEIS CSS - DESIGN TOKENS
+   Paleta "Executivo de Elite"
+============================================ */
+:root {
+  /* CORES */
+  --preto-antracite: #121212;
+  --ouro-fosco: #C5A059;
+  --branco-gelo: #F8F9FA;
+  --cinza-platina: #2C2C2C;
+  
+  /* TIPOGRAFIA */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-cta: 'Montserrat', sans-serif;
+  
+  /* TAMANHOS DE FONTE */
+  --h1-size: 3.5rem;
+  --h2-size: 2.75rem;
+  --h3-size: 2rem;
+  --h4-size: 1.5rem;
+  --body-size: 1.125rem;
+  --small-size: 0.95rem;
+  
+  /* ESPAÇAMENTOS */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* OUTROS */
+  --container-width: 1200px;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   RESET E BASE
+============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.7;
+  color: var(--branco-gelo);
+  background-color: var(--preto-antracite);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   TIPOGRAFIA GLOBAL
+============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--branco-gelo);
+}
+
+h1 {
+  font-size: var(--h1-size);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--h2-size);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+h4 {
+  font-size: var(--h4-size);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+strong {
+  color: var(--ouro-fosco);
+  font-weight: 600;
+}
+
+a {
+  color: var(--ouro-fosco);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: #D4B16A;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ============================================
+   LAYOUT GLOBAL - CONTAINERS
+============================================ */
+section {
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero__container,
+.problem__container,
+.solution__container,
+.pilares__container,
+.value-stack__container,
+.social-proof__container,
+.guarantee__container,
+.urgency__container,
+.faq__container,
+.final-cta__container,
+.footer__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ============================================
+   COMPONENTES REUTILIZÁVEIS - BOTÕES CTA
+============================================ */
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-cta);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.25rem 3rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-decoration: none;
+}
+
+.cta-button--primary {
+  background: linear-gradient(135deg, var(--ouro-fosco) 0%, #D4B16A 100%);
+  color: var(--preto-antracite);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-button--primary:hover {
+  background: linear-gradient(135deg, #D4B16A 0%, var(--ouro-fosco) 100%);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.cta-button--large {
+  font-size: 1.4rem;
+  padding: 1.5rem 3.5rem;
+}
+
+.cta-button--giant {
+  font-size: 1.6rem;
+  padding: 1.75rem 4rem;
+  margin: var(--spacing-md) 0;
+}
+
+.cta-subtext {
+  text-align: center;
+  font-size: var(--small-size);
+  color: var(--branco-gelo);
+  opacity: 0.8;
+  margin-top: var(--spacing-sm);
+}
+
+/* ============================================
+   HERO SECTION
+============================================ */
+.hero {
+  background: linear-gradient(180deg, var(--preto-antracite) 0%, var(--cinza-platina) 100%);
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero__headline {
+  font-size: var(--h1-size);
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.15;
+}
+
+.hero__subheadline {
+  font-size: 1.5rem;
+  color: var(--branco-gelo);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__dream-outcome {
+  background: rgba(197, 160, 89, 0.1);
+  border-left: 4px solid var(--ouro-fosco);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) auto;
+  max-width: 800px;
+  border-radius: var(--border-radius);
+}
+
+.hero__dream-outcome p {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--branco-gelo);
+  margin: 0;
+}
+
+.hero__copy {
+  max-width: 800px;
+  margin: var(--spacing-lg) auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.hero .cta-button {
+  margin-top: var(--spacing-lg);
+}
+
+.hero__trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+  font-size: var(--small-size);
+  opacity: 0.85;
+}
+
+.hero__trust-bar span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ============================================
+   PROBLEM SECTION
+============================================ */
+.problem {
+  background-color: var(--cinza-platina);
+}
+
+.problem__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.problem__subheadline {
+  text-align: center;
+  font-size: 1.35rem;
+  color: var(--branco-gelo);
+  opacity: 0.85;
+  margin-bottom: var(--spacing-lg);
+}
+
+.problem__item {
+  background-color: var(--preto-antracite);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border-left: 5px solid var(--ouro-fosco);
+  box-shadow: var(--shadow-sm);
+}
+
+.problem__item-headline {
+  color: var(--ouro-fosco);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.problem__list {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+}
+
+.problem__list li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  position: relative;
+}
+
+.problem__list li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  background-color: var(--ouro-fosco);
+  border-radius: 50%;
+}
+
+.problem__consequences {
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.15) 0%, rgba(197, 160, 89, 0.05) 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-xl);
+  border: 2px solid var(--ouro-fosco);
+}
+
+.problem__consequences-headline {
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.problem__consequences-final {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+/* ============================================
+   SOLUTION SECTION
+============================================ */
+.solution {
+  background-color: var(--preto-antracite);
+}
+
+.solution__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.solution__subheadline {
+  text-align: center;
+  font-size: 1.35rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.85;
+}
+
+.solution__intro {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.solution__credentials {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+}
+
+.solution__credentials li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+}
+
+.solution__tagline {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  font-style: italic;
+}
+
+/* ============================================
+   PILARES SECTION
+============================================ */
+.pilares {
+  background-color: var(--cinza-platina);
+}
+
+.pilares__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-xl);
+}
+
+.pilar {
+  background-color: var(--preto-antracite);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--ouro-fosco);
+}
+
+.pilar__headline {
+  color: var(--ouro-fosco);
+  font-size: 1.85rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.pilar__list {
+  margin: var(--spacing-md) 0;
+}
+
+.pilar__list li {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.pilar__list ul {
+  margin-top: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+}
+
+.pilar__resultado {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(197, 160, 89, 0.1);
+  border-left: 4px solid var(--ouro-fosco);
+  border-radius: var(--border-radius);
+  font-size: 1.15rem;
+}
+
+/* ============================================
+   VALUE STACK SECTION
+============================================ */
+.value-stack {
+  background-color: var(--preto-antracite);
+}
+
+.value-stack__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-stack__subheadline {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.85;
+}
+
+.bonus-destaque {
+  background: linear-gradient(135deg, var(--cinza-platina) 0%, var(--preto-antracite) 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xl);
+  border: 3px solid var(--ouro-fosco);
+  box-shadow: var(--shadow-lg);
+}
+
+.bonus-destaque__headline {
+  color: var(--ouro-fosco);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.bonus-destaque__valor {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-md);
+}
+
+.value-table {
+  margin: var(--spacing-xl) 0;
+  overflow-x: auto;
+}
+
+.value-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cinza-platina);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.value-table th,
+.value-table td {
+  padding: 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.value-table th {
+  background-color: var(--ouro-fosco);
+  color: var(--preto-antracite);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.value-table td {
+  color: var(--branco-gelo);
+}
+
+.value-table__total {
+  background-color: var(--ouro-fosco);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.value-table__total td {
+  color: var(--preto-antracite);
+  border-bottom: none;
+}
+
+.garantia-box {
+  background: rgba(197, 160, 89, 0.1);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--ouro-fosco);
+  margin: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.garantia-box h3 {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+}
+
+.investimento {
+  text-align: center;
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--cinza-platina);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+.investimento__de {
+  font-size: 1.2rem;
+  color: var(--branco-gelo);
+  opacity: 0.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.investimento__riscado {
+  text-decoration: line-through;
+  color: #FF6B6B;
+}
+
+.investimento__por {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.investimento__opcoes {
+  font-size: 1.4rem;
+  margin: var(--spacing-md) 0;
+  color: var(--ouro-fosco);
+}
+
+.investimento__opcoes li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.viabilidade {
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-lg);
+  background-color: var(--cinza-platina);
+  border-radius: var(--border-radius);
+}
+
+.viabilidade h3 {
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ============================================
+   SOCIAL PROOF SECTION
+============================================ */
+.social-proof {
+  background-color: var(--cinza-platina);
+}
+
+.social-proof__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.social-proof__subheadline {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.85;
+}
+
+.testimonial {
+  background-color: var(--preto-antracite);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonial--hero {
+  border: 3px solid var(--ouro-fosco);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial__label {
+  color: var(--ouro-fosco);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.testimonial__title {
+  color: var(--ouro-fosco);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonial__results {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+}
+
+.testimonial__quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--branco-gelo);
+  border-left: 4px solid var(--ouro-fosco);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.testimonial__rating {
+  color: var(--ouro-fosco);
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.testimonial__text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonial__author {
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  font-size: 1rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+}
+
+.modulos {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--preto-antracite);
+  border-radius: var(--border-radius);
+}
+
+.modulos__headline {
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.modulos__intro {
+  text-align: center;
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.modulos__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+.modulos__table th,
+.modulos__table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.modulos__table th {
+  background-color: var(--ouro-fosco);
+  color: var(--preto-antracite);
+  font-weight: 700;
+}
+
+.credenciais {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--cinza-platina) 0%, var(--preto-antracite) 100%);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--ouro-fosco);
+}
+
+.credenciais__headline {
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.credenciais__intro {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-style: italic;
+}
+
+.credenciais h4 {
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.credenciais__tagline {
+  font-size: 1.15rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-lg);
+  font-style: italic;
+}
+
+/* ============================================
+   GUARANTEE SECTION
+============================================ */
+.guarantee {
+  background-color: var(--preto-antracite);
+}
+
+.guarantee__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.guarantee__subheadline {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.85;
+}
+
+.guarantee__contrato,
+.guarantee__porque,
+.guarantee__logica {
+  background-color: var(--cinza-platina);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+}
+
+.guarantee__contrato h3,
+.guarantee__porque h3,
+.guarantee__logica h3 {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+}
+
+.guarantee__promise {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
+
+.guarantee__tagline {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-md);
+}
+
+.guarantee__final {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+/* ============================================
+   URGENCY SECTION
+============================================ */
+.urgency {
+  background-color: var(--cinza-platina);
+}
+
+.urgency__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.urgency__intro {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.urgency__porque,
+.urgency__prazo,
+.urgency__custo {
+  background-color: var(--preto-antracite);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+}
+
+.urgency__porque h3,
+.urgency__prazo h3,
+.urgency__custo h3 {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+}
+
+.urgency__alerta {
+  background: rgba(255, 107, 107, 0.1);
+  border-left: 4px solid #FF6B6B;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+.urgency__pergunta {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  text-align: center;
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+/* ============================================
+   FAQ SECTION
+============================================ */
+.faq {
+  background-color: var(--preto-antracite);
+}
+
+.faq__headline {
+  text-align: center;
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.faq__subheadline {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.85;
+}
+
+.faq__item {
+  background-color: var(--cinza-platina);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  border-left: 4px solid var(--ouro-fosco);
+  transition: var(--transition);
+}
+
+.faq__item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq__question {
+  color: var(--ouro-fosco);
+  font-size: 1.35rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.faq__answer {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   FINAL CTA SECTION
+============================================ */
+.final-cta {
+  background: linear-gradient(135deg, var(--cinza-platina) 0%, var(--preto-antracite) 100%);
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.final-cta__headline {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__subheadline {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.85;
+}
+
+.final-cta__resumo {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.final-cta__resumo h3 {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+}
+
+.final-cta__beneficios {
+  display: inline-block;
+  text-align: left;
+  margin: var(--spacing-md) auto;
+  font-size: 1.15rem;
+}
+
+.final-cta__beneficios li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__reforco {
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-lg);
+  background-color: var(--cinza-platina);
+  border-radius: var(--border-radius);
+}
+
+.final-cta__reforco h3 {
+  color: var(--ouro-fosco);
+  margin-bottom: var(--spacing-md);
+}
+
+.final-cta__pergunta {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ouro-fosco);
+  margin: var(--spacing-md) 0;
+  font-style: italic;
+}
+
+.final-cta__cta-text {
+  font-size: 1.15rem;
+  margin-top: var(--spacing-md);
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  background-color: var(--preto-antracite);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  border-top: 2px solid var(--ouro-fosco);
+}
+
+.footer__container p {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--small-size);
+  opacity: 0.8;
+}
+
+.footer a {
+  color: var(--ouro-fosco);
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE FIRST
+============================================ */
+
+/* Tablets (768px e acima) */
+@media (max-width: 768px) {
+  :root {
+    --h1-size: 2.25rem;
+    --h2-size: 1.85rem;
+    --h3-size: 1.5rem;
+    --h4-size: 1.25rem;
+    --body-size: 1rem;
+    --spacing-xl: 4rem;
+    --spacing-lg: 3rem;
+  }
+
+  section {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .hero__trust-bar {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+
+  .cta-button--large {
+    font-size: 1.2rem;
+    padding: 1.25rem 2.5rem;
+  }
+
+  .cta-button--giant {
+    font-size: 1.3rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-table,
+  .modulos__table {
+    font-size: 0.9rem;
+  }
+
+  .value-table th,
+  .value-table td,
+  .modulos__table th,
+  .modulos__table td {
+    padding: 0.75rem;
+  }
+
+  .final-cta__beneficios {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (576px e abaixo) */
+@media (max-width: 576px) {
+  :root {
+    --h1-size: 1.85rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --body-size: 0.95rem;
+    --spacing-md: 1.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero__headline {
+    font-size: 1.75rem;
+  }
+
+  .hero__subheadline {
+    font-size: 1.15rem;
+  }
+
+  .hero__dream-outcome p {
+    font-size: 1.1rem;
+  }
+
+  .value-table table,
+  .modulos__table {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   ANIMAÇÕES SUTIS
+============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__container,
+.problem__item,
+.pilar,
+.testimonial,
+.faq__item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   GOOGLE FONTS IMPORT
+============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap');
+   </style>
+</head>
+<body>
+
+  <!-- ========================================
+       HERO SECTION
+  ======================================== -->
+  <section class="hero">
+    <div class="hero__container">
+      <h1 class="hero__headline">
+        Como Fechar Seu Primeiro Contrato de R$ 250 Mil em RJ nos Próximos 90 Dias — Mesmo Sem Experiência Prévia (Método Comprovado por 200+ Advogados)
+      </h1>
+      
+      <p class="hero__subheadline">
+        O único curso ministrado por um Administrador Judicial em atividade e Presidente da ABAJUD que revela o passo a passo prático para dominar processos complexos de RJ — sem precisar ser da "elite" da advocacia empresarial.
+      </p>
+
+      <div class="hero__dream-outcome">
+        <p>
+          Imagine receber <strong>R$ 250 mil de honorários</strong> de um único caso... enquanto seus colegas ainda brigam por causas de R$ 5 mil.
+        </p>
+      </div>
+      
+      <div class="hero__copy">
+        <p>
+          Você é um advogado experiente. Mas quando surge uma oportunidade em Recuperação Judicial — aquela que pode gerar R$ 250 mil em honorários — você sente que não sabe por onde começar. A lei é complexa. As fases processuais são confusas. E o pior: você não tem tempo para aprender por tentativa e erro. Isso está prestes a mudar.
+        </p>
+      </div>
+      
+      <a href="#oferta" class="cta-button cta-button--primary">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+      
+      <div class="hero__trust-bar">
+        <span><!-- [IMAGEM: Ícone Certificado] --> Certificado ABAJUD (50h)</span>
+        <span><!-- [IMAGEM: Ícone Garantia] --> Garantia de 7 dias</span>
+        <span><!-- [IMAGEM: Ícone Relógio] --> Acesso imediato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PROBLEM SECTION
+  ======================================== -->
+  <section class="problem">
+    <div class="problem__container">
+      <h2 class="problem__headline">
+        Por Que Advogados Experientes Perdem Oportunidades Milionárias em Recuperação Judicial?
+      </h2>
+      
+      <p class="problem__subheadline">
+        Três obstáculos que impedem você de atuar nesse mercado (e como superá-los).
+      </p>
+
+      <!-- Problema 01 -->
+      <article class="problem__item">
+        <h3 class="problem__item-headline">
+          Você não conhece o mercado — e está deixando oportunidades de R$ 250 mil passarem para outros.
+        </h3>
+        <p>
+          Você é um advogado experiente. Trabalhou em direito civil, trabalhista, tributário, ou qualquer outra área. Você conhece seu mercado, tem clientes, tem reputação. Mas Recuperação Judicial? É um território completamente estranho. Você não sabe quem são os players-chave. Não conhece como se posicionar. Não sabe como advogados "comuns" (não da elite) estão fechando contratos milionários. E então, quando surge uma oportunidade — aquela que poderia gerar R$ 250 mil em honorários — você deixa passar porque não se sente seguro. Enquanto isso, outros advogados estão faturando alto.
+        </p>
+      </article>
+
+      <!-- Problema 02 -->
+      <article class="problem__item">
+        <h3 class="problem__item-headline">
+          A Lei 11.101/05 é densa e confusa — e você não sabe como aplicá-la na prática
+        </h3>
+        <p>
+          Você tentou estudar Recuperação Judicial. Pegou livros teóricos, leu artigos, assistiu vídeos. Mas a Lei 11.101/05 é densa. Cheia de nuances. Cheia de detalhes que parecem importantes mas você não sabe se realmente são. E o pior: os materiais teóricos não ensinam o que REALMENTE acontece na prática. Você não sabe:
+        </p>
+        <ul class="problem__list">
+          <li>Quais são as fases processuais de um processo de RJ</li>
+          <li>Como conduzir uma Assembleia Geral de Credores</li>
+          <li>Como calcular votos com segurança</li>
+          <li>Quais são os erros mais comuns que anulam processos</li>
+          <li>Como se proteger legalmente como administrador</li>
+        </ul>
+        <p>
+          Cada dúvida te paralisa. E você não tem tempo para aprender por tentativa e erro — porque um erro pode comprometer sua reputação e gerar responsabilidades.
+        </p>
+      </article>
+
+      <!-- Problema 03 -->
+      <article class="problem__item">
+        <h3 class="problem__item-headline">
+          Você foi nomeado em uma RJ e o processo JÁ ESTÁ EM CURSO — precisa atuar AGORA
+        </h3>
+        <p>
+          Esse é um cenário cada vez mais comum: Você recebe uma intimação do juiz. Você foi nomeado administrador judicial em uma Recuperação Judicial. O processo já está em curso. Você precisa atuar AGORA. Mas você não sabe por onde começar. Qual é a primeira coisa que você faz? Quem você precisa contatar? Qual é a sequência de ações? Quando é a Assembleia Geral de Credores? Como você conduz isso com segurança? A pressão é REAL. Cada decisão errada pode:
+        </p>
+        <ul class="problem__list">
+          <li>Anular a assembleia</li>
+          <li>Gerar responsabilidades civis e criminais</li>
+          <li>Comprometer sua reputação profissional</li>
+          <li>Perder a confiança do juiz e do tribunal</li>
+        </ul>
+        <p>
+          E você precisa de conhecimento técnico IMEDIATO — não em 3 meses, não em 6 semanas. AGORA.
+        </p>
+      </article>
+
+      <!-- Consequências -->
+      <div class="problem__consequences">
+        <h3 class="problem__consequences-headline">
+          A Consequência de Não Resolver Isso Agora
+        </h3>
+        <p>Enquanto você adia, deixa passar ou fica paralisado pela insegurança:</p>
+        <ul class="problem__list">
+          <li>Outros advogados estão fechando contratos de R$ 250 mil, R$ 500 mil, até R$ 1 milhão em honorários</li>
+          <li>Oportunidades que poderiam ser suas estão sendo conduzidas por profissionais que dominam o que você ainda não sabe</li>
+          <li>Se você foi nomeado e não atua com segurança, você corre risco legal real</li>
+          <li>Sua carreira continua estagnada na mesma área, com os mesmos clientes, com o mesmo faturamento</li>
+          <li>Você vê colegas seus transitando para RJ e ganhando muito mais — e você fica para trás</li>
+        </ul>
+        <p class="problem__consequences-final">
+          A janela de oportunidade está aberta AGORA. Mas não vai ficar aberta para sempre.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SOLUTION SECTION
+  ======================================== -->
+  <section class="solution">
+    <div class="solution__container">
+      <h2 class="solution__headline">
+        Apresentando a Estratégia do Dr. Adelino Neto de Recuperação Judicial Prática.
+      </h2>
+      
+      <p class="solution__subheadline">
+        O único sistema passo a passo criado por quem VIVE Recuperação Judicial todos os dias — não apenas ensina, mas mostra exatamente como fazer.
+      </p>
+      
+      <div class="solution__intro">
+        <p>
+          Diferente de cursos teóricos ministrados por professores que nunca atuaram em um caso real, a estratégia do Dr. Adelino Neto foi desenvolvida por alguém que está nas trincheiras de processos de alta complexidade e impacto econômico AGORA.
+        </p>
+        <p><strong>Dr. Adelino Neto é:</strong></p>
+        <ul class="solution__credentials">
+          <li>Administrador Judicial em atividade</li>
+          <li>Presidente da ABAJUD</li>
+          <li>Especialista em Recuperação Judicial com 12+ anos de experiência</li>
+          <li>Responsável por demandas de grande porte e relevância nacional</li>
+        </ul>
+        <p class="solution__tagline">
+          Ele não ensina teoria. Ele ensina o que FUNCIONA porque ele FAZ todos os dias.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       OS 3 PILARES
+  ======================================== -->
+  <section class="pilares">
+    <div class="pilares__container">
+      <h2 class="pilares__headline">Os 3 Pilares da Estratégia</h2>
+
+      <!-- Pilar 1 -->
+      <article class="pilar">
+        <div class="pilar__icon">
+          <!-- [IMAGEM: Ícone Mapa/Fluxograma] -->
+        </div>
+        <h3 class="pilar__headline">
+          Pilar 1: Domine Todas as Fases Processuais de uma RJ — Do Pedido Inicial ao Encerramento.
+        </h3>
+        <p>
+          A confusão sobre as fases processuais é o maior obstáculo para advogados que desejam atuar em Recuperação Judicial. Na Trilha Estratégica do Dr. Adelino Neto, você recebe clareza absoluta:
+        </p>
+        <ul class="pilar__list">
+          <li><strong>Fluxograma Visual Completo:</strong> Um mapa passo a passo de TODAS as fases da RJ. Você saberá exatamente onde o processo está e qual o próximo movimento estratégico.</li>
+          <li><strong>Manuais Técnicos Detalhados (200+ páginas):</strong> Conteúdo aprofundado com exemplos reais, modelos de peças e orientações precisas para cada etapa.</li>
+          <li><strong>Segurança Jurídica Total:</strong> Elimine a insegurança e evite erros fatais por falta de conhecimento prático. Você conduzirá o processo com a autoridade de quem domina o terreno.</li>
+        </ul>
+        <p class="pilar__resultado">
+          <strong>Resultado:</strong> Você assume causas de alta complexidade com a confiança de um especialista veterano.
+        </p>
+      </article>
+
+      <!-- Pilar 2 -->
+      <article class="pilar">
+        <div class="pilar__icon">
+          <!-- [IMAGEM: Ícone Ferramentas/Planilha] -->
+        </div>
+        <h3 class="pilar__headline">
+          Pilar 2: Ferramentas de "Pronto Uso" para Execução Imediata nos Seus Casos.
+        </h3>
+        <p>
+          A teoria informa, mas as ferramentas executam. No Protocolo Adelino Neto, você não precisa "reinventar a roda". Você recebe o que há de mais avançado em gestão de RJ:
+        </p>
+        <ul class="pilar__list">
+          <li><strong>Planilha de Cálculo de Votos da AGC (BÔNUS EXCLUSIVO - 20 PRIMEIROS):</strong> A Assembleia Geral de Credores é o momento crítico. Um erro no cálculo de votos pode anular meses de trabalho. Com esta ferramenta, você:
+            <ul>
+              <li>Calcula automaticamente o peso de cada credor.</li>
+              <li>Identifica quórums com precisão matemática.</li>
+              <li>Gera relatórios de votação prontos para o juízo.</li>
+              <li>(Valor estimado desta ferramenta isolada: R$ 697).</li>
+            </ul>
+          </li>
+          <li><strong>Biblioteca de Modelos Estratégicos:</strong> Petições, relatórios e comunicados prontos para adaptar, garantindo agilidade e padrão de excelência ABAJUD.</li>
+        </ul>
+        <p class="pilar__resultado">
+          <strong>Resultado:</strong> Ganho de produtividade e redução drástica de riscos operacionais e responsabilidades civis.
+        </p>
+      </article>
+
+      <!-- Pilar 3 -->
+      <article class="pilar">
+        <div class="pilar__icon">
+          <!-- [IMAGEM: Ícone Alvo/Estratégia] -->
+        </div>
+        <h3 class="pilar__headline">
+          Pilar 3: Posicionamento de Autoridade e Viabilização de Contratos de Alto Valor.
+        </h3>
+        <p>
+          Conhecimento técnico é apenas 50% da equação. A outra metade é saber como se posicionar estrategicamente para acessar grandes grupos empresariais. Você aprenderá:
+        </p>
+        <ul class="pilar__list">
+          <li><strong>Autoridade Estratégica:</strong> Como construir uma narrativa para ser visto como o especialista que o mercado (e os juízes) confiam.</li>
+          <li><strong>Mapeamento de Players-Chave:</strong> Como interagir com magistrados, credores e administradores de forma ética e profissional para gerar novas oportunidades.</li>
+          <li><strong>Engenharia de Honorários:</strong> Estratégias de precificação e apresentação de propostas para causas de Alta Relevância Econômica, baseadas em casos reais.</li>
+          <li><strong>Transição de Carreira Segura:</strong> O caminho comprovado para migrar de áreas saturadas para o ecossistema da Recuperação Judicial.</li>
+        </ul>
+        <p class="pilar__resultado">
+          <strong>Resultado:</strong> Você deixa de ser um "advogado comum" para se tornar um player estratégico em um mercado que fatura milhões.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================================
+       VALUE STACK SECTION
+  ======================================== -->
+  <section class="value-stack" id="oferta">
+    <div class="value-stack__container">
+      <h2 class="value-stack__headline">
+        O Que Você Recebe Ao Garantir Sua Vaga Hoje
+      </h2>
+      <p class="value-stack__subheadline">
+        Tudo o que você precisa para dominar Recuperação Judicial, atuar com segurança e fechar contratos de alto valor de honorários.
+      </p>
+
+      <!-- Bônus em Destaque -->
+      <div class="bonus-destaque">
+        <div class="bonus-destaque__image">
+          <!-- [IMAGEM: Mockup do Compêndio de Direito Empresarial - 1.659 páginas] -->
+        </div>
+        <h3 class="bonus-destaque__headline">BÔNUS 01: COMPÊNDIO DE DIREITO EMPRESARIAL (1.659 PÁGINAS)</h3>
+        <p>
+          Este não é um "bônus comum". É uma obra completa que poderia ser comercializada separadamente por R$ 297,00.
+        </p>
+        <h4>O QUE VOCÊ RECEBE:</h4>
+        <ul>
+          <li><strong>Obra de Referência Completa:</strong> 1.659 páginas de doutrina aplicada ao Direito Empresarial moderno.</li>
+          <li><strong>Estrutura Profissional:</strong> Organizada para consulta rápida em reuniões, audiências e elaboração de pareceres.</li>
+          <li><strong>Abordagem Prática:</strong> Direito Societário, Títulos de Crédito, Contratos, Recuperação Judicial e Falência — tudo com a visão do operador do direito.</li>
+        </ul>
+        <h4>POR QUE ESTE BÔNUS É UM DIVISOR DE ÁGUAS:</h4>
+        <p>
+          Enquanto outros cursos oferecem apenas a "tática", você recebe a estratégia fundamentada. Este compêndio é o alicerce que permite:
+        </p>
+        <ul>
+          <li>Argumentar com autoridade perante juízes e conselhos de administração.</li>
+          <li>Tomar decisões estratégicas com base na doutrina mais atualizada.</li>
+          <li>Diferenciar-se como o advogado que domina tanto a prática quanto a teoria robusta.</li>
+        </ul>
+        <p class="bonus-destaque__valor">VALOR DE MERCADO: R$ 297,00<br>(Incluído gratuitamente na sua inscrição hoje)</p>
+      </div>
+
+      <!-- Tabela de Valor Stack -->
+      <div class="value-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>DESCRIÇÃO</th>
+              <th>VALOR DE MERCADO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Curso Completo</strong></td>
+              <td>Mais de 20h de aulas práticas + Acesso por 1 ano + Certificado ABAJUD (50h)</td>
+              <td>R$ 2.997,00</td>
+            </tr>
+            <tr>
+              <td><strong>10 Apostilas Técnicas</strong></td>
+              <td>200+ páginas com modelos, fluxos e orientações passo a passo</td>
+              <td>R$ 497,00</td>
+            </tr>
+            <tr>
+              <td><strong>Fluxograma Visual Completo</strong></td>
+              <td>Mapa de todas as fases da RJ com prazos e responsabilidades</td>
+              <td>R$ 297,00</td>
+            </tr>
+            <tr>
+              <td><strong>Planilha de Cálculo de Votos AGC</strong></td>
+              <td>Ferramenta exclusiva para evitar erros na Assembleia de Credores</td>
+              <td>R$ 697,00</td>
+            </tr>
+            <tr>
+              <td><strong>Compêndio de Direito Empresarial</strong></td>
+              <td>Livro completo de 1.659 páginas (obra independente)</td>
+              <td>R$ 297,00</td>
+            </tr>
+            <tr>
+              <td><strong>Suporte e Atualizações</strong></td>
+              <td>Acesso à comunidade + Atualizações por 1 ano</td>
+              <td>R$ 397,00</td>
+            </tr>
+            <tr class="value-table__total">
+              <td colspan="2"><strong>VALOR TOTAL</strong></td>
+              <td><strong>R$ 5.182,00</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Garantia -->
+      <div class="garantia-box">
+        <div class="garantia-box__icon">
+          <!-- [IMAGEM: Ícone Escudo/Garantia] -->
+        </div>
+        <h3>GARANTIA BLINDADA: 7 DIAS DE RISCO ZERO</h3>
+        <p>
+          Teste o método, acesse as ferramentas e assista às aulas. Se em 7 dias você decidir que o ecossistema da Recuperação Judicial não é para você, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+        </p>
+      </div>
+
+      <!-- Investimento -->
+      <div class="investimento">
+        <p class="investimento__de">DE <span class="investimento__riscado">R$ 5.182,00</span></p>
+        <p class="investimento__por">POR:</p>
+        <ul class="investimento__opcoes">
+          <li><strong>À VISTA:</strong> R$ 1.444,56 (Economia imediata de R$ 3.737,44)</li>
+          <li><strong>PARCELADO:</strong> 12x de R$ 149,40</li>
+        </ul>
+        <a href="#checkout" class="cta-button cta-button--primary cta-button--large">
+          GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+        </a>
+      </div>
+
+      <!-- Análise de Viabilidade -->
+      <div class="viabilidade">
+        <h3>Análise de Viabilidade Econômica (O "Pulo do Gato")</h3>
+        <p>Para o advogado estrategista, este não é um custo, é um aporte.</p>
+        <ul>
+          <li><strong>Cenário A:</strong> Você fecha um único caso de relevância média. Os honorários cobrem o curso centenas de vezes.</li>
+          <li><strong>Cenário B:</strong> Você evita um único erro na Assembleia de Credores usando a Planilha AGC. Você salvou sua reputação e evitou prejuízos de seis dígitos.</li>
+        </ul>
+        <p>
+          <strong>A conta é simples:</strong> O risco de ficar de fora e perder uma nomeação por insegurança técnica é infinitamente mais caro que o investimento na Trilha.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SOCIAL PROOF SECTION
+  ======================================== -->
+  <section class="social-proof">
+    <div class="social-proof__container">
+      <h2 class="social-proof__headline">
+        Advogados Como Você Já Estão Faturando Alto em Recuperação Judicial
+      </h2>
+      <p class="social-proof__subheadline">
+        Resultados reais de profissionais que transformaram suas carreiras com o Método Adelino Neto
+      </p>
+
+      <!-- Hero Testimonial -->
+      <article class="testimonial testimonial--hero">
+        <div class="testimonial__image">
+          <!-- [IMAGEM: Foto da Dra. Solange Arch ou placeholder profissional] -->
+        </div>
+        <h3 class="testimonial__label">CASO: SOLANGE ARCH</h3>
+        <h4 class="testimonial__title">A Transformação: Da advocacia convencional à especialista em demandas de alta relevância econômica.</h4>
+        
+        <p><strong>O Desafio:</strong> Apesar de sua sólida experiência, Solange sentia-se insegura para ingressar no mercado de Recuperação Judicial. A complexidade técnica era a barreira que a impedia de aceitar nomeações e atuar em causas de grande porte.</p>
+        
+        <p><strong>A Virada de Chave:</strong> Ao dominar a Trilha Estratégica, ela adquiriu a segurança necessária para atuar nas esferas mais complexas do Direito Empresarial.</p>
+        
+        <p><strong>O Resultado:</strong> Solange foi nomeada para uma Recuperação Judicial de expressiva envergadura, envolvendo um passivo de grande escala. Essa atuação garantiu uma remuneração de alto patamar, consolidando sua autoridade no mercado.</p>
+        
+        <ul class="testimonial__results">
+          <li>Salto de Posicionamento: Transição para demandas de elite.</li>
+          <li>Domínio Técnico: Gestão de processos de impacto nacional.</li>
+          <li>Segurança: Protocolo prático para atuar sem riscos.</li>
+        </ul>
+        
+        <blockquote class="testimonial__quote">
+          "A Trilha me deu a confiança que faltava. Hoje, atuo em processos de alta relevância com segurança e reconhecimento."
+        </blockquote>
+        <p class="testimonial__rating">
+          <!-- [IMAGEM: 5 estrelas] -->
+          <span class="sr-only">5 estrelas</span>
+        </p>
+      </article>
+
+      <!-- Testemunhos Adicionais -->
+      <div class="testimonials-grid">
+        <article class="testimonial">
+          <div class="testimonial__image">
+            <!-- [IMAGEM: Foto do Dr. Carlos Henrique ou avatar profissional] -->
+          </div>
+          <p class="testimonial__rating">
+            <!-- [IMAGEM: 5 estrelas] -->
+            <span class="sr-only">5 estrelas</span>
+          </p>
+          <p class="testimonial__text">
+            "Eu fui nomeado de surpresa em uma RJ e não sabia por onde começar. Usei as apostilas e o fluxograma do curso para me orientar, e a planilha de AGC foi essencial para conduzir a assembleia com segurança. O juiz elogiou meu trabalho."
+          </p>
+          <p class="testimonial__author">— Dr. Carlos Henrique, Advogado, Joinville-SC.</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__image">
+            <!-- [IMAGEM: Foto do Dr. Alércio Romeiro ou avatar profissional] -->
+          </div>
+          <p class="testimonial__rating">
+            <!-- [IMAGEM: 5 estrelas] -->
+            <span class="sr-only">5 estrelas</span>
+          </p>
+          <p class="testimonial__text">
+            "Eu trabalhava em direito civil há 15 anos. Sabia que havia oportunidade em RJ porque minha base é em um Distrito Industrial, mas achava que era só para elite. O curso me mostrou que não é verdade. Em 3 meses já tinha meu primeiro caso. Hoje atendo empresas em crise e meu faturamento triplicou."
+          </p>
+          <p class="testimonial__author">— Dr. Alércio Romeiro, Advogado, Maracanaú-CE.</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__image">
+            <!-- [IMAGEM: Foto da Dra. Geovana Ribeiro ou avatar profissional] -->
+          </div>
+          <p class="testimonial__rating">
+            <!-- [IMAGEM: 5 estrelas] -->
+            <span class="sr-only">5 estrelas</span>
+          </p>
+          <p class="testimonial__text">
+            "O conteúdo é prático e direto. Dr. Adelino Neto ensina o que REALMENTE funciona porque ele faz todos os dias. Muito melhor que outros cursos teóricos que fiz."
+          </p>
+          <p class="testimonial__author">— Dra. Geovana Ribeiro, Advogada, Araguaína-TO.</p>
+        </article>
+      </div>
+
+      <!-- Módulos do Curso -->
+      <div class="modulos">
+        <h3 class="modulos__headline">O Que Você Vai Aprender na Trilha do Dr. Adelino Neto:</h3>
+        <p class="modulos__intro">10 módulos com videoaulas práticas que você pode aplicar no seu escritório ou em suas nomeações judiciais imediatamente.</p>
+        
+        <table class="modulos__table">
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>Foco Principal</th>
+              <th>O que você domina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01 a 03</td>
+              <td>Fundamentos e Pedido</td>
+              <td>Estratégia inicial e requisitos para deferimento da RJ.</td>
+            </tr>
+            <tr>
+              <td>04 e 05</td>
+              <td>Gestão de Créditos</td>
+              <td>Habilitações, divergências e créditos retardatários.</td>
+            </tr>
+            <tr>
+              <td>06 a 09</td>
+              <td>Administração Judicial</td>
+              <td>Deveres, remuneração, relatórios e gestão de crises.</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Assembleia (AGC)</td>
+              <td>Condução, quóruns e aprovação do plano de recuperação.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <a href="#oferta" class="cta-button cta-button--primary">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+      <p class="cta-subtext">Acesso imediato à plataforma | Certificado ABAJUD</p>
+
+      <!-- Credenciais Dr. Adelino -->
+      <div class="credenciais">
+        <div class="credenciais__image">
+          <!-- [IMAGEM: Foto profissional do Dr. Adelino Neto] -->
+        </div>
+        <h3 class="credenciais__headline">QUEM CONDUZ A TRILHA: DR. ADELINO NETO</h3>
+        <p class="credenciais__intro">
+          Unindo a precisão da engenharia à profundidade do Direito, o Dr. Adelino Neto é uma das maiores autoridades do país em reestruturação de empresas.
+        </p>
+        
+        <h4>Liderança Institucional e Reconhecimento</h4>
+        <ul>
+          <li>Presidente da ABAJUD (Associação Brasileira de Administradores Judiciais).</li>
+          <li>Administrador Judicial em atividade, com amplo reconhecimento de Tribunais e Magistrados.</li>
+          <li>Palestrante e referência nacional no ecossistema da Recuperação Judicial.</li>
+        </ul>
+        
+        <h4>Experiência Prática nas Trincheiras</h4>
+        <ul>
+          <li>Mais de 12 anos de atuação especializada em Recuperação Judicial e Falências.</li>
+          <li>Experiência direta em processos de alta complexidade e impacto econômico.</li>
+          <li>Atuação multidisciplinar como Advogado, Engenheiro e Administrador Judicial.</li>
+        </ul>
+        
+        <h4>Formação e Autoridade Acadêmica</h4>
+        <ul>
+          <li>Doutor em Ciências Jurídicas.</li>
+          <li>Professor e Servidor Público com vasta bagagem técnica.</li>
+        </ul>
+        
+        <p class="credenciais__tagline">
+          Mais do que um acadêmico, o Dr. Adelino Neto entrega o conhecimento de quem decide e opera nos processos de maior envergadura do país.
+        </p>
+        
+        <h4>QUEM OFERECE: ABAJUD</h4>
+        <div class="credenciais__abajud-logo">
+          <!-- [IMAGEM: Logo ABAJUD] -->
+        </div>
+        <ul>
+          <li>Entidade referência nacional em Administração Judicial.</li>
+          <li>200+ associados em todo Brasil.</li>
+          <li>Reconhecida no meio jurídico.</li>
+          <li>Compromisso com excelência e ética profissional.</li>
+          <li>Certificado reconhecido no mercado.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       GUARANTEE SECTION
+  ======================================== -->
+  <section class="guarantee">
+    <div class="guarantee__container">
+      <h2 class="guarantee__headline">
+        Garantia Incondicional de 7 Dias — Risco 100% Nosso
+      </h2>
+      <p class="guarantee__subheadline">
+        Teste o método completo. Se não transformar sua atuação, devolvemos 100% do seu investimento.
+      </p>
+
+      <div class="guarantee__contrato">
+        <div class="guarantee__icon">
+          <!-- [IMAGEM: Ícone Documento/Contrato] -->
+        </div>
+        <h3>CONTRATO DE RISCO ZERO</h3>
+        <p>Você tem 7 dias para testar a Trilha Estratégica do Dr. Adelino Neto.</p>
+        <p>Durante este período, você pode:</p>
+        <ul>
+          <li>Assistir aos dois primeiros módulos completos do curso.</li>
+          <li>Baixar todas as apostilas e ferramentas dos módulos 1 e 2.</li>
+          <li>Aplicar os protocolos em seus casos ou nomeações.</li>
+        </ul>
+        <p>
+          Se por QUALQUER motivo você achar que o conteúdo não entrega o valor prometido, basta enviar um único e-mail para <strong>financeiro@abajud.com.br</strong> dentro do prazo de 7 dias.
+        </p>
+        <p class="guarantee__promise">
+          Devolvemos 100% do seu dinheiro. Sem perguntas. Sem burocracia.
+        </p>
+      </div>
+
+      <div class="guarantee__porque">
+        <h3>Por Que Oferecemos Esta Garantia?</h3>
+        <p>Porque sabemos — com base nos resultados de dezenas de advogados — que o método funciona. Quem aplica a abordagem prática do Dr. Adelino Neto está:</p>
+        <ul>
+          <li>Fechando contratos de alto valor com empresas em crise.</li>
+          <li>Transitando com segurança para a atuação em Recuperação Judicial.</li>
+          <li>Aceitando nomeações judiciais com confiança técnica.</li>
+          <li>Evitando erros processuais que custam centenas de milhares de reais.</li>
+          <li>Construindo uma especialização que diferencia no mercado.</li>
+        </ul>
+        <p class="guarantee__tagline">
+          <strong>O risco é TODO nosso.</strong><br>
+          <strong>O ganho é TODO seu.</strong>
+        </p>
+      </div>
+
+      <div class="guarantee__logica">
+        <h3>A Lógica Por Trás da Garantia</h3>
+        <p>Pense como um estrategista:</p>
+        <ul>
+          <li>Se o curso NÃO entregar → Você recebe seu dinheiro de volta. Perda: Zero.</li>
+          <li>Se o curso ENTREGAR (e sabemos que vai) → Você desbloqueia uma nova fonte de receita de alto patamar. Ganho: Exponencial.</li>
+        </ul>
+        <p class="guarantee__final">Não há cenário em que você saia perdendo.</p>
+      </div>
+
+      <a href="#oferta" class="cta-button cta-button--primary">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       URGENCY/SCARCITY SECTION
+  ======================================== -->
+  <section class="urgency">
+    <div class="urgency__container">
+      <h2 class="urgency__headline">
+        ATENÇÃO: BÔNUS EXCLUSIVO PARA OS 20 PRIMEIROS ALUNOS
+      </h2>
+      <p class="urgency__intro">
+        A Planilha de Cálculo de Votos da AGC (Valor: R$ 697) está disponível APENAS para os primeiros 20 inscritos.
+      </p>
+
+      <div class="urgency__porque">
+        <h3>Por que esta ferramenta é o seu maior ativo de segurança?</h3>
+        <p>
+          A Assembleia Geral de Credores é o "ponto de inflexão" de qualquer Recuperação Judicial. Um erro no cálculo de votos pode anular meses de trabalho e comprometer processos de dezenas de milhões de reais.
+        </p>
+        <p>Com a Planilha de Cálculo de Votos da AGC, você elimina o risco humano:</p>
+        <ul>
+          <li>Precisão Matemática: Calcula o peso de cada credor instantaneamente.</li>
+          <li>Conformidade Legal: Identifica quórums e maiorias de forma automática.</li>
+          <li>Segurança Processual: Gera a base documental irrefutável para o juízo.</li>
+          <li>Blindagem Profissional: Evita nulidades que custariam caro à sua reputação.</li>
+        </ul>
+        <p class="urgency__alerta">
+          <strong>IMPORTANTE:</strong> Após a 20ª vaga preenchida, este bônus será removido da oferta. Você poderá adquirir o curso, mas sem acesso a esta ferramenta exclusiva.
+        </p>
+      </div>
+
+      <div class="urgency__prazo">
+        <div class="urgency__prazo-icon">
+          <!-- [IMAGEM: Ícone Relógio/Calendário] -->
+        </div>
+        <h3>PRAZO FINAL: INSCRIÇÕES ENCERRAM EM 28 DE FEVEREIRO</h3>
+        <p>As inscrições para esta turma encerram-se imprevisivelmente no dia 28 de fevereiro de 2026. Após esta data, não podemos garantir:</p>
+        <ul>
+          <li>Manutenção do valor promocional com 70% de desconto.</li>
+          <li>Disponibilidade de nova turma no curto prazo.</li>
+          <li>Acesso ao pacote completo de bônus da ABAJUD.</li>
+        </ul>
+      </div>
+
+      <div class="urgency__custo">
+        <h3>O CUSTO REAL DE ADIAR ESTA DECISÃO</h3>
+        <p>Cada dia de hesitação é um dia a menos de faturamento em um dos mercados mais lucrativos do Direito. Enquanto você espera:</p>
+        <ul>
+          <li>Outros profissionais estão sendo nomeados e garantindo remunerações de alto patamar.</li>
+          <li>Grandes grupos empresariais estão fechando contratos com quem já domina o protocolo prático.</li>
+          <li>Sua carreira permanece estagnada em áreas saturadas e de baixa rentabilidade.</li>
+        </ul>
+        <p class="urgency__pergunta">
+          A próxima oportunidade milionária em Recuperação Judicial pode cruzar sua mesa amanhã. Você estará preparado para assumi-la ou terá que deixá-la passar por insegurança técnica?
+        </p>
+      </div>
+
+      <a href="#checkout" class="cta-button cta-button--primary cta-button--large">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FAQ SECTION
+  ======================================== -->
+  <section class="faq">
+    <div class="faq__container">
+      <h2 class="faq__headline">Perguntas Frequentes</h2>
+      <p class="faq__subheadline">Respostas para as dúvidas mais comuns de nossos alunos</p>
+
+      <article class="faq__item">
+        <h3 class="faq__question">Eu nunca atuei em RJ. Esse curso é para mim?</h3>
+        <p class="faq__answer">
+          Sim. O curso foi desenhado para advogados que desejam migrar para a Recuperação Judicial com segurança. Você aprenderá desde os fundamentos até a prática avançada. Não exige experiência prévia na área, apenas a disposição para dominar um novo e lucrativo mercado.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">Fui nomeado em uma RJ e preciso atuar agora. O curso ajuda?</h3>
+        <p class="faq__answer">
+          Perfeitamente. O acesso é imediato e o conteúdo é focado na prática das "trincheiras". Você terá em mãos fluxogramas, modelos de peças e a Planilha de AGC para guiar sua atuação em tempo real, garantindo segurança técnica perante o juízo.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">O curso realmente me habilita para casos reais?</h3>
+        <p class="faq__answer">
+          Sim. Você dominará a Lei 11.101/2005 sob a ótica de quem decide e opera o processo. A maioria de nossos alunos relata segurança para aceitar nomeações ou buscar clientes de alto valor entre 2 e 4 semanas de estudo aplicado.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">Esse curso é só para a "elite" da advocacia empresarial?</h3>
+        <p class="faq__answer">
+          Não. O domínio técnico é o que democratiza o acesso ao mercado de RJ. O método do Dr. Adelino Neto entrega a técnica e o posicionamento necessários para que advogados de qualquer perfil possam fechar contratos de alto patamar.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">O certificado é reconhecido no mercado?</h3>
+        <p class="faq__answer">
+          Sim. O certificado de 50h é emitido pela ABAJUD — referência nacional na área. Ele atesta sua especialização técnica perante tribunais, magistrados e clientes, consolidando sua autoridade no ecossistema da Recuperação Judicial.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">Quais são as formas de pagamento?</h3>
+        <p class="faq__answer">
+          Você pode investir via Cartão de Crédito, PIX ou Boleto.<br>
+          • À vista: R$ 1.444,56 (Desconto especial).<br>
+          • Parcelado: 12x de R$ 149,40.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">O acesso ao curso é vitalício?</h3>
+        <p class="faq__answer">
+          O acesso é válido por 1 ano (365 dias). Durante esse período, você pode assistir às aulas e baixar os materiais quantas vezes quiser, garantindo que terá suporte durante suas primeiras nomeações ou casos.
+        </p>
+      </article>
+
+      <article class="faq__item">
+        <h3 class="faq__question">E se eu não gostar do curso?</h3>
+        <p class="faq__answer">
+          Você tem 7 dias de Garantia Incondicional. Se em uma semana você entender que o curso não é para você, devolvemos 100% do seu dinheiro. O risco é totalmente da ABAJUD.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FINAL CTA SECTION
+  ======================================== -->
+  <section class="final-cta">
+    <div class="final-cta__container">
+      <h2 class="final-cta__headline">
+        Sua Próxima Nomeação ou Contrato de 6 Dígitos Começa Aqui.
+      </h2>
+      <p class="final-cta__subheadline">
+        Transforme sua autoridade profissional e acesse o mercado mais lucrativo do Direito.
+      </p>
+
+      <div class="final-cta__resumo">
+        <h3>Resumo da Oferta:</h3>
+        <p>
+          Ao garantir sua vaga agora, você recebe a Trilha Estratégica do Dr. Adelino Neto completa: 10 Módulos Práticos + Biblioteca de Modelos + Fluxograma Processual + Planilha de AGC (Bônus exclusivo para os 20 primeiros). Tudo o que você precisa para atuar em casos de alta relevância econômica com segurança absoluta e risco zero.
+        </p>
+      </div>
+
+      <a href="#checkout" class="cta-button cta-button--primary cta-button--giant">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+
+      <ul class="final-cta__beneficios">
+        <li>Acesso imediato após o pagamento</li>
+        <li>Garantia incondicional de 7 dias</li>
+        <li>Bônus exclusivo (Planilha AGC) para os 20 primeiros</li>
+        <li>Parcelamento facilitado em até 12x</li>
+        <li>Certificado ABAJUD (50h-aula) incluído</li>
+        <li>Acesso integral por 1 ano (365 dias)</li>
+      </ul>
+
+      <div class="final-cta__reforco">
+        <h3>Reforço Final:</h3>
+        <p>
+          Lembre-se: um único caso de Recuperação Judicial pode gerar honorários de 6 dígitos. Foi exatamente o que aconteceu com a aluna Solange Arch ao assumir uma demanda de alta envergadura. O investimento de R$ 1.444,56 não é um custo; é o aporte necessário para viabilizar sua entrada na elite da advocacia empresarial.
+        </p>
+        <p class="final-cta__pergunta">
+          A pergunta não é se você pode investir, mas sim: você pode se dar ao luxo de não estar preparado quando a próxima oportunidade milionária chegar?
+        </p>
+        <p class="final-cta__cta-text">
+          Clique no botão abaixo e garanta seu lugar na nova economia jurídica.
+        </p>
+      </div>
+
+      <a href="#checkout" class="cta-button cta-button--primary cta-button--large">
+        GARANTIR MINHA VAGA + BÔNUS R$ 697 AGORA
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__logo">
+        <!-- [IMAGEM: Logo ABAJUD] -->
+      </div>
+      <p>&copy; 2026 ABAJUD - Associação Brasileira de Administradores Judiciais. Todos os direitos reservados.</p>
+      <p>Dúvidas? Entre em contato: <a href="mailto:financeiro@abajud.com.br">financeiro@abajud.com.br</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
