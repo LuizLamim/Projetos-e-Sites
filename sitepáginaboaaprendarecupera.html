@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperação Judicial Prática | Método Dr. Adelino Neto</title>
+  <meta name="description" content="Domine Processos de Recuperação Judicial e acesse honorários de R$ 250 mil.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================
+       RESET & VARIÁVEIS (ESTILO EXTREMO)
+    ========================================= */
+    :root {
+      /* Paleta "Máquina" adaptada para o Jurídico (Ouro/Preto) */
+      --bg-body: #050505;       /* Preto Profundo */
+      --bg-card: #121212;       /* Cinza Carvão */
+      --bg-highlight: #1E1E1E;  /* Destaque Sutil */
+      
+      --brand-primary: #C5A059; /* Ouro Original */
+      --brand-glow: #E5C57F;    /* Ouro Brilhante para Hover */
+      --accent-alert: #FF4D4D;  /* Vermelho Urgência */
+      
+      --text-main: #F0F0F0;
+      --text-muted: #A0A0A0;
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --container-max: 1140px;
+      --radius-std: 4px;        /* Bordas mais retas (estilo industrial/tech) */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    strong { color: var(--brand-primary); }
+    
+    img { max-width: 100%; display: block; }
+    
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+    .container {
+      width: 90%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* =========================================
+       COMPONENTES DE UI
+    ========================================= */
+    /* Botão "Extremo" */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(180deg, var(--brand-glow) 0%, var(--brand-primary) 100%);
+      color: #000;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.2rem;
+      padding: 1.2rem 2.5rem;
+      border-radius: var(--radius-std);
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+      border: 1px solid var(--brand-glow);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .btn-cta:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(197, 160, 89, 0.6);
+      filter: brightness(1.1);
+    }
+    
+    /* Animação de Pulso no botão */
+    .pulse {
+      animation: pulse-animation 2s infinite;
+    }
+    @keyframes pulse-animation {
+      0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+    }
+
+    .section-spacing { padding: 80px 0; }
+    .text-center { text-align: center; }
+    .highlight-box {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: var(--radius-std);
+    }
+
+    /* =========================================
+       HEADER / HERO SECTION
+    ========================================= */
+    .header {
+      background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+      padding: 60px 0 80px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .pre-headline {
+      color: var(--brand-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    /* Video Placeholder estilo VSL */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background: #000;
+      border: 2px solid var(--brand-primary);
+      box-shadow: 0 0 40px rgba(197, 160, 89, 0.15);
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      background: rgba(197, 160, 89, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .play-btn::after {
+      content: '';
+      width: 0; 
+      height: 0; 
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 25px solid #000;
+      margin-left: 5px;
+    }
+    .play-btn:hover { transform: scale(1.1); background: #fff; }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .trust-badges span i { color: var(--brand-primary); margin-right: 8px; }
+
+    /* =========================================
+       SEÇÃO PROBLEMA (DARKER)
+    ========================================= */
+    .problem-section {
+      background-color: var(--bg-body);
+    }
+    
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .problem-card {
+      background: var(--bg-card);
+      padding: 30px;
+      border-left: 3px solid #333;
+      transition: 0.3s;
+    }
+    .problem-card:hover {
+      border-left-color: var(--brand-primary);
+      transform: translateY(-5px);
+    }
+    .problem-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: var(--brand-primary);
+    }
+
+    .consequence-box {
+      margin-top: 50px;
+      background: rgba(255, 77, 77, 0.05);
+      border: 1px solid rgba(255, 77, 77, 0.2);
+      padding: 30px;
+      text-align: center;
+    }
+    .consequence-box h3 { color: var(--accent-alert); }
+
+    /* =========================================
+       SEÇÃO SOLUÇÃO / PILARES
+    ========================================= */
+    .solution-section {
+      background-color: var(--bg-highlight);
+    }
+
+    .pillar-card {
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+    }
+    .pillar-number {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+    }
+    .pillar-card ul {
+      margin-top: 20px;
+      list-style: none;
+    }
+    .pillar-card li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      color: var(--text-muted);
+    }
+    .pillar-card li::before {
+      content: '✓';
+      color: var(--brand-primary);
+      position: absolute;
+      left: 0;
+    }
+
+    /* =========================================
+       STACK DE OFERTA (IMPORTANTE)
+    ========================================= */
+    .offer-section {
+      background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    }
+
+    .stack-container {
+      background: #000;
+      border: 2px solid var(--brand-primary);
+      border-radius: 10px;
+      padding: 40px;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .bonus-tag {
+      background: var(--brand-primary);
+      color: #000;
+      font-weight: 800;
+      padding: 5px 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .stack-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+    }
+    .stack-item:last-child { border-bottom: none; }
+    
+    .stack-name { font-weight: 600; font-size: 1.1rem; }
+    .stack-value { color: var(--accent-alert); font-weight: 700; text-decoration: line-through; }
+    
+    .price-box {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background: rgba(197, 160, 89, 0.1);
+      border-radius: 8px;
+    }
+    .price-old { color: #666; font-size: 1.2rem; text-decoration: line-through; }
+    .price-new { 
+      font-size: 3.5rem; 
+      font-weight: 900; 
+      color: var(--brand-primary); 
+      line-height: 1;
+      margin: 10px 0;
+    }
+    .price-installments { color: #fff; font-size: 1.1rem; margin-bottom: 20px; }
+
+    /* =========================================
+       PROVA SOCIAL
+    ========================================= */
+    .testimonial-card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .quote { font-style: italic; color: #ccc; margin-bottom: 15px; display: block; }
+    .author { font-weight: 700; color: var(--brand-primary); }
+
+    /* =========================================
+       FAQ
+    ========================================= */
+    .faq-item {
+      background: var(--bg-card);
+      margin-bottom: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a1a1a;
+    }
+    .faq-question:hover { color: var(--brand-primary); }
+    .faq-answer {
+      padding: 20px;
+      color: var(--text-muted);
+      border-top: 1px solid #333;
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       RODAPÉ
+    ========================================= */
+    footer {
+      background: #000;
+      padding: 40px 0;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 1.8rem; }
+      .stack-item { flex-direction: column; text-align: left; align-items: flex-start; gap: 5px; }
+      .btn-cta { width: 100%; padding: 1rem; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container text-center">
+      <span class="pre-headline">Para Advogados que buscam honorários de 6 dígitos</span>
+      <h1 class="hero-title">
+        Como Fechar Seu Primeiro Contrato de <span style="color:var(--brand-primary)">R$ 250 Mil em RJ</span> nos Próximos 90 Dias
+      </h1>
+      <p class="hero-subtitle">
+        Mesmo Sem Experiência Prévia. Método Comprovado por 200+ Advogados e Ministrado pelo Presidente da ABAJUD.
+      </p>
+
+      <div class="video-wrapper">
+        <div class="play-btn"></div>
+        <p style="position: absolute; bottom: 20px; width: 100%; text-align: center; color: #fff; font-weight: 600;">ASSISTA AO VÍDEO EXPLICATIVO</p>
+      </div>
+
+      <a href="#oferta" class="btn-cta pulse">
+        QUERO ACESSAR O MÉTODO AGORA
+        <span style="display:block; font-size:0.75rem; font-weight:400; margin-top:5px; color:#000;">+ Bônus de R$ 697 (Apenas hoje)</span>
+      </a>
+
+      <div class="trust-badges">
+        <span>🔒 Garantia de 7 Dias</span>
+        <span>🎓 Certificado ABAJUD (50h)</span>
+        <span>🚀 Acesso Imediato</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-spacing problem-section">
+    <div class="container">
+      <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+        <h2>Por Que Advogados Experientes Perdem Oportunidades Milionárias?</h2>
+        <p style="color:var(--text-muted); margin-top:10px;">Três obstáculos que separam você dos honorários de R$ 250 mil.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>01. O Medo do Desconhecido</h3>
+          <p class="text-muted">Você é experiente em Cível ou Trabalhista, mas RJ parece um "bicho de sete cabeças". Enquanto você hesita, outros advogados menos preparados estão fechando contratos que poderiam ser seus.</p>
+        </div>
+        <div class="problem-card">
+          <h3>02. Teoria vs. Prática</h3>
+          <p class="text-muted">A Lei 11.101/05 é densa. Cursos teóricos não ensinam como conduzir uma Assembleia de Credores na vida real. Um erro técnico aqui pode destruir sua reputação.</p>
+        </div>
+        <div class="problem-card">
+          <h3>03. A Pressão do "Agora"</h3>
+          <p class="text-muted">Você foi nomeado e o processo já está rodando. Você não tem 6 meses para estudar. Você precisa de um guia passo a passo para agir HOJE sem riscos.</p>
+        </div>
+      </div>
+
+      <div class="consequence-box">
+        <h3>⚠ A CONSEQUÊNCIA DE IGNORAR ISSO</h3>
+        <p>A janela de oportunidade está aberta AGORA. O mercado de recuperação de empresas está explodindo e empresas grandes estão contratando. Se você não se posicionar, ficará estagnado brigando por honorários pequenos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing solution-section">
+    <div class="container">
+      <div class="text-center margin-bottom-40">
+        <h2>A Estratégia "Campo de Batalha"</h2>
+        <p>Desenvolvida por quem VIVE a Recuperação Judicial todos os dias.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-top: 40px;">
+        <div style="flex: 1; min-width: 300px;">
+          <div style="background: #222; height: 400px; border-radius: 8px; display:flex; align-items:center; justify-content:center; border: 1px solid #333;">
+            <span style="color:#555">[FOTO DR. ADELINO NETO]</span>
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="color: var(--brand-primary); margin-bottom: 20px;">QUEM É O DR. ADELINO NETO?</h3>
+          <ul style="list-style: none; space-y: 10px;">
+            <li style="margin-bottom: 15px;">✅ <strong>Presidente da ABAJUD</strong> (Associação Brasileira de Administradores Judiciais).</li>
+            <li style="margin-bottom: 15px;">✅ <strong>Administrador Judicial em Atividade</strong> em casos de relevância nacional.</li>
+            <li style="margin-bottom: 15px;">✅ <strong>Engenheiro e Doutor em Direito</strong>, unindo precisão técnica com segurança jurídica.</li>
+          </ul>
+          <p style="border-left: 4px solid var(--brand-primary); padding-left: 15px; font-style: italic; color: #ccc;">
+            "Eu não ensino teoria de livro. Eu ensino o que funciona na trincheira do tribunal."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing" style="background: #000;">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 50px;">Os 3 Pilares do Método</h2>
+      
+      <div class="pillar-card">
+        <span class="pillar-number">1</span>
+        <h3>Domínio Processual Completo</h3>
+        <p>Do pedido inicial ao encerramento. Acabe com a insegurança.</p>
+        <ul>
+          <li>Fluxograma Visual de todas as fases.</li>
+          <li>Manuais Técnicos (+200 páginas).</li>
+          <li>Segurança para atuar como Administrador ou Advogado da Recuperanda.</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <span class="pillar-number">2</span>
+        <h3>Ferramentas de Execução Imediata</h3>
+        <p>Não reinvente a roda. Copie e cole o que já funciona.</p>
+        <ul>
+          <li><strong>Planilha de Cálculo de Votos AGC (Bônus):</strong> Evite erros matemáticos que anulam assembleias.</li>
+          <li>Biblioteca de Petições e Modelos ABAJUD.</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <span class="pillar-number">3</span>
+        <h3>Posicionamento de Autoridade</h3>
+        <p>Como vender seu serviço e cobrar honorários de alto valor.</p>
+        <ul>
+          <li>Engenharia de Honorários: como precificar R$ 250k+.</li>
+          <li>Mapeamento de Players e Networking com Juízes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="section-spacing offer-section">
+    <div class="container">
+      <h2 class="text-center" style="color: var(--brand-primary);">O QUE VOCÊ RECEBE HOJE</h2>
+      <p class="text-center text-muted">Acesso Vitalício por 1 Ano + Certificação</p>
+
+      <div class="stack-container">
+        <div class="bonus-tag">OFERTA EXCLUSIVA</div>
+        
+        <div class="stack-item">
+          <span class="stack-name">Curso Completo "Recuperação Judicial Prática" (20h)</span>
+          <span class="stack-value">R$ 2.997,00</span>
+        </div>
+        <div class="stack-item">
+          <span class="stack-name">10 Apostilas Técnicas & Manuais</span>
+          <span class="stack-value">R$ 497,00</span>
+        </div>
+        <div class="stack-item">
+          <span class="stack-name">Fluxograma Visual de Processos</span>
+          <span class="stack-value">R$ 297,00</span>
+        </div>
+        <div class="stack-item" style="background: rgba(197, 160, 89, 0.1);">
+          <span class="stack-name">🎁 <strong>BÔNUS 1:</strong> Planilha de Cálculo de Votos AGC</span>
+          <span class="stack-value">R$ 697,00</span>
+        </div>
+        <div class="stack-item" style="background: rgba(197, 160, 89, 0.1);">
+          <span class="stack-name">🎁 <strong>BÔNUS 2:</strong> Compêndio Empresarial (1.659 pág)</span>
+          <span class="stack-value">R$ 297,00</span>
+        </div>
+
+        <div style="margin-top: 30px; border-top: 1px dashed #555; padding-top: 20px; display: flex; justify-content: space-between; font-weight: 800;">
+          <span>VALOR TOTAL ENTREGUE:</span>
+          <span style="text-decoration: line-through;">R$ 5.182,00</span>
+        </div>
+
+        <div class="price-box">
+          <p class="price-old">DE R$ 5.182,00 POR APENAS:</p>
+          <div class="price-new">R$ 1.444,56</div>
+          <p class="price-installments">Ou 12x de R$ 149,40 no cartão</p>
+          
+          <a href="#checkout" class="btn-cta pulse" style="width: 100%;">
+            GARANTIR MINHA VAGA AGORA
+          </a>
+          <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">Compra 100% Segura • Hotmart</p>
+        </div>
+      </div>
+      
+      <div style="max-width: 600px; margin: 40px auto; text-align: center; border: 1px solid #333; padding: 20px; border-radius: 8px;">
+        <h3 style="color: #fff; font-size: 1.2rem;">🛡️ GARANTIA BLINDADA DE 7 DIAS</h3>
+        <p class="text-muted" style="font-size: 0.9rem; margin-top: 10px;">
+          Se você não gostar, devolvemos 100% do seu dinheiro. O risco é todo nosso.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-spacing" style="background: #0a0a0a;">
+    <div class="container">
+      <h2 class="text-center">Resultados Reais</h2>
+      <div class="problem-grid">
+        <div class="testimonial-card">
+          <span class="quote">"A Trilha me deu a confiança que faltava. Hoje, atuo em processos de alta relevância com segurança."</span>
+          <span class="author">- Dra. Solange Arch</span>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">"Em 3 meses já tinha meu primeiro caso. Hoje meu faturamento triplicou."</span>
+          <span class="author">- Dr. Alércio Romeiro</span>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">"A planilha de AGC foi essencial. O juiz elogiou meu trabalho na assembleia."</span>
+          <span class="author">- Dr. Carlos Henrique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="text-center margin-bottom-40">Perguntas Frequentes</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">Eu nunca atuei em RJ. É para mim?</div>
+        <div class="faq-answer">Sim. O curso vai do zero ao avançado, desenhado para quem quer migrar de área com segurança.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">O certificado é válido?</div>
+        <div class="faq-answer">Sim, certificado de 50h emitido pela ABAJUD, referência nacional na área.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Tenho acesso imediato?</div>
+        <div class="faq-answer">Sim, assim que o pagamento for aprovado você recebe o acesso por e-mail.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container text-center">
+      <p style="font-weight: 700; color: #fff; margin-bottom: 10px;">ABAJUD - Associação Brasileira de Administradores Judiciais</p>
+      <p>© 2026 Todos os direitos reservados.</p>
+      <p style="margin-top: 10px;">Contato: financeiro@abajud.com.br</p>
+    </div>
+  </footer>
+
+</body>
+</html>
