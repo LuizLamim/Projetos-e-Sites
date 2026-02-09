@@ -16,3 +16,7 @@ def calcular_potencia():
     
     except ValueError:
         print("\nErro: Por favor, digite apenas números válidos.")
+
+# Executa a função
+if __name__ == "__main__":
+    calcular_potencia()
