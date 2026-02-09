@@ -13,3 +13,6 @@ def calcular_potencia():
         
         # Exibe o resultado formatado
         print(f"\nO resultado de {x} elevado a {y} é: {resultado}")
+    
+    except ValueError:
+        print("\nErro: Por favor, digite apenas números válidos.")
