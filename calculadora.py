@@ -29,7 +29,7 @@ def calcular():
             resultado = None
             operacao = ""
 
-            # Lógica das operações
+            # Lógica das 4 operações
             if escolha == '1':
                 resultado = x + y
                 operacao = "soma"
