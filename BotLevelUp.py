@@ -32,3 +32,22 @@ class SteamLevelUpBot:
         except Exception as e:
             print(f"[-] Erro crítico no login: {e}")
             return False
+        
+    def get_inventory_summary(self):
+        """
+        Busca o inventário de itens da Comunidade Steam (Cartas, Gemas, BGs)
+        Game ID 753 = Steam
+        Context ID 6 = Community Items
+        """
+        if not self.client.is_session_alive():
+            print("[-] Sessão expirada. Faça login novamente.")
+            return
+
+        print("[*] Buscando inventário...")
+        # O ID 753 é o AppID da Steam (onde vivem as cartas)
+        # O Context 6 são itens de troca/comunidade
+        inventory = self.client.get_my_inventory(game=GameOptions.STEAM, merge=True)
+        
+        total_items = len(inventory)
+        gems_count = 0
+        cards_count = 0
