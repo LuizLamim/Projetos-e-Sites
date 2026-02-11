@@ -70,3 +70,19 @@ class SteamLevelUpBot:
         print(f"Total de Gemas: {gems_count}")
         
         return inventory
+    
+# --- Execução ---
+if __name__ == "__main__":
+    # DICA DE SEGURANÇA: Em produção, use variáveis de ambiente (.env)
+    API_KEY = "SUA_API_KEY_AQUI"
+    USER = "SEU_USUARIO"
+    PASS = "SUA_SENHA"
+    
+    # O arquivo secrets.json deve conter: {"shared_secret": "...", "identity_secret": "..."}
+    GUARD_FILE = "caminho/para/secrets.json" 
+
+    bot = SteamLevelUpBot(API_KEY, USER, PASS, GUARD_FILE)
+    
+    if bot.login():
+        inv = bot.get_inventory_summary()
+        # Aqui você poderia chamar a lógica de processar ofertas
