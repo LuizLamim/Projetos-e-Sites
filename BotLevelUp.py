@@ -7,3 +7,28 @@ class SteamLevelUpBot:
         self.api_key = api_key
         self.username = username
         self.password = password
+
+        with open(steam_guard_file, 'r') as f:
+            secrets = json.load(f)
+            self.shared_secret = secrets['shared_secret']
+            self.identity_secret = secrets['identity_secret']
+            
+        self.client = SteamClient(self.api_key)
+
+    def login(self):
+        """Realiza o login e configura as credenciais do Steam Guard"""
+        print(f"[*] Tentando logar na conta: {self.username}...")
+        
+        try:
+            self.client.login(self.username, self.password, self.shared_secret)
+            
+            if self.client.is_session_alive():
+                print("[+] Login realizado com sucesso!")
+                return True
+            else:
+                print("[-] Falha ao verificar sessão.")
+                return False
+                
+        except Exception as e:
+            print(f"[-] Erro crítico no login: {e}")
+            return False
