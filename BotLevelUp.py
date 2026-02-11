@@ -46,6 +46,8 @@ class SteamLevelUpBot:
         print("[*] Buscando inventário...")
         # O ID 753 é o AppID da Steam (onde vivem as cartas)
         # O Context 6 são itens de troca/comunidade
+
+        # Pode alterar o número de itens (prestar atenção nos valores atuais)
         inventory = self.client.get_my_inventory(game=GameOptions.STEAM, merge=True)
         
         total_items = len(inventory)
