@@ -51,3 +51,22 @@ class SteamLevelUpBot:
         total_items = len(inventory)
         gems_count = 0
         cards_count = 0
+
+        # Exemplo simples de iteração e classificação
+        for item_id, item_data in inventory.items():
+            market_name = item_data.get('market_name', 'Unknown')
+            type_name = item_data.get('type', '')
+
+            if "Gems" in market_name:
+                # Gemas podem ser stackable, então olhamos a quantidade
+                gems_count += int(item_data.get('amount', 1))
+            
+            if "Trading Card" in type_name:
+                cards_count += 1
+
+        print(f"\n=== Resumo do Inventário ===")
+        print(f"Total de Slots Ocupados: {total_items}")
+        print(f"Cartas Identificadas: {cards_count}")
+        print(f"Total de Gemas: {gems_count}")
+        
+        return inventory
