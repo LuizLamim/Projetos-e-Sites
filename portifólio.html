@@ -70,9 +70,279 @@
             color: var(--primary-color);
         }
 
-        
+        /* --- Seções Gerais --- */
+        section {
+            padding: 100px 10% 60px;
+            min-height: auto;
+        }
 
-        
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Seção Projetos (Cards) --- */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd; /* Placeholder */
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        /* --- Seção Quem Sou --- */
+        #sobre {
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* --- Redes Sociais --- */
+        .social-links {
+            text-align: center;
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: 1px solid #ffffff44;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplicidade para o exemplo */
+            #sobre { text-align: center; }
+            header { padding: 0 20px; }
+        }
+
+        /* --- Header & Navegação --- */
+        header {
+            background-color: var(--white);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Seções Gerais --- */
+        section {
+            padding: 100px 10% 60px;
+            min-height: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Seção Projetos (Cards) --- */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd; /* Placeholder */
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        /* --- Seção Quem Sou --- */
+        #sobre {
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* --- Redes Sociais --- */
+        .social-links {
+            text-align: center;
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: 1px solid #ffffff44;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplicidade para o exemplo */
+            #sobre { text-align: center; }
+            header { padding: 0 20px; }
+        }
+
     </style>
 </head>
 <body>
