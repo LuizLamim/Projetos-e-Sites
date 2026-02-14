@@ -45,3 +45,12 @@ class SimulacaoGas:
                     direcao = (self.pos[i] - self.pos[j]) / dist
                     self.pos[i] += direcao * (sobreposicao / 2)
                     self.pos[j] -= direcao * (sobreposicao / 2)
+
+# Configuração da figura
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.set_xlim(0, TAMANHO_TANQUE)
+ax.set_ylim(0, TAMANHO_TANQUE)
+ax.set_title("Simulação de Gás Ideal (Partículas em Tanque)")
+
+sim = SimulacaoGas(N_PARTICULAS, TAMANHO_TANQUE, RAIO_PARTICULA)
+scatter = ax.scatter(sim.pos[:, 0], sim.pos[:, 1], s=100, c='royalblue', edgecolors='black')
