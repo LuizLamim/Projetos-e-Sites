@@ -31,3 +31,17 @@ class SimulacaoGas:
                 self.vel[i, 0] *= -1
             if self.pos[i, 1] <= self.raio or self.pos[i, 1] >= self.tanque - self.raio:
                 self.vel[i, 1] *= -1
+
+        # 3. Colisão entre partículas (Simplificada)
+        for i in range(self.n):
+            for j in range(i + 1, self.n):
+                dist = np.linalg.norm(self.pos[i] - self.pos[j])
+                if dist < 2 * self.raio:
+                    # Troca simples de velocidades (colisão elástica de massas iguais)
+                    self.vel[i], self.vel[j] = self.vel[j].copy(), self.vel[i].copy()
+                    
+                    # Impede que as partículas fiquem presas uma dentro da outra
+                    sobreposicao = 2 * self.raio - dist
+                    direcao = (self.pos[i] - self.pos[j]) / dist
+                    self.pos[i] += direcao * (sobreposicao / 2)
+                    self.pos[j] -= direcao * (sobreposicao / 2)
