@@ -54,3 +54,11 @@ ax.set_title("Simulação de Gás Ideal (Partículas em Tanque)")
 
 sim = SimulacaoGas(N_PARTICULAS, TAMANHO_TANQUE, RAIO_PARTICULA)
 scatter = ax.scatter(sim.pos[:, 0], sim.pos[:, 1], s=100, c='royalblue', edgecolors='black')
+
+def animar(frame):
+    sim.atualizar()
+    scatter.set_offsets(sim.pos)
+    return scatter,
+
+ani = FuncAnimation(fig, animar, frames=200, interval=20, blit=True)
+plt.show()
