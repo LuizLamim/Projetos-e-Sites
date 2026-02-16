@@ -14,3 +14,13 @@ plt.plot(x, y, label=r'$f(x) = \ln(x)$', color='blue', linewidth=2)
 # 3. Adicionar linhas de referência (Eixos X e Y)
 plt.axhline(0, color='black', linewidth=1)
 plt.axvline(0, color='black', linewidth=1)
+
+# 4. Customização estética
+plt.title('Gráfico da Função Logaritmo Natural (ln)')
+plt.xlabel('x')
+plt.ylabel('ln(x)')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+
+# 5. Exibir o resultado
+plt.show()
