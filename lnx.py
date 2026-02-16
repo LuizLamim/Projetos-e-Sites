@@ -10,3 +10,7 @@ y = np.log(x)
 # 2. Criar a figura e o gráfico
 plt.figure(figsize=(8, 5))
 plt.plot(x, y, label=r'$f(x) = \ln(x)$', color='blue', linewidth=2)
+
+# 3. Adicionar linhas de referência (Eixos X e Y)
+plt.axhline(0, color='black', linewidth=1)
+plt.axvline(0, color='black', linewidth=1)
