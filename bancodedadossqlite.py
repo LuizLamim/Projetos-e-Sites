@@ -48,3 +48,12 @@ def gerenciar_banco():
 
     except sqlite3.Error as erro:
         print(f"Erro ao interagir com o banco: {erro}")
+
+    finally:
+        # 3. Fecha a conexão para liberar recursos
+        if conexao:
+            conexao.close()
+            print("\nConexão fechada.")
+
+if __name__ == "__main__":
+    gerenciar_banco()
