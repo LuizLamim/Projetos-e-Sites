@@ -8,7 +8,7 @@ def gerenciar_banco():
     # 2. Cria o cursor (o objeto que executa os comandos SQL)
     cursor = conexao.cursor()
 
-    ry:
+    try:
         # --- CRIAR TABELA ---
         print("Criando tabela...")
         cursor.execute('''
