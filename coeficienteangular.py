@@ -13,3 +13,20 @@ def calcular_coeficiente_angular():
         # Cálculo das variações (Deltas)
         delta_y = y2 - y1
         delta_x = x2 - x1
+
+        if delta_x == 0:
+            print("\nResultado: O coeficiente angular é INDEFINIDO.")
+            print("Explicação: A reta é vertical (paralela ao eixo Y).")
+        else:
+            m = delta_y / delta_x
+            print(f"\nResultado: O coeficiente angular (m) é: {m:.2f}")
+            
+            # Informação extra sobre a inclinação
+            if m > 0:
+                print("A reta é crescente.")
+            elif m < 0:
+                print("A reta é decrescente.")
+            else:
+                print("A reta é horizontal (constante).")
+
+    
