@@ -29,4 +29,7 @@ def calcular_coeficiente_angular():
             else:
                 print("A reta é horizontal (constante).")
 
+    except ValueError:
+        print("\nErro: Por favor, insira apenas números válidos.")
+
     
