@@ -32,4 +32,8 @@ def calcular_coeficiente_angular():
     except ValueError:
         print("\nErro: Por favor, insira apenas números válidos.")
 
+# Executa o programa
+if __name__ == "__main__":
+    calcular_coeficiente_angular()
+
     
