@@ -40,3 +40,36 @@ class Calculadora:
             
             # Ajuste de layout (Grid)
             btn.grid(row=linha, column=col, sticky="nsew", padx=2, pady=2)
+
+        # Configurar as linhas e colunas para expandirem uniformemente
+        for i in range(5):
+            self.root.grid_rowconfigure(i, weight=1)
+        for i in range(4):
+            self.root.grid_columnconfigure(i, weight=1)
+
+    def adicionar_valor(self, valor):
+        """Adiciona números ou operadores ao visor"""
+        self.expressao += str(valor)
+        self.texto_entrada.set(self.expressao)
+
+    def limpar(self):
+        """Limpa o visor"""
+        self.expressao = ""
+        self.texto_entrada.set("")
+
+    def calcular(self):
+        """Realiza o cálculo matemático"""
+        try:
+            # A função eval analisa a string matemática e executa o cálculo
+            resultado = str(eval(self.expressao))
+            self.texto_entrada.set(resultado)
+            self.expressao = resultado # Atualiza para permitir cálculos contínuos
+        except ZeroDivisionError:
+            self.texto_entrada.set("Erro")
+            self.expressao = ""
+        except SyntaxError:
+            self.texto_entrada.set("Erro")
+            self.expressao = ""
+        except Exception as e:
+            self.texto_entrada.set("Erro")
+            print(f"Erro detalhado: {e}")
