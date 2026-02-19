@@ -73,3 +73,9 @@ class Calculadora:
         except Exception as e:
             self.texto_entrada.set("Erro")
             print(f"Erro detalhado: {e}")
+
+# Execução do programa
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = Calculadora(root)
+    root.mainloop()
