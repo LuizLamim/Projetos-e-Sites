@@ -25,3 +25,18 @@ class Calculadora:
             ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
             ('C', 4, 0), ('0', 4, 1), ('=', 4, 2), ('+', 4, 3),
         ]
+
+        # Criação e posicionamento dos botões
+        for (texto, linha, col) in botoes:
+            if texto == '=':
+                btn = tk.Button(self.root, text=texto, padx=20, pady=20, font=('Arial', 14, 'bold'),
+                                command=self.calcular, bg="#4CAF50", fg="white")
+            elif texto == 'C':
+                btn = tk.Button(self.root, text=texto, padx=20, pady=20, font=('Arial', 14, 'bold'),
+                                command=self.limpar, bg="#f44336", fg="white")
+            else:
+                btn = tk.Button(self.root, text=texto, padx=20, pady=20, font=('Arial', 14),
+                                command=lambda t=texto: self.adicionar_valor(t))
+            
+            # Ajuste de layout (Grid)
+            btn.grid(row=linha, column=col, sticky="nsew", padx=2, pady=2)
