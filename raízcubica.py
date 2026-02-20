@@ -11,3 +11,6 @@ def calcular_raiz_cubica():
         
         # Exibe o resultado formatado com 4 casas decimais
         print(f"A raiz cúbica de {numero} é {raiz:.4f}")
+
+    except ValueError:
+        print("Erro: Por favor, digite um número válido.")
