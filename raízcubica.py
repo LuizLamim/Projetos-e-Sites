@@ -14,3 +14,7 @@ def calcular_raiz_cubica():
 
     except ValueError:
         print("Erro: Por favor, digite um número válido.")
+
+# Executa o programa
+if __name__ == "__main__":
+    calcular_raiz_cubica()
