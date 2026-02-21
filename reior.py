@@ -15,3 +15,6 @@ def calcular_perimetro():
         perimetro = 2 * math.pi * raio
 
         print(f"\nResultado: O perímetro da circunferência é {perimetro:.2f}")
+
+    except ValueError:
+        print("\nErro: Por favor, digite um número válido (ex: 5 ou 2.5).")
