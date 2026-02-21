@@ -18,3 +18,7 @@ def calcular_velocidade_media():
 
     except ValueError:
         print("Erro: Por favor, insira apenas números válidos.")
+
+# Executa a função
+if __name__ == "__main__":
+    calcular_velocidade_media()
