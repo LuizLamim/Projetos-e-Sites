@@ -11,3 +11,5 @@ def calcular_perimetro():
         if raio < 0:
             print("O raio não pode ser um número negativo.")
             return
+        
+        perimetro = 2 * math.pi * raio
