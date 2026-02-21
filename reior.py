@@ -13,3 +13,5 @@ def calcular_perimetro():
             return
         
         perimetro = 2 * math.pi * raio
+
+        print(f"\nResultado: O perímetro da circunferência é {perimetro:.2f}")
