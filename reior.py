@@ -18,3 +18,7 @@ def calcular_perimetro():
 
     except ValueError:
         print("\nErro: Por favor, digite um número válido (ex: 5 ou 2.5).")
+
+# Executa o programa
+if __name__ == "__main__":
+    calcular_perimetro()
