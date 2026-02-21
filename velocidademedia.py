@@ -15,3 +15,6 @@ def calcular_velocidade_media():
             
             # Exibindo o resultado formatado com 2 casas decimais
             print(f"\nA velocidade média é de {velocidade_media:.2f} km/h.")
+
+    except ValueError:
+        print("Erro: Por favor, insira apenas números válidos.")
