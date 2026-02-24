@@ -22,3 +22,6 @@ def obter_primeiros_primos(quantidade):
 # Definindo a quantidade desejada
 n = 15
 resultado = obter_primeiros_primos(n)
+
+print(f"Os {n} primeiros números primos são:")
+print(resultado)
