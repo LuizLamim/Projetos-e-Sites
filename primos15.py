@@ -11,3 +11,10 @@ def obter_primeiros_primos(quantidade):
             if numero % i == 0:
                 eh_primo = False
                 break  # Não é primo, podemos parar de testar
+
+        if eh_primo:
+            primos.append(numero)
+            
+        numero += 1
+        
+    return primos
