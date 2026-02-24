@@ -18,3 +18,7 @@ def obter_primeiros_primos(quantidade):
         numero += 1
         
     return primos
+
+# Definindo a quantidade desejada
+n = 15
+resultado = obter_primeiros_primos(n)
