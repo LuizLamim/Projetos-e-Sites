@@ -22,3 +22,6 @@ def calcular_imc():
             
         # Exibe o resultado formatado
         resultado_label.config(text=f"IMC: {imc:.2f}\nStatus: {categoria}", fg="#2c3e50")
+
+    except ValueError:
+    messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
