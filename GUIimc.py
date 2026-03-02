@@ -25,3 +25,9 @@ def calcular_imc():
 
     except ValueError:
     messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
+
+# Configuração da Janela Principal
+janela = tk.Tk()
+janela.title("Calculadora de IMC")
+janela.geometry("300x350")
+janela.configure(padx=20, pady=20)
