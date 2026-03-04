@@ -28,3 +28,5 @@ plt.xticks(posicoes)
 
 # Salva a imagem
 plt.savefig('primes_plot.png')
+
+print(f"Lista de primos gerada: {lista_primos}")
