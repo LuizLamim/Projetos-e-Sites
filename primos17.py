@@ -17,3 +17,11 @@ def buscar_primeiros_n_primos(n):
 n = 17
 lista_primos = buscar_primeiros_n_primos(n)
 posicoes = list(range(1, n + 1))
+
+# Configuração do gráfico
+plt.plot(posicoes, lista_primos, marker='o', linestyle='-', color='blue')
+plt.title(f'Os Primeiros {n} Números Primos')
+plt.xlabel('Posição ($n$)')
+plt.ylabel('Valor do Número Primo ($P_n$)')
+plt.grid(True)
+plt.xticks(posicoes)
