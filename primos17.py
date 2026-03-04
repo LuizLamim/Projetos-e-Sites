@@ -12,3 +12,8 @@ def buscar_primeiros_n_primos(n):
             primos.append(numero_atual)
         numero_atual += 1
     return primos
+
+# Quantidade de primos desejada
+n = 17
+lista_primos = buscar_primeiros_n_primos(n)
+posicoes = list(range(1, n + 1))
