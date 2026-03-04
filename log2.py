@@ -21,3 +21,5 @@ plt.title('Gráfico da Função Logarítmica (Base 2)')
 plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.legend()
+
+plt.show()
