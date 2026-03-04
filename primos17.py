@@ -25,3 +25,6 @@ plt.xlabel('Posição ($n$)')
 plt.ylabel('Valor do Número Primo ($P_n$)')
 plt.grid(True)
 plt.xticks(posicoes)
+
+# Salva a imagem
+plt.savefig('primes_plot.png')
