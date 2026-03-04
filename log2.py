@@ -10,3 +10,8 @@ y = np.log2(x)
 
 plt.figure(figsize=(8, 5))
 plt.plot(x, y, label=r'$f(x) = \log_2(x)$', color='blue', linewidth=2)
+
+
+plt.axhline(0, color='black', linewidth=0.8, linestyle='--') # Eixo X
+plt.axvline(0, color='black', linewidth=0.8, linestyle='--') # Eixo Y
+plt.grid(True, linestyle=':', alpha=0.6)
