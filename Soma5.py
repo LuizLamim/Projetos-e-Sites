@@ -16,3 +16,5 @@ soma = 0
 for i in range(1, 6):
     numero = float(input(f"Digite o {i}º número: "))
     soma += numero  # Isso é o mesmo que: soma = soma + numero
+
+print(f"\nO total da soma é: {soma}")
