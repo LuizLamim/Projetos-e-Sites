@@ -54,3 +54,9 @@ SELECT
     p.Preco AS PrecoUnitario,
     (pd.Quantidade * p.Preco) AS ValorTotalProduto,
     pd.DataPedido
+FROM 
+    Pedidos pd
+JOIN 
+    Clientes c ON pd.ClienteID = c.ClienteID
+JOIN 
+    Produtos p ON pd.ProdutoID = p.ProdutoID;
