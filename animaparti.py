@@ -60,4 +60,38 @@ def atualizar_simulacao(frame):
     mask_parede_y = (posicoes[:, 1] <= RAIO_PARTICULA) | (posicoes[:, 1] >= TAMANHO_CAIXA - RAIO_PARTICULA)
     velocidades[mask_parede_y, 1] *= -1
 
-    
+    # 3. Tratar Colisões Partícula-Partícula (Cálculo O(N²))
+    # Iteração sobre todos os pares únicos de partículas
+    for i in range(N_PARTICULAS):
+        for j in range(i + 1, N_PARTICULAS):
+            dr = posicoes[i] - posicoes[j]
+            dist_sq = np.dot(dr, dr) # Distância ao quadrado (evita raiz quadrada, mais rápido)
+            
+            # Se a distância quadrada for menor que o diâmetro ao quadrado, colidiram
+            if dist_sq < (2 * RAIO_PARTICULA)**2:
+                # Elas colidiram!
+                dist = np.sqrt(dist_sq)
+                n_unitario = dr / dist # Vetor normal unitário da colisão
+
+                # Velocidade relativa
+                dv = velocidades[i] - velocidades[j]
+                
+                # Velocidade relativa projetada na direção normal (vn)
+                # Se vn < 0, as partículas estão se aproximando (aplica a colisão)
+                vn = np.dot(dv, n_unitario)
+
+                if vn < 0:
+                    # Fórmula da colisão elástica simplificada para massas iguais
+                    # Aplica a troca de momentum apenas na componente normal
+                    delta_v = vn * n_unitario
+                    velocidades[i] -= delta_v
+                    velocidades[j] += delta_v
+
+    # 4. Atualizar o Visual na Tela
+    for i in range(N_PARTICULAS):
+        particulal_visual = particulas_visuais[i]
+        particulal_visual.center = posicoes[i]
+
+    # Retorna a lista de objetos atualizados para o Matplotlib
+    return particulas_visuais
+
