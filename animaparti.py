@@ -95,3 +95,12 @@ def atualizar_simulacao(frame):
     # Retorna a lista de objetos atualizados para o Matplotlib
     return particulas_visuais
 
+# --- Executar a Animação ---
+# blit=True otimiza a animação desenhando apenas o que mudou
+ani = animation.FuncAnimation(fig, atualizar_simulacao, frames=200, interval=INTERVALO_MS, blit=True)
+
+# plt.show() abre a janela da animação
+plt.show()
+
+# Para salvar o vídeo (opcional, requer ffmpeg instalado):
+# ani.save('simulacao_gas_ideal.mp4', writer='ffmpeg', fps=30)
