@@ -28,3 +28,13 @@ pontos_grade = np.vstack([np.repeat(x_grid, grid_dim), np.tile(y_grid, grid_dim)
 indices = np.random.choice(range(len(pontos_grade)), N_PARTICULAS, replace=False)
 posicoes = pontos_grade[indices]
 
+# --- Configuração do Gráfico e Animação (Matplotlib) ---
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.set_xlim(0, TAMANHO_CAIXA)
+ax.set_ylim(0, TAMANHO_CAIXA)
+ax.set_aspect('equal') # Mantém a caixa quadrada no visual
+ax.set_title('Simulação de Gás Ideal: Colisões de Partículas')
+# Remove as marcas dos eixos para um visual mais limpo
+ax.set_xticks([])
+ax.set_yticks([])
+
