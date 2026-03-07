@@ -46,3 +46,11 @@ INSERT INTO Pedidos (ClienteID, ProdutoID, Quantidade) VALUES
 (1, 2, 2), -- Ana comprou 2 Mouses
 (2, 3, 1), -- Carlos comprou 1 Teclado
 (3, 1, 1); -- Beatriz comprou 1 Notebook
+
+SELECT 
+    c.Nome AS Cliente,
+    p.NomeProduto AS Produto,
+    pd.Quantidade,
+    p.Preco AS PrecoUnitario,
+    (pd.Quantidade * p.Preco) AS ValorTotalProduto,
+    pd.DataPedido
