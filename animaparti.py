@@ -38,3 +38,26 @@ ax.set_title('Simulação de Gás Ideal: Colisões de Partículas')
 ax.set_xticks([])
 ax.set_yticks([])
 
+# Criar os objetos visuais das partículas (círculos)
+particulas_visuais = [Circle(posicoes[i], RAIO_PARTICULA, color='navy', edgecolor='white') for i in range(N_PARTICULAS)]
+for particula in particulas_visuais:
+    ax.add_patch(particula)
+
+# --- A Lógica da Física (Coração da Simulação) ---
+def atualizar_simulacao(frame):
+    global posicoes, velocidades
+
+    # 1. Atualizar Posições (Movimento Retilíneo Uniforme entre colisões)
+    posicoes += velocidades * DT
+
+    # 2. Tratar Colisões com as Paredes (Paredes perfeitamente elásticas)
+    # Parede Esquerda/Direita (Eixo X)
+    # Se a posição X + Raio ultrapassar a caixa, inverte a velocidade X
+    mask_parede_x = (posicoes[:, 0] <= RAIO_PARTICULA) | (posicoes[:, 0] >= TAMANHO_CAIXA - RAIO_PARTICULA)
+    velocidades[mask_parede_x, 0] *= -1
+    
+    # Parede Inferior/Superior (Eixo Y)
+    mask_parede_y = (posicoes[:, 1] <= RAIO_PARTICULA) | (posicoes[:, 1] >= TAMANHO_CAIXA - RAIO_PARTICULA)
+    velocidades[mask_parede_y, 1] *= -1
+
+    
