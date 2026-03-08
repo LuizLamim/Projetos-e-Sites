@@ -7,5 +7,9 @@ int main() {
 
     printf("--- Calculadora de Potencia ---\n");
 
+    // Solicita os dados ao usuário
+    printf("Digite o valor de X (base): ");
+    scanf("%lf", &base);
+
     return 0;
 }
