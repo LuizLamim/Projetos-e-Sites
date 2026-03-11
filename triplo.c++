@@ -8,3 +8,6 @@ int main() {
     // Pede ao usuário para digitar um número
     std::cout << "Digite um numero: ";
     std::cin >> numero;
+
+    // Calcula o triplo do número
+    triplo = numero * 3;
