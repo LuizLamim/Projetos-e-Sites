@@ -4,3 +4,7 @@ int main() {
     // Usamos 'double' para permitir tanto números inteiros quanto decimais
     double numero;
     double triplo;
+
+    // Pede ao usuário para digitar um número
+    std::cout << "Digite um numero: ";
+    std::cin >> numero;
