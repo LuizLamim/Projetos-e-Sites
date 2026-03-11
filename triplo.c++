@@ -11,3 +11,9 @@ int main() {
 
     // Calcula o triplo do número
     triplo = numero * 3;
+
+    // Exibe o resultado final
+    std::cout << "O triplo de " << numero << " e " << triplo << std::endl;
+
+    return 0;
+}
