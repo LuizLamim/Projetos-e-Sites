@@ -16,3 +16,14 @@ class Perceptron:
         # Inicializa pesos com zero
         self.weights = np.zeros(n_features)
         self.bias = 0
+
+        for _ in range(self.n_iter):
+            for idx, x_i in enumerate(X):
+                # Cálculo da saída linear: z = (w * x) + b
+                linear_output = np.dot(x_i, self.weights) + self.bias
+                y_predicted = self.activation_function(linear_output)
+
+                # Regra de atualização do Perceptron
+                update = self.lr * (y[idx] - y_predicted)
+                self.weights += update * x_i
+                self.bias += update
