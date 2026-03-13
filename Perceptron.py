@@ -27,3 +27,20 @@ class Perceptron:
                 update = self.lr * (y[idx] - y_predicted)
                 self.weights += update * x_i
                 self.bias += update
+    
+    def predict(self, X):
+        linear_output = np.dot(X, self.weights) + self.bias
+        y_predicted = [self.activation_function(i) for i in linear_output]
+        return np.array(y_predicted)
+
+# Exemplo de uso: Porta Lógica AND
+if __name__ == "__main__":
+    X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    y = np.array([0, 0, 0, 1]) # Saídas esperadas do AND
+
+    p = Perceptron(learning_rate=0.1, n_iterations=10)
+    p.fit(X, y)
+
+    print(f"Pesos finais: {p.weights}")
+    print(f"Bias final: {p.bias}")
+    print(f"Predições: {p.predict(X)}")
