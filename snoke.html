@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Cobrinha</title>
     <style>
         body {
@@ -27,6 +26,109 @@
     </style>
 </head>
 <body>
-    
+
+    <div id="score">Pontos: 0</div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const box = 20; // Tamanho de cada bloco do grid
+        let score = 0;
+
+        // Posição inicial da cobrinha
+        let snake = [];
+        snake[0] = { x: 10 * box, y: 10 * box };
+
+        // Posição inicial da comida
+        let food = {
+            x: Math.floor(Math.random() * 20) * box,
+            y: Math.floor(Math.random() * 20) * box
+        };
+
+        // Controle de direção
+        let d;
+        document.addEventListener("keydown", direction);
+
+        function direction(event) {
+            let key = event.keyCode;
+            // Impede que a cobrinha dê "marcha ré" no próprio corpo
+            if (key == 37 && d != "RIGHT") d = "LEFT";
+            else if (key == 38 && d != "DOWN") d = "UP";
+            else if (key == 39 && d != "LEFT") d = "RIGHT";
+            else if (key == 40 && d != "UP") d = "DOWN";
+        }
+
+        // Função que desenha e atualiza o jogo
+        function draw() {
+            // Desenha o fundo do canvas
+            ctx.fillStyle = "#34495e";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Desenha a cobrinha
+            for (let i = 0; i < snake.length; i++) {
+                ctx.fillStyle = (i == 0) ? "#2ecc71" : "#27ae60"; // Cabeça verde clara, corpo verde escuro
+                ctx.fillRect(snake[i].x, snake[i].y, box, box);
+                ctx.strokeStyle = "#2c3e50";
+                ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+            }
+
+            // Desenha a comida
+            ctx.fillStyle = "#e74c3c"; // Vermelho
+            ctx.fillRect(food.x, food.y, box, box);
+
+            // Posição atual da cabeça
+            let snakeX = snake[0].x;
+            let snakeY = snake[0].y;
+
+            // Movimenta a cabeça na direção atual
+            if (d == "LEFT") snakeX -= box;
+            if (d == "UP") snakeY -= box;
+            if (d == "RIGHT") snakeX += box;
+            if (d == "DOWN") snakeY += box;
+
+            // Verifica se comeu a comida
+            if (snakeX == food.x && snakeY == food.y) {
+                score++;
+                document.getElementById("score").innerHTML = "Pontos: " + score;
+                // Gera nova comida em posição aleatória
+                food = {
+                    x: Math.floor(Math.random() * 20) * box,
+                    y: Math.floor(Math.random() * 20) * box
+                };
+            } else {
+                // Remove o último pedaço da cauda se não comeu
+                snake.pop();
+            }
+
+            // Cria a nova cabeça
+            let newHead = { x: snakeX, y: snakeY };
+
+            // Verifica Game Over (Bater nas paredes ou no próprio corpo)
+            if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
+                clearInterval(game);
+                alert("Fim de Jogo! Sua pontuação final foi: " + score);
+                location.reload(); // Recarrega a página para jogar de novo
+            }
+
+            // Adiciona a nova cabeça no início da cobrinha
+            snake.unshift(newHead);
+        }
+
+        // Função para checar colisão com o corpo
+        function collision(head, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (head.x == array[i].x && head.y == array[i].y) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Atualiza a tela a cada 100 milissegundos (velocidade do jogo)
+        let game = setInterval(draw, 100);
+
+    </script>
 </body>
 </html>
