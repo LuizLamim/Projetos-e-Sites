@@ -23,3 +23,10 @@ def funcao_onda_hidrogenio(n, l, m, r, theta, phi):
     Y_lm = sph_harm(m, l, phi, theta)
     
     return R_nl * Y_lm
+
+# 1. Configurar os números quânticos
+# Altere estes valores para ver diferentes orbitais!
+# Exemplo: (1,0,0) = 1s | (2,1,0) = 2pz | (3,2,0) = 3dz^2
+n = 3
+l = 2
+m = 0
