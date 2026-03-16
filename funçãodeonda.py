@@ -30,3 +30,30 @@ def funcao_onda_hidrogenio(n, l, m, r, theta, phi):
 n = 3
 l = 2
 m = 0
+
+# 2. Criar a malha de coordenadas (plano xz, onde y = 0)
+limite = 20 # Tamanho do grid em raios de Bohr
+pontos = 500
+x = np.linspace(-limite, limite, pontos)
+z = np.linspace(-limite, limite, pontos)
+X, Z = np.meshgrid(x, z)
+Y = 0 
+
+# Converter coordenadas cartesianas para esféricas
+R = np.sqrt(X**2 + Y**2 + Z**2)
+
+# Evitar erro de divisão por zero na origem (r=0)
+Theta = np.zeros_like(R)
+mascara = R > 0
+Theta[mascara] = np.arccos(Z[mascara] / R[mascara]) # Ângulo polar
+Phi = np.arctan2(Y, X) # Ângulo azimutal
+
+# 3. Calcular a função de onda e a densidade de probabilidade
+psi = funcao_onda_hidrogenio(n, l, m, R, Theta, Phi)
+densidade_probabilidade = np.abs(psi)**2
+
+# 4. Plotar o resultado
+plt.figure(figsize=(8, 6))
+# Usamos o colormap 'inferno' que destaca bem as regiões de alta densidade
+img = plt.imshow(densidade_probabilidade, extent=[-limite, limite, -limite, limite], 
+                 origin='lower', cmap='inferno')
