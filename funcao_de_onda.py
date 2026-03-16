@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.special import sph_harm, genlaguerre
+from scipy.special import sph_harm_y, genlaguerre
 from math import factorial
 
 def funcao_onda_hidrogenio(n, l, m, r, theta, phi):
@@ -8,7 +8,7 @@ def funcao_onda_hidrogenio(n, l, m, r, theta, phi):
     Calcula a função de onda do átomo de hidrogênio.
     """
     a0 = 1.0 # Raio de Bohr em unidades atômicas
-    
+
     # --- Parte Radial ---
     rho = 2.0 * r / (n * a0)
     # Constante de normalização radial
@@ -16,12 +16,11 @@ def funcao_onda_hidrogenio(n, l, m, r, theta, phi):
     # Polinômio associado de Laguerre
     laguerre = genlaguerre(n - l - 1, 2 * l + 1)(rho)
     R_nl = norm_r * np.exp(-rho / 2.0) * (rho**l) * laguerre
-    
+
     # --- Parte Angular ---
-    # Harmônicos esféricos (scipy usa phi para azimutal e theta para polar, a convenção física é o inverso, 
-    # então passamos (m, l, phi, theta) para alinhar com a convenção scipy)
-    Y_lm = sph_harm(m, l, phi, theta)
-    
+    # Harmônicos esféricos (na versão atual do scipy.special.sph_harm_y: n=l, m=m, theta=polar, phi=azimutal)
+    Y_lm = sph_harm_y(l, m, theta, phi)
+
     return R_nl * Y_lm
 
 # 1. Configurar os números quânticos
