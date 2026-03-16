@@ -57,3 +57,12 @@ plt.figure(figsize=(8, 6))
 # Usamos o colormap 'inferno' que destaca bem as regiões de alta densidade
 img = plt.imshow(densidade_probabilidade, extent=[-limite, limite, -limite, limite], 
                  origin='lower', cmap='inferno')
+
+plt.colorbar(img, label='Densidade de Probabilidade $|\psi|^2$')
+plt.title(f'Corte no plano XZ do Orbital do Hidrogênio (n={n}, l={l}, m={m})')
+plt.xlabel('Eixo X (Raios de Bohr, $a_0$)')
+plt.ylabel('Eixo Z (Raios de Bohr, $a_0$)')
+
+# Ajustar o layout e mostrar
+plt.tight_layout()
+plt.show()
