@@ -71,6 +71,148 @@
     </style>
 </head>
 <body>
+    <div class="container">
+    <h2 style="margin-top: 0; text-align: center;">Entendendo a Integral com Retângulos</h2>
     
+    <canvas id="mathCanvas" width="800" height="400"></canvas>
+    
+    <div class="controls">
+        <button id="playBtn">▶ Play</button>
+        <label for="nSlider">Retângulos (n):</label>
+        <input type="range" id="nSlider" min="2" max="150" value="2">
+    </div>
+
+    <div class="stats">
+        <div>Número de Retângulos (n): <span id="nDisplay">2</span></div>
+        <div>Área Estimada: <span id="areaEstimada">0.00</span></div>
+        <div>Área Exata: <span>37.50</span></div>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('mathCanvas');
+    const ctx = canvas.getContext('2d');
+    const nSlider = document.getElementById('nSlider');
+    const playBtn = document.getElementById('playBtn');
+    const nDisplay = document.getElementById('nDisplay');
+    const areaEstimadaDisplay = document.getElementById('areaEstimada');
+
+    // Função matemática: f(x) = -0.15 * (x - 5)^2 + 5
+    const f = (x) => -0.15 * Math.pow(x - 5, 2) + 5;
+    
+    // Configurações do gráfico
+    const xMin = 0, xMax = 10;
+    const yMin = 0, yMax = 6;
+    const padding = 40;
+
+    // Converte coordenadas matemáticas para coordenadas do Canvas
+    function mapX(x) {
+        return padding + ((x - xMin) / (xMax - xMin)) * (canvas.width - 2 * padding);
+    }
+
+    function mapY(y) {
+        return canvas.height - padding - ((y - yMin) / (yMax - yMin)) * (canvas.height - 2 * padding);
+    }
+
+    // Variáveis de Animação
+    let isPlaying = false;
+    let animationId;
+    let currentN = parseInt(nSlider.value);
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 1. Desenhar Eixos Cartesianos
+        ctx.beginPath();
+        ctx.strokeStyle = '#999';
+        ctx.lineWidth = 1;
+        // Eixo X
+        ctx.moveTo(mapX(xMin), mapY(0));
+        ctx.lineTo(mapX(xMax), mapY(0));
+        // Eixo Y
+        ctx.moveTo(mapX(0), mapY(yMin));
+        ctx.lineTo(mapX(0), mapY(yMax));
+        ctx.stroke();
+
+        // 2. Desenhar os Retângulos (Soma de Riemann à Esquerda)
+        let n = currentN;
+        let deltaX = (xMax - xMin) / n;
+        let areaSum = 0;
+
+        for (let i = 0; i < n; i++) {
+            let x_i = xMin + i * deltaX;
+            let altura = f(x_i);
+            areaSum += altura * deltaX;
+
+            let canvasX = mapX(x_i);
+            let canvasY = mapY(altura);
+            let canvasWidth = mapX(x_i + deltaX) - mapX(x_i);
+            let canvasHeight = mapY(0) - canvasY;
+
+            ctx.fillStyle = 'rgba(52, 152, 219, 0.5)'; // Azul semi-transparente
+            ctx.fillRect(canvasX, canvasY, canvasWidth, canvasHeight);
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(canvasX, canvasY, canvasWidth, canvasHeight);
+        }
+
+        // 3. Desenhar a Curva da Função por cima
+        ctx.beginPath();
+        ctx.strokeStyle = '#2c3e50';
+        ctx.lineWidth = 3;
+        for (let x = xMin; x <= xMax; x += 0.05) {
+            if (x === xMin) ctx.moveTo(mapX(x), mapY(f(x)));
+            else ctx.lineTo(mapX(x), mapY(f(x)));
+        }
+        ctx.stroke();
+
+        // 4. Atualizar os Textos na Tela
+        nDisplay.innerText = n;
+        areaEstimadaDisplay.innerText = areaSum.toFixed(2);
+    }
+
+    // Lógica da Animação
+    function animate() {
+        if (!isPlaying) return;
+        
+        if (currentN < parseInt(nSlider.max)) {
+            // Aumenta a velocidade conforme o número cresce
+            currentN += Math.max(1, Math.floor(currentN * 0.02)); 
+            if (currentN > parseInt(nSlider.max)) currentN = parseInt(nSlider.max);
+            nSlider.value = currentN;
+            draw();
+            animationId = requestAnimationFrame(animate);
+        } else {
+            togglePlay(); // Para ao chegar no limite
+        }
+    }
+
+    function togglePlay() {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+            playBtn.innerText = '⏸ Pause';
+            if (currentN >= parseInt(nSlider.max)) {
+                currentN = parseInt(nSlider.min);
+                nSlider.value = currentN;
+            }
+            animate();
+        } else {
+            playBtn.innerText = '▶ Play';
+            cancelAnimationFrame(animationId);
+        }
+    }
+
+    // Eventos de Interação
+    nSlider.addEventListener('input', (e) => {
+        currentN = parseInt(e.target.value);
+        if (isPlaying) togglePlay(); // Pausa se mexer no controle
+        draw();
+    });
+
+    playBtn.addEventListener('click', togglePlay);
+
+    // Desenha o gráfico inicial
+    draw();
+</script>
 </body>
 </html>
