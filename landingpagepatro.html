@@ -4,6 +4,318 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* --- VARIÁVEIS DE CORES --- */
+        :root {
+            --bg-main: #0A0A0A;
+            --bg-card: #1A1A1A;
+            --gold: #D4AF37;
+            --gold-hover: #b5952f;
+            --text-light: #FFFFFF;
+            --text-muted: #CCCCCC;
+        }
+
+        /* --- RESET E BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- BOTÕES --- */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--bg-main);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--bg-main);
+        }
+
+        /* --- CABEÇALHO (NAVBAR) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .hero h2 {
+            color: var(--gold);
+            font-size: 18px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            max-width: 900px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* --- SEÇÕES GERAIS --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 60px;
+        }
+
+        /* --- VANTAGENS --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            border-top: 3px solid var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* --- COTAS DE PATROCÍNIO --- */
+        #cotas {
+            background-color: #111;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cota-card {
+            background-color: var(--bg-card);
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cota-premium {
+            border: 2px solid var(--gold);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .cota-premium::before {
+            content: 'EXCLUSIVO';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--gold);
+            color: var(--bg-main);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        .cota-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .cota-card .price {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cota-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .cota-card ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* --- DEPOIMENTO --- */
+        .testimonial {
+            text-align: center;
+            background-color: var(--bg-main);
+            padding: 80px 10%;
+        }
+
+        .testimonial p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .testimonial span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: #050505;
+            padding: 60px 10%;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 15px; }
+            .cota-premium { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
     
