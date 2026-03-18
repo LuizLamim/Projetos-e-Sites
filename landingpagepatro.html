@@ -318,6 +318,154 @@
     </style>
 </head>
 <body>
-    
+    <header id="header">
+        <div class="logo">ABAJUD</div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#vantagens">Vantagens</a></li>
+                <li><a href="#cotas">Cotas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="#cotas" class="btn btn-gold" style="padding: 10px 20px; font-size: 12px;">Patrocinar</a>
+    </header>
+
+    <section class="hero" id="sobre">
+        <h2>O Maior Evento de Recuperação Judicial do Brasil</h2>
+        <h1>Posicione sua Marca no Centro do Direito Empresarial: ABAJUD 2026</h1>
+        <p>De 15 a 17 de maio de 2026 | Centro de Convenções Fiesp | São Paulo, SP</p>
+        <a href="#cotas" class="btn btn-gold">Ver Cotas de Patrocínio</a>
+        
+        <div class="hero-stats">
+            <span>✓ 450 Participantes</span>
+            <span>✓ 25 Palestrantes</span>
+            <span>✓ 3 Dias de Imersão</span>
+        </div>
+    </section>
+
+    <section id="vantagens">
+        <h2 class="section-title">Por que Patrocinar?</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Público Qualificado</h3>
+                <p>Acesso direto a juízes, desembargadores, advogados sócios, administradores judiciais e CFOs de grandes empresas do Brasil.</p>
+            </div>
+            <div class="card">
+                <h3>Posicionamento Estratégico</h3>
+                <p>Consolide sua marca como autoridade incontestável no segmento jurídico que mais cresce no país nos últimos anos.</p>
+            </div>
+            <div class="card">
+                <h3>Networking e ROI</h3>
+                <p>Três dias de interação com tomadores de decisão, gerando oportunidades reais de negócios e conexões premium.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cotas">
+        <h2 class="section-title">Escolha a Cota Ideal</h2>
+        <div class="grid-4">
+            
+            <div class="cota-card">
+                <h3>Básica: Presença</h3>
+                <div class="price">R$ 28.000</div>
+                <ul>
+                    <li>5 Cotas Disponíveis</li>
+                    <li>Estande de 6m² em área de exposição</li>
+                    <li>Logo em materiais oficiais</li>
+                    <li>1 convite premium</li>
+                    <li>ROI: 5 a 8 leads qualificados</li>
+                </ul>
+                <button class="btn btn-outline" onclick="interesseCota('Básica')">Reservar Cota</button>
+            </div>
+
+            <div class="cota-card">
+                <h3>Tática: Experiência</h3>
+                <div class="price">R$ 58.000</div>
+                <ul>
+                    <li>3 Cotas Disponíveis</li>
+                    <li>Patrocínio de ativação customizada</li>
+                    <li>Estande de 9m²</li>
+                    <li>Workshop prático de 30 min</li>
+                    <li>ROI: 8 a 12 leads qualificados</li>
+                </ul>
+                <button class="btn btn-outline" onclick="interesseCota('Tática')">Reservar Cota</button>
+            </div>
+
+            <div class="cota-card">
+                <h3>Estratégica: Networking</h3>
+                <div class="price">R$ 95.000</div>
+                <ul>
+                    <li>Apenas 2 Cotas Disponíveis</li>
+                    <li>Patrocínio exclusivo do coquetel (dia 2)</li>
+                    <li>Estande de 12m²</li>
+                    <li>Painel de 20 minutos</li>
+                    <li>ROI: 10 a 18 leads qualificados</li>
+                </ul>
+                <button class="btn btn-outline" onclick="interesseCota('Estratégica')">Reservar Cota</button>
+            </div>
+
+            <div class="cota-card cota-premium">
+                <h3 style="color: var(--gold);">Premium: Autoridade</h3>
+                <div class="price">R$ 180.000</div>
+                <ul>
+                    <li>Exclusividade Garantida (1 Cota)</li>
+                    <li>Palestra principal de 45 min no horário nobre</li>
+                    <li>Estande premium de 24m²</li>
+                    <li>Patrocínio exclusivo do coffee break</li>
+                    <li>4 convites VIP</li>
+                    <li>ROI: 15 a 25 leads ultra-qualificados</li>
+                </ul>
+                <button class="btn btn-gold" onclick="interesseCota('Premium')">Reservar Cota Premium</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <p>"O patrocínio do evento ABAJUD 2024 gerou para nossa empresa 23 leads qualificados, 4 novos clientes corporativos, e posicionou nossa marca como referência. O ROI superou nossas expectativas em 340%."</p>
+        <span>— Roberto Mendes, CEO da LegalTech Solutions</span>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h2 class="logo" style="margin-bottom: 15px;">ABAJUD</h2>
+                <p>Associação Brasileira de Advogados Especializados em Recuperação Judicial.</p>
+                <p style="margin-top: 20px; color: var(--gold); font-weight: bold;">Condições Especiais:</p>
+                <p>Desconto de 15% à vista até 30/11/2025.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Fale Conosco</h4>
+                <p>Marcela Rodrigues - Gerente de Parcerias</p>
+                <p>E-mail: patrocinio@abajud.org.br</p>
+                <p>WhatsApp: (11) 98765-4321</p>
+                <p>Telefone: (11) 3456-7890</p>
+            </div>
+            <div class="footer-col">
+                <h4>Endereço</h4>
+                <p>Avenida Paulista, 1.842 - 8º andar</p>
+                <p>Bela Vista, São Paulo - SP</p>
+                <p>CEP 01310-200</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de sombra no Header ao rolar a página
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.8)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Função de simulação ao clicar em reservar
+        function interesseCota(nomeCota) {
+            alert(`Obrigado pelo interesse na Cota ${nomeCota}!\n\nEm um ambiente real, este botão abriria um formulário de contato, direcionaria para o WhatsApp da Marcela Rodrigues ou iniciaria o processo de pagamento.`);
+        }
+    </script>
 </body>
 </html>
