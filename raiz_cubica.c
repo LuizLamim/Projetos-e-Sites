@@ -13,6 +13,12 @@ int main() {
         return 1;
     }
     
+    // Calculando a raiz cúbica
+    resultado = cbrt(numero);
+
+    // Exibindo o resultado com 2 casas decimais
+    printf("A raiz cúbica de %.2f é: %.2f\n", numero, resultado);
+    
     return 0;
 
 }
