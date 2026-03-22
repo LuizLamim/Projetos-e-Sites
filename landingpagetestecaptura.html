@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Masterclass Blindagem na Recuperação Judicial da ABAJUD. Aprenda a evitar erros fatais e garantir sucesso na RJ com o Dr. Adelino Neto.">
+    <meta name="keywords" content="Recuperação Judicial, ABAJUD, Masterclass, Direito Empresarial, Dr. Adelino Neto">
+    <meta name="author" content="ABAJUD">
+    <title>Blindagem na Recuperação Judicial - Masterclass ABAJUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --preto-luxo: #050505;
+            --preto-secao: #0f0f0f;
+            --preto-card: #1a1a1a;
+            --ouro-primario: #D4AF37;
+            --ouro-brilhante: #F1D592;
+            --ouro-escuro: #AA8831;
+            --branco-puro: #FFFFFF;
+            --texto-cinza: #CCCCCC;
+            --borda-ouro: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--branco-puro);
+            background-color: var(--preto-luxo);
+            line-height: 1.6;
+        }
+        .hero__title, .cta-button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .subheadline {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: var(--borda-ouro);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .navbar__logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--ouro-primario);
+            letter-spacing: 2px;
+        }
+        .navbar__cta {
+            background: var(--ouro-primario);
+            color: var(--preto-luxo);
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+            transition: background 0.3s;
+        }
+        .navbar__cta:hover {
+            background: var(--ouro-brilhante);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px 0 rgba(212, 175, 55, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+        }
+        .hero {
+            background: linear-gradient(180deg, var(--preto-luxo) 0%, var(--preto-secao) 100%);
+            color: var(--branco-puro);
+            padding: 150px 2rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--ouro-primario), transparent);
+        }
+        .hero__badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--ouro-primario);
+            border: 1px solid var(--ouro-primario);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero__title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #FFFFFF, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero__subheadline {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--texto-cinza);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .countdown {
+            font-size: 1.8rem;
+            margin: 2rem 0;
+            color: var(--ouro-primario);
+            font-weight: bold;
+        }
+        .hero__image-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            border: var(--borda-ouro);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            background: var(--preto-card);
+        }
+        .hero__image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .cta-button {
+            background: var(--ouro-primario);
+            color: var(--preto-luxo);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+        .cta-button:hover {
+            background: var(--ouro-brilhante);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .problem {
+            background: var(--preto-secao);
+        }
+        .problem__title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--ouro-primario);
+        }
+        .problem p {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--texto-cinza);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .error-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .error-card {
+            background: var(--preto-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: var(--borda-ouro);
+            flex: 1 1 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .error-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--ouro-primario);
+        }
+        .solution {
+            background: var(--preto-luxo);
+        }
+        .solution__title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--ouro-primario);
+        }
+        .expert-card {
+            background: var(--preto-card);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 3rem;
+            border: var(--borda-ouro);
+        }
+        .expert-card h3 {
+            color: var(--ouro-primario);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .pillar {
+            background: var(--preto-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--ouro-primario);
+            flex: 1 1 200px;
+            text-align: center;
+        }
+        .value-stack {
+            background: var(--preto-secao);
+            text-align: center;
+        }
+        .value-stack__title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--ouro-primario);
+        }
+        .value-stack p {
+            margin: 2rem 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--ouro-brilhante);
+        }
+        .bonus-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .bonus-item {
+            background: var(--preto-card);
+            padding: 1.2rem 2rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            border: var(--borda-ouro);
+        }
+        .social-proof {
+            background: var(--preto-luxo);
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .testimonial {
+            background: var(--preto-secao);
+            padding: 2rem;
+            border-radius: 8px;
+            flex: 1 1 250px;
+            border-bottom: 3px solid var(--ouro-primario);
+            font-style: italic;
+        }
+        .guarantee {
+            background: var(--preto-secao);
+        }
+        .guarantee__title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--ouro-primario);
+        }
+        .guarantee-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .guarantee-item {
+            background: var(--preto-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: var(--borda-ouro);
+        }
+        .urgency {
+            background: linear-gradient(90deg, var(--ouro-escuro), var(--ouro-primario));
+            color: var(--preto-luxo);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .urgency .cta-button {
+            background: var(--preto-luxo);
+            color: var(--ouro-primario);
+        }
+        .faq {
+            background: var(--preto-luxo);
+        }
+        .faq__title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--ouro-primario);
+        }
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            border: var(--borda-ouro);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background: var(--preto-card);
+            padding: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--ouro-primario);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-content {
+            display: none;
+            padding: 1.2rem;
+            background: var(--preto-secao);
+            color: var(--texto-cinza);
+        }
+        .final-cta {
+            background: var(--preto-luxo);
+            color: var(--branco-puro);
+            text-align: center;
+            padding: 6rem 2rem;
+            border-top: var(--borda-ouro);
+        }
+        .footer {
+            background: var(--preto-luxo);
+            color: var(--texto-cinza);
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer__logo {
+            color: var(--ouro-primario);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .footer a {
+            color: var(--ouro-primario);
+            text-decoration: none;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .hero__title {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">ABAJUD</div>
+        <a href="#cta" class="navbar__cta" aria-label="Inscrever-se na Masterclass">QUERO MINHA VAGA</a>
+    </nav>
+    <header class="hero" id="hero">
+        <div class="hero__badge"> 16 de abril de 2026 (Quinta-feira) | Vagas limitadas pela capacidade da sala virtual</div>
+        <h1 class="hero__title">Blindagem na Recuperação Judicial: Como evitar os erros fatais que levam ao indeferimento e à falência.</h1>
+        <p class="hero__subheadline">Uma Masterclass exclusiva com o Dr. Adelino Neto (AJ em atividade e Presidente da ABAJUD). Aprenda a identificar as 7 armadilhas processuais que travam a RJ e garanta a viabilidade do plano com segurança técnica absoluta — em apenas 2h30min.</p>
+        <div class="countdown" id="countdown-hero">Carregando contador...</div>
+        <img src="https://static-public.pages.hotmart.com/uploads/media/file/10001361/reduzido.png" alt="Dr. Adelino Neto - Especialista em Recuperação Judicial" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #333; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <a href="#cta" class="cta-button" aria-label="Inscrever-se na Masterclass por R$ 49,90">QUERO MINHA VAGA NA MASTERCLASS (R$ 49,90)</a>
+        <p>Você está a um passo de dominar o framework que transformou centenas de RJs de risco em aprovações garantidas. Não deixe para depois.</p>
+    </header>
+    <section class="problem section fade-in" id="problem">
+        <h2 class="problem__title">Você está cometendo um destes 5 erros fatais em sua próxima RJ?</h2>
+        <div class="error-cards">
+            <div class="error-card">Erro #1: Documentação Incompleta</div>
+            <div class="error-card">Erro #2: Desconhecimento dos 7 Requisitos Mínimos</div>
+            <div class="error-card">Erro #3: Humilhação Profissional Perante o Cliente</div>
+            <div class="error-card">Erro #4: Plano de Recuperação Vulnerável a Objeções</div>
+            <div class="error-card">Erro #5: Jurisprudência Desatualizada</div>
+        </div>
+        <p>Aprender sozinho é arriscado e pode custar caro. Descubra o caminho certo.</p>
+    </section>
+    <section class="solution section fade-in" id="solution">
+        <h2 class="solution__title">Existe um caminho comprovado para blindar sua RJ contra indeferimento.</h2>
+        <div class="expert-card">
+            <h3>Dr. Adelino Neto</h3>
+            <p>Presidente da ABAJUD</p>
+            <p>AJ em atividade</p>
+            <p>15+ anos de experiência</p>
+            <p>300+ recuperações judiciais bem-sucedidas</p>
+        </div>
+        <div class="pillars">
+            <div class="pillar">Pilar 1: Visão do AJ</div>
+            <div class="pillar">Pilar 2: Checklist de Segurança</div>
+            <div class="pillar">Pilar 3: Estratégia de Negociação</div>
+            <div class="pillar">Pilar 4: Jurisprudência de Risco</div>
+        </div>
+    </section>
+    <section class="value-stack section fade-in" id="value-stack">
+        <h2 class="value-stack__title">Aqui está o que você recebe por R$ 49,90:</h2>
+        <ul class="bonus-list">
+            <li class="bonus-item">Masterclass ao Vivo: R$ 297</li>
+            <li class="bonus-item">Bônus #1 Checklist PDF: R$ 197</li>
+            <li class="bonus-item">Bônus #2 Jurisprudência de Risco: R$ 247</li>
+            <li class="bonus-item">Bônus #3 Template de Plano: R$ 397</li>
+            <li class="bonus-item">Bônus #4 Comunidade ABAJUD WhatsApp: R$ 197</li>
+            <li class="bonus-item">Bônus #5 Gravação Vitalícia: R$ 147</li>
+        </ul>
+        <p>Total: R$ 1.482 → Hoje: R$ 49,90 (96% desconto)</p>
+        <a href="#cta" class="cta-button">GARANTIR MINHA VAGA</a>
+    </section>
+    <section class="social-proof section fade-in" id="social-proof">
+        <h2 class="social-proof__title">Centenas de AJs e advogados já transformaram suas RJs com este framework.</h2>
+        <div class="testimonials">
+            <div class="testimonial">João Silva, SP: "Mudou minha prática."</div>
+            <div class="testimonial">Marina Costa, RJ: "Incrível!"</div>
+            <div class="testimonial">Carlos Mendes, MG: "Recomendo."</div>
+            <div class="testimonial">Fernanda Oliveira, BSB: "Valeu cada centavo."</div>
+            <div class="testimonial">Roberto Alves, BA: "Framework essencial."</div>
+        </div>
+        <div style="color: var(--ouro-primario); font-weight: bold;">Chancela ABAJUD</div>
+    </section>
+    <section class="guarantee section fade-in" id="guarantee">
+        <h2 class="guarantee__title">Sua Participação é 100% Protegida.</h2>
+        <ul class="guarantee-list">
+            <li class="guarantee-item">Acesso Vitalício à Gravação</li>
+            <li class="guarantee-item">Certificado de Participação ABAJUD</li>
+            <li class="guarantee-item">Acesso à Comunidade ABAJUD no WhatsApp</li>
+            <li class="guarantee-item">Conteúdo Exclusivo Permanente</li>
+        </ul>
+    </section>
+    <section class="urgency section fade-in" id="urgency">
+        <h2 class="urgency__title"> Tempo está acabando. Vagas limitadas.</h2>
+        <div class="countdown" id="countdown-urgency">Carregando contador...</div>
+        <p>Não perca a chance de blindar suas RJs. Aja agora!</p>
+        <a href="#cta" class="cta-button">GARANTIR AGORA</a>
+    </section>
+    <section class="faq section fade-in" id="faq">
+        <h2 class="faq__title">Dúvidas Frequentes</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Preciso ser AJ ou posso ser advogado?</div>
+                <div class="accordion-content">Qualquer profissional pode participar.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Quanto tempo dura a aula?</div>
+                <div class="accordion-content">2h30min.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Posso assistir sem experiência em RJ?</div>
+                <div class="accordion-content">Sim, é para todos os níveis.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">O que acontece após o checkout?</div>
+                <div class="accordion-content">Acesso ao WhatsApp e materiais.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Tem certificado?</div>
+                <div class="accordion-content">Sim, certificado ABAJUD.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Posso compartilhar a gravação?</div>
+                <div class="accordion-content">Não, uso pessoal.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">E se não conseguir assistir ao vivo?</div>
+                <div class="accordion-content">Gravação vitalícia.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Há garantia de satisfação?</div>
+                <div class="accordion-content">Sim, 100% protegida.</div>
+            </div>
+        </div>
+    </section>
+    <section class="final-cta section" id="cta">
+        <h2 class="final-cta__title">Não deixe para depois. Sua próxima RJ pode ser a que muda tudo.</h2>
+        <p>Opção 1: Continuar sozinho e arriscar. Opção 2: Investir R$ 49,90 e garantir sucesso.</p>
+        <a href="https://chat.whatsapp.com/abajud" class="cta-button" onclick="alert('Você deu o primeiro passo para uma atuação segura em RJ. O material pré-aula será enviado aqui.')">QUERO MINHA VAGA NA MASTERCLASS (R$ 49,90)</a>
+        <p>Valor inestimável para sua carreira.</p>
+    </section>
+    <footer class="footer">
+        <div class="footer__logo">ABAJUD</div>
+        <nav>
+            <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Contato</a>
+        </nav>
+        <p>&copy; ABAJUD 2026</p>
+    </footer>
+    <script>
+        // Countdown
+        const targetDate = new Date('2026-04-16T00:00:00').getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('countdown-hero').innerHTML = countdownText;
+            document.getElementById('countdown-urgency').innerHTML = countdownText;
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById('countdown-hero').innerHTML = 'Evento encerrado';
+                document.getElementById('countdown-urgency').innerHTML = 'Evento encerrado';
+            }
+        }
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(5, 5, 5, 0.95)';
+            } else {
+                navbar.style.background = 'var(--preto-luxo)';
+            }
+        });
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
