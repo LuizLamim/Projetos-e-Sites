@@ -36,3 +36,25 @@ janela.title("Calculadora de Juros Compostos")
 janela.geometry("350x350")
 janela.config(padx=20, pady=20)
 janela.resizable(False, False)
+
+
+# --- Elementos da Interface (Widgets) ---
+
+# Título
+titulo = tk.Label(janela, text="Juros Compostos", font=("Helvetica", 14, "bold"))
+titulo.pack(pady=(0, 15))
+
+# Campo: Capital
+tk.Label(janela, text="Capital Inicial (R$):").pack()
+entry_capital = tk.Entry(janela, width=25, justify="center")
+entry_capital.pack(pady=5)
+
+# Campo: Taxa de Juros
+tk.Label(janela, text="Taxa de Juros por período (%):").pack()
+entry_taxa = tk.Entry(janela, width=25, justify="center")
+entry_taxa.pack(pady=5)
+
+# Campo: Tempo
+tk.Label(janela, text="Tempo (meses ou anos):").pack()
+entry_tempo = tk.Entry(janela, width=25, justify="center")
+entry_tempo.pack(pady=5)
