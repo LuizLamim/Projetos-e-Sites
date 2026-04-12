@@ -58,3 +58,16 @@ entry_taxa.pack(pady=5)
 tk.Label(janela, text="Tempo (meses ou anos):").pack()
 entry_tempo = tk.Entry(janela, width=25, justify="center")
 entry_tempo.pack(pady=5)
+
+# Botão de Calcular
+botao_calcular = tk.Button(janela, text="Calcular", command=calcular_juros, 
+                           bg="#0052cc", fg="white", font=("Helvetica", 10, "bold"), 
+                           width=15, relief="flat", cursor="hand2")
+botao_calcular.pack(pady=20)
+
+# Label para exibir o resultado final
+label_resultado = tk.Label(janela, text="", font=("Helvetica", 11, "bold"))
+label_resultado.pack()
+
+# Iniciar o loop principal da aplicação
+janela.mainloop()
