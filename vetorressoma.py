@@ -11,3 +11,6 @@ def somar_vetores(v1, v2):
 
 vetor_a = [1, 5, 9]
 vetor_b = [2, 3, 4]
+
+resultado = somar_vetores(vetor_a, vetor_b)
+print(f"Resultado da soma: {resultado}") # Saída: [3, 8, 13]
