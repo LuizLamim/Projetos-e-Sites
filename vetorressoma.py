@@ -10,3 +10,4 @@ def somar_vetores(v1, v2):
 # Exemplo de uso
 
 vetor_a = [1, 5, 9]
+vetor_b = [2, 3, 4]
