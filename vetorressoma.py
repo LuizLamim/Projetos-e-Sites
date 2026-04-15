@@ -6,3 +6,6 @@ def somar_vetores(v1, v2):
     # Soma os elementos de mesma posição (índice)
     vetor_soma = [v1[i] + v2[i] for i in range(len(v1))]
     return vetor_soma
+
+# Exemplo de uso
+vetor_a = [1, 5, 
