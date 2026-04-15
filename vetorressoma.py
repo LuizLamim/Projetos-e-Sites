@@ -8,4 +8,5 @@ def somar_vetores(v1, v2):
     return vetor_soma
 
 # Exemplo de uso
-vetor_a = [1, 5, 
+
+vetor_a = [1, 5, 9]
