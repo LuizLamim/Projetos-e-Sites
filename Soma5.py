@@ -13,7 +13,7 @@ print(f"A soma dos 5 números é: {soma}")
 soma = 0
 
 # O loop vai rodar 5 vezes
-for i in range(1, 6):
+for i in range(1, 7):
     numero = float(input(f"Digite o {i}º número: "))
     soma += numero  # Isso é o mesmo que: soma = soma + numero
 
