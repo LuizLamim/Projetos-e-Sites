@@ -7,7 +7,7 @@ n6 = float(input("Digite o 6º número: "))
 
 soma = n1 + n2 + n3 + n4 + n5 + n6
 
-print(f"A soma dos 5 números é: {soma}")
+print(f"A soma dos 6 números é: {soma}")
 
 # outra forma de escrever o código
 
