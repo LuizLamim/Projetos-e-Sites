@@ -38,3 +38,6 @@ def somar_fracoes():
         print("0")
     else:
         print(f"{num_simplificado}/{den_simplificado}")
+
+# Executa o programa
+somar_fracoes()
