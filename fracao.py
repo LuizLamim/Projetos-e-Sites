@@ -30,3 +30,11 @@ def somar_fracoes():
     # Passo 3: Exibir o resultado
     print("\n--- Resultado ---")
     print(f"A soma de {num1}/{den1} + {num2}/{den2} é:")
+
+    # Se o denominador for 1, o resultado é um número inteiro, então ocultamos o "/1"
+    if den_simplificado == 1:
+        print(f"{num_simplificado}")
+    elif num_simplificado == 0:
+        print("0")
+    else:
+        print(f"{num_simplificado}/{den_simplificado}")
