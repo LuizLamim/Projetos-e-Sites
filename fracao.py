@@ -17,3 +17,16 @@ def somar_fracoes():
     if den1 == 0 or den2 == 0:
         print("\nErro: O denominador não pode ser igual a zero!")
         return
+    
+    # Passo 1: Aplicar a regra de soma de frações
+    num_resultado = (num1 * den2) + (num2 * den1)
+    den_resultado = den1 * den2
+    
+    # Passo 2: Simplificar a fração resultante usando o MDC
+    mdc = math.gcd(num_resultado, den_resultado)
+    num_simplificado = num_resultado // mdc
+    den_simplificado = den_resultado // mdc
+    
+    # Passo 3: Exibir o resultado
+    print("\n--- Resultado ---")
+    print(f"A soma de {num1}/{den1} + {num2}/{den2} é:")
