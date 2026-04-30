@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        :root {
+            --card-width: 250px;
+            --gap: 20px;
+            --duration: 20s; /* Velocidade da animação */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* O contêiner principal que esconde o que sai da tela */
+        .slider {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: white;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* A faixa que segura os cards e anima */
+        .slider-track {
+            display: flex;
+            width: calc((var(--card-width) + var(--gap)) * 12); /* Dobro do número de cards */
+            animation: scroll var(--duration) linear infinite;
+        }
+
+        /* Estilização dos cards */
+        .card {
+            width: var(--card-width);
+            height: 100px;
+            background: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-right: var(--gap);
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Keyframes: Move a faixa até a metade (onde a cópia começa) */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-1 * (var(--card-width) + var(--gap)) * 6)); }
+        }
+
+        /* Pausar ao passar o mouse */
+        .slider:hover .slider-track {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body>
     
