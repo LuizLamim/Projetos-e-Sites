@@ -56,3 +56,6 @@ botao_calcular.pack(pady=15)
 # Label para mostrar o resultado
 label_resultado = tk.Label(janela, text="Comprimento de Onda (λ): ---", font=("Arial", 11))
 label_resultado.pack(pady=5)
+
+# Inicia o loop principal da interface gráfica
+janela.mainloop()
