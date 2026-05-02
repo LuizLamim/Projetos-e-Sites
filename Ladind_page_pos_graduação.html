@@ -2058,10 +2058,27 @@ section {
   background: var(--color-primary);
   padding: var(--spacing-3xl) 0;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+}
+
+.footer__logo-img {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.footer__info {
+  flex: 1;
   text-align: center;
 }
 
-.footer__content p {
+.footer__info p {
   font-size: 14px;
   margin-bottom: var(--spacing-sm);
 }
@@ -2289,6 +2306,16 @@ section {
   
   .faq__item--open .faq__answer {
     padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  /* Footer */
+  .footer__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__logo-img {
+    height: 60px;
   }
 }
 
@@ -3439,12 +3466,17 @@ section {
   <footer class="footer footer--tech">
     <div class="container">
       <div class="footer__content">
-        <p>&copy; 2025 ABAJUD - Associação Brasileira de Administradores Judiciais. Todos os direitos reservados.</p>
-        <p>Administrador Judicial IA - Powered by Luiz Brito e Dr. Marcelo Brito</p>
-        <div class="footer__links">
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
-          <a href="mailto:financeiro@abajud.com.br">Contato</a>
+        <div class="footer__logo">
+          <img src="https://static-public.pages.hotmart.com/uploads/media/file/10596108/logo-branca-600x600.png" alt="Logo ABAJUD" class="footer__logo-img">
+        </div>
+        <div class="footer__info">
+          <p>&copy; 2025 ABAJUD - Associação Brasileira de Administradores Judiciais. Todos os direitos reservados.</p>
+          <p>Administrador Judicial IA - Powered by Luiz Brito e Dr. Marcelo Brito</p>
+          <div class="footer__links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="mailto:financeiro@abajud.com.br">Contato</a>
+          </div>
         </div>
       </div>
     </div>
