@@ -53,5 +53,210 @@
         <!-- Resolução interna do jogo -->
         <canvas id="gameCanvas" width="800" height="400"></canvas>
     </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const ui = document.getElementById('ui');
+        const startMsg = document.getElementById('start-msg');
+
+        // Variáveis de Estado do Jogo
+        let score = 0;
+        let gameSpeed = 6;
+        let isGameOver = false;
+        let isStarted = false;
+        let obstacles = [];
+        let animationId;
+        let frameCount = 0;
+
+        // Entidade do Jogador (Bloco Neon Ciano)
+        const player = {
+            x: 50,
+            y: 300,
+            width: 30,
+            height: 50,
+            dy: 0,
+            jumpForce: 14,
+            gravity: 0.6,
+            grounded: false,
+            
+            draw: function() {
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#0ff';
+                ctx.fillStyle = '#0ff'; // Ciano
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+                ctx.shadowBlur = 0; // Reseta a sombra para os próximos desenhos
+            },
+            
+            jump: function() {
+                if (this.grounded) {
+                    this.dy = -this.jumpForce;
+                    this.grounded = false;
+                }
+            },
+            
+            update: function() {
+                // Aplica a gravidade
+                this.y += this.dy;
+                
+                // O chão fica na posição Y = 350
+                if (this.y + this.height < 350) {
+                    this.dy += this.gravity;
+                    this.grounded = false;
+                } else {
+                    this.dy = 0;
+                    this.grounded = true;
+                    this.y = 350 - this.height;
+                }
+                this.draw();
+            }
+        };
+
+        // Entidade dos Obstáculos (Blocos Neon Rosa)
+        class Obstacle {
+            constructor() {
+                this.width = 20 + Math.random() * 20;
+                this.height = 30 + Math.random() * 40;
+                this.x = canvas.width;
+                this.y = 350 - this.height;
+            }
+            
+            draw() {
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#ff007f';
+                ctx.fillStyle = '#ff007f'; // Rosa choque
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+                ctx.shadowBlur = 0;
+            }
+            
+            update() {
+                this.x -= gameSpeed;
+                this.draw();
+            }
+        }
+
+        // Desenha o cenário (Sol Retro e a linha de grade)
+        function drawEnvironment() {
+            // Sol
+            ctx.beginPath();
+            ctx.arc(400, 200, 90, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffaa00'; // Laranja
+            ctx.shadowBlur = 50;
+            ctx.shadowColor = '#ff5500';
+            ctx.fill();
+            ctx.closePath();
+            ctx.shadowBlur = 0;
+
+            // Chão (Grid line ciano)
+            ctx.beginPath();
+            ctx.moveTo(0, 350);
+            ctx.lineTo(800, 350);
+            ctx.strokeStyle = '#0ff';
+            ctx.lineWidth = 3;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#0ff';
+            ctx.stroke();
+            ctx.closePath();
+            ctx.shadowBlur = 0;
+        }
+
+        // Lógica de Spawn e Colisão
+        function handleObstacles() {
+            // Cria um obstáculo a cada 100 frames
+            if (frameCount % 100 === 0 && isStarted) {
+                obstacles.push(new Obstacle());
+            }
+            
+            for (let i = 0; i < obstacles.length; i++) {
+                obstacles[i].update();
+
+                // Colisão AABB (Axis-Aligned Bounding Box)
+                if (
+                    player.x < obstacles[i].x + obstacles[i].width &&
+                    player.x + player.width > obstacles[i].x &&
+                    player.y < obstacles[i].y + obstacles[i].height &&
+                    player.y + player.height > obstacles[i].y
+                ) {
+                    isGameOver = true;
+                }
+
+                // Remove o obstáculo se ele sair da tela e soma pontos
+                if (obstacles[i].x + obstacles[i].width < 0) {
+                    obstacles.splice(i, 1);
+                    score++;
+                    
+                    // Aumenta a velocidade do jogo progressivamente
+                    if (score % 5 === 0) gameSpeed += 0.5;
+                    i--;
+                }
+            }
+        }
+
+        function drawScore() {
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 20px Courier New';
+            ctx.fillText(`SCORE: ${score}`, 650, 40);
+            
+            if (isGameOver) {
+                ui.style.display = 'block';
+                startMsg.innerText = 'GAME OVER! Aperte ESPAÇO para reiniciar';
+            }
+        }
+
+        // Loop Principal (Game Loop)
+        function animate() {
+            // Limpa o frame anterior
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            drawEnvironment();
+            
+            if (isStarted && !isGameOver) {
+                player.update();
+                handleObstacles();
+                drawScore();
+                frameCount++;
+                animationId = requestAnimationFrame(animate);
+            } else if (isGameOver) {
+                // Desenha as coisas paradas
+                player.draw();
+                obstacles.forEach(obs => obs.draw());
+                drawScore();
+            } else {
+                // Tela inicial parada
+                player.draw();
+            }
+        }
+
+        // Escutador de Teclas
+        window.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault(); // Evita scroll da página
+                
+                if (!isStarted) {
+                    // Inicia o jogo
+                    isStarted = true;
+                    ui.style.display = 'none';
+                    animate();
+                } else if (isGameOver) {
+                    // Reinicia as variáveis
+                    isGameOver = false;
+                    score = 0;
+                    gameSpeed = 6;
+                    obstacles = [];
+                    player.y = 300;
+                    player.dy = 0;
+                    frameCount = 0;
+                    ui.style.display = 'none';
+                    animate();
+                } else {
+                    // Pula
+                    player.jump();
+                }
+            }
+        });
+
+        // Renderiza a primeira tela
+        drawEnvironment();
+        player.draw();
+    </script>
 </body>
 </html>
