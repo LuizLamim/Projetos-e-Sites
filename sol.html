@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* Centraliza o sol na tela e define a cor do céu */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #87CEEB; /* Azul céu */
+            overflow: hidden;
+        }
+
+        /* Estilo principal do corpo do sol */
+        .sol {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #ffeb3b, #ff9800);
+            border-radius: 50%;
+            position: relative;
+            /* Aplica a animação de pulsar */
+            animation: pulsar 3s infinite alternate;
+        }
+
+        /* Estilo dos raios do sol */
+        .raios {
+            position: absolute;
+            top: -35px;
+            left: -35px;
+            width: 220px;
+            height: 220px;
+            /* Cria um padrão circular de raios usando gradiente cônico */
+            background: repeating-conic-gradient(
+                from 0deg, 
+                #ffc107 0deg 15deg, 
+                transparent 15deg 30deg
+            );
+            border-radius: 50%;
+            z-index: -1; /* Coloca os raios atrás do sol */
+            opacity: 0.5;
+            /* Aplica a animação de rotação */
+            animation: girar 15s linear infinite;
+        }
+
+        /* Animação 1: Rotação contínua dos raios */
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animação 2: Efeito pulsante de tamanho e brilho (box-shadow) */
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 40px #ff9800, 0 0 80px #ffeb3b;
+            }
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 0 60px #ff9800, 0 0 120px #ffeb3b;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Estrutura do Sol -->
