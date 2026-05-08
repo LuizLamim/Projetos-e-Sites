@@ -10,3 +10,7 @@ try:
     valor_ms = float(input("Digite a velocidade em m/s: "))
     
     resultado = converter_ms_para_kmh(valor_ms)
+
+    print(f"\nA velocidade de {valor_ms} m/s equivale a {resultado:.2f} km/h.")
+except ValueError:
+    print("Erro: Por favor, insira um número válido.")
