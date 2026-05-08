@@ -325,6 +325,7 @@
             <ul>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#sobre">Quem sou</a></li>
+                <li><a href="#mini-games">Games</a></li>
                 <li><a href="#certificados">Certificados</a></li>
                 <li><a href="#curriculo">Currículo</a></li>
                 <li><a href="#contato">Redes</a></li>
@@ -371,10 +372,23 @@ Criação e treinamento de um Agente de Inteligência Artificial voltado para o 
         </div>
     </section>
 
-    <section id="game-snake">
-        <h2>Mini-game: Snake Tech</h2>
-        <div id="score">Pontos: 0</div>
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <section id="mini-games">
+        <div class="game-wrapper">
+            <h2>Mini-game: Snake Tech</h2>
+            <div id="snakeScore">Pontos: 0</div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <div class="game-wrapper">
+            <h2>Mini-game: Retrowave Runner</h2>
+            <div id="runner-container">
+                <div id="runner-ui">
+                    <h3>Retrowave Runner</h3>
+                    <p id="start-msg">Aperte ESPAÇO para começar</p>
+                </div>
+                <canvas id="runnerCanvas" width="800" height="400"></canvas>
+            </div>
+        </div>
     </section>
 
     <section id="certificados">
@@ -419,115 +433,101 @@ Criação e treinamento de um Agente de Inteligência Artificial voltado para o 
     </section>
 
     <script>
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
+        // --- SNAKE GAME ---
+        const sCanvas = document.getElementById("snakeCanvas");
+        const sCtx = sCanvas.getContext("2d");
 
-        const box = 20; 
-        let score = 0;
-        let snake = [];
-        let food;
-        let d;
-        let game;
+        const sBox = 20; 
+        let sScore = 0;
+        let sSnake = [];
+        let sFood;
+        let sD;
+        let sGame;
 
-        function resetGame() {
-            score = 0;
-            const scoreElement = document.getElementById("score");
-            if (scoreElement) scoreElement.innerHTML = "Pontos: " + score;
-            snake = [];
-            snake[0] = { x: 10 * box, y: 10 * box };
-            food = {
-                x: Math.floor(Math.random() * 20) * box,
-                y: Math.floor(Math.random() * 20) * box
+        function resetSnake() {
+            sScore = 0;
+            const scoreElement = document.getElementById("snakeScore");
+            if (scoreElement) scoreElement.innerHTML = "Pontos: " + sScore;
+            sSnake = [];
+            sSnake[0] = { x: 10 * sBox, y: 10 * sBox };
+            sFood = {
+                x: Math.floor(Math.random() * 20) * sBox,
+                y: Math.floor(Math.random() * 20) * sBox
             };
-            d = undefined;
-            if (game) clearInterval(game);
-            game = setInterval(draw, 100);
+            sD = undefined;
+            if (sGame) clearInterval(sGame);
+            sGame = setInterval(drawSnake, 100);
         }
 
-        document.addEventListener("keydown", direction);
-
-        function direction(event) {
-            let key = event.keyCode;
-            if (key == 37 && d != "RIGHT") d = "LEFT";
-            else if (key == 38 && d != "DOWN") d = "UP";
-            else if (key == 39 && d != "LEFT") d = "RIGHT";
-            else if (key == 40 && d != "UP") d = "DOWN";
-            
-            // Prevent scrolling with arrow keys when playing
-            if([37, 38, 39, 40].indexOf(key) > -1) {
-                event.preventDefault();
+        function drawSnakeGrid() {
+            sCtx.strokeStyle = "rgba(0, 243, 255, 0.1)";
+            sCtx.lineWidth = 1;
+            for (let i = 0; i < sCanvas.width; i += sBox) {
+                sCtx.beginPath();
+                sCtx.moveTo(i, 0);
+                sCtx.lineTo(i, sCanvas.height);
+                sCtx.stroke();
             }
-        }
-
-        function drawGrid() {
-            ctx.strokeStyle = "rgba(0, 243, 255, 0.1)";
-            ctx.lineWidth = 1;
-            for (let i = 0; i < canvas.width; i += box) {
-                ctx.beginPath();
-                ctx.moveTo(i, 0);
-                ctx.lineTo(i, canvas.height);
-                ctx.stroke();
-            }
-            for (let i = 0; i < canvas.height; i += box) {
-                ctx.beginPath();
-                ctx.moveTo(0, i);
-                ctx.lineTo(canvas.width, i);
-                ctx.stroke();
+            for (let i = 0; i < sCanvas.height; i += sBox) {
+                sCtx.beginPath();
+                sCtx.moveTo(0, i);
+                sCtx.lineTo(sCanvas.width, i);
+                sCtx.stroke();
             }
         }
 
-        function draw() {
-            ctx.fillStyle = "#1a1a2e";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            drawGrid();
+        function drawSnake() {
+            sCtx.fillStyle = "#1a1a2e";
+            sCtx.fillRect(0, 0, sCanvas.width, sCanvas.height);
+            drawSnakeGrid();
 
-            for (let i = 0; i < snake.length; i++) {
-                ctx.shadowBlur = 15;
-                ctx.shadowColor = "#00f3ff";
-                ctx.fillStyle = (i == 0) ? "#00f3ff" : "#00a8b1"; 
-                ctx.fillRect(snake[i].x, snake[i].y, box, box);
-                ctx.shadowBlur = 0;
-                ctx.strokeStyle = "#1a1a2e";
-                ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+            for (let i = 0; i < sSnake.length; i++) {
+                sCtx.shadowBlur = 15;
+                sCtx.shadowColor = "#00f3ff";
+                sCtx.fillStyle = (i == 0) ? "#00f3ff" : "#00a8b1"; 
+                sCtx.fillRect(sSnake[i].x, sSnake[i].y, sBox, sBox);
+                sCtx.shadowBlur = 0;
+                sCtx.strokeStyle = "#1a1a2e";
+                sCtx.strokeRect(sSnake[i].x, sSnake[i].y, sBox, sBox);
             }
 
-            ctx.shadowBlur = 20;
-            ctx.shadowColor = "#ff007f";
-            ctx.fillStyle = "#ff007f"; 
-            ctx.fillRect(food.x, food.y, box, box);
-            ctx.shadowBlur = 0;
+            sCtx.shadowBlur = 20;
+            sCtx.shadowColor = "#ff007f";
+            sCtx.fillStyle = "#ff007f"; 
+            sCtx.fillRect(sFood.x, sFood.y, sBox, sBox);
+            sCtx.shadowBlur = 0;
 
-            let snakeX = snake[0].x;
-            let snakeY = snake[0].y;
+            let snakeX = sSnake[0].x;
+            let snakeY = sSnake[0].y;
 
-            if (d == "LEFT") snakeX -= box;
-            if (d == "UP") snakeY -= box;
-            if (d == "RIGHT") snakeX += box;
-            if (d == "DOWN") snakeY += box;
+            if (sD == "LEFT") snakeX -= sBox;
+            if (sD == "UP") snakeY -= sBox;
+            if (sD == "RIGHT") snakeX += sBox;
+            if (sD == "DOWN") snakeY += sBox;
 
-            if (snakeX == food.x && snakeY == food.y) {
-                score++;
-                const scoreElement = document.getElementById("score");
-                if (scoreElement) scoreElement.innerHTML = "Pontos: " + score;
-                food = {
-                    x: Math.floor(Math.random() * 20) * box,
-                    y: Math.floor(Math.random() * 20) * box
+            if (snakeX == sFood.x && snakeY == sFood.y) {
+                sScore++;
+                const scoreElement = document.getElementById("snakeScore");
+                if (scoreElement) scoreElement.innerHTML = "Pontos: " + sScore;
+                sFood = {
+                    x: Math.floor(Math.random() * 20) * sBox,
+                    y: Math.floor(Math.random() * 20) * sBox
                 };
             } else {
-                snake.pop();
+                sSnake.pop();
             }
 
             let newHead = { x: snakeX, y: snakeY };
 
-            if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
-                clearInterval(game);
-                resetGame();
+            if (snakeX < 0 || snakeX >= sCanvas.width || snakeY < 0 || snakeY >= sCanvas.height || sCollision(newHead, sSnake)) {
+                clearInterval(sGame);
+                resetSnake();
             }
 
-            snake.unshift(newHead);
+            sSnake.unshift(newHead);
         }
 
-        function collision(head, array) {
+        function sCollision(head, array) {
             for (let i = 0; i < array.length; i++) {
                 if (head.x == array[i].x && head.y == array[i].y) {
                     return true;
@@ -536,7 +536,191 @@ Criação e treinamento de um Agente de Inteligência Artificial voltado para o 
             return false;
         }
 
-        resetGame();
+        // --- RETROWAVE RUNNER ---
+        const rCanvas = document.getElementById('runnerCanvas');
+        const rCtx = rCanvas.getContext('2d');
+        const rUi = document.getElementById('runner-ui');
+        const rStartMsg = document.getElementById('start-msg');
+
+        let rScore = 0;
+        let rGameSpeed = 6;
+        let rIsGameOver = false;
+        let rIsStarted = false;
+        let rObstacles = [];
+        let rAnimationId;
+        let rFrameCount = 0;
+
+        const runnerPlayer = {
+            x: 50,
+            y: 300,
+            width: 30,
+            height: 50,
+            dy: 0,
+            jumpForce: 14,
+            gravity: 0.6,
+            grounded: false,
+            draw: function() {
+                rCtx.shadowBlur = 20;
+                rCtx.shadowColor = '#0ff';
+                rCtx.fillStyle = '#0ff';
+                rCtx.fillRect(this.x, this.y, this.width, this.height);
+                rCtx.shadowBlur = 0;
+            },
+            jump: function() {
+                if (this.grounded) {
+                    this.dy = -this.jumpForce;
+                    this.grounded = false;
+                }
+            },
+            update: function() {
+                this.y += this.dy;
+                if (this.y + this.height < 350) {
+                    this.dy += this.gravity;
+                    this.grounded = false;
+                } else {
+                    this.dy = 0;
+                    this.grounded = true;
+                    this.y = 350 - this.height;
+                }
+                this.draw();
+            }
+        };
+
+        class Obstacle {
+            constructor() {
+                this.width = 20 + Math.random() * 20;
+                this.height = 30 + Math.random() * 40;
+                this.x = rCanvas.width;
+                this.y = 350 - this.height;
+            }
+            draw() {
+                rCtx.shadowBlur = 20;
+                rCtx.shadowColor = '#ff007f';
+                rCtx.fillStyle = '#ff007f';
+                rCtx.fillRect(this.x, this.y, this.width, this.height);
+                rCtx.shadowBlur = 0;
+            }
+            update() {
+                this.x -= rGameSpeed;
+                this.draw();
+            }
+        }
+
+        function drawEnv() {
+            rCtx.beginPath();
+            rCtx.arc(400, 200, 90, 0, Math.PI * 2);
+            rCtx.fillStyle = '#ffaa00';
+            rCtx.shadowBlur = 50;
+            rCtx.shadowColor = '#ff5500';
+            rCtx.fill();
+            rCtx.closePath();
+            rCtx.shadowBlur = 0;
+
+            rCtx.beginPath();
+            rCtx.moveTo(0, 350);
+            rCtx.lineTo(800, 350);
+            rCtx.strokeStyle = '#0ff';
+            rCtx.lineWidth = 3;
+            rCtx.shadowBlur = 10;
+            rCtx.shadowColor = '#0ff';
+            rCtx.stroke();
+            rCtx.closePath();
+            rCtx.shadowBlur = 0;
+        }
+
+        function handleObstacles() {
+            if (rFrameCount % 100 === 0 && rIsStarted) {
+                rObstacles.push(new Obstacle());
+            }
+            for (let i = 0; i < rObstacles.length; i++) {
+                rObstacles[i].update();
+                if (
+                    runnerPlayer.x < rObstacles[i].x + rObstacles[i].width &&
+                    runnerPlayer.x + runnerPlayer.width > rObstacles[i].x &&
+                    runnerPlayer.y < rObstacles[i].y + rObstacles[i].height &&
+                    runnerPlayer.y + runnerPlayer.height > rObstacles[i].y
+                ) {
+                    rIsGameOver = true;
+                }
+                if (rObstacles[i].x + rObstacles[i].width < 0) {
+                    rObstacles.splice(i, 1);
+                    rScore++;
+                    if (rScore % 5 === 0) rGameSpeed += 0.5;
+                    i--;
+                }
+            }
+        }
+
+        function drawScore() {
+            rCtx.fillStyle = '#fff';
+            rCtx.font = 'bold 20px Courier New';
+            rCtx.fillText(`SCORE: ${rScore}`, 650, 40);
+            if (rIsGameOver) {
+                rUi.style.display = 'block';
+                rStartMsg.innerText = 'GAME OVER! Espaço p/ reiniciar';
+            }
+        }
+
+        function animateRunner() {
+            rCtx.clearRect(0, 0, rCanvas.width, rCanvas.height);
+            drawEnv();
+            if (rIsStarted && !rIsGameOver) {
+                runnerPlayer.update();
+                handleObstacles();
+                drawScore();
+                rFrameCount++;
+                rAnimationId = requestAnimationFrame(animateRunner);
+            } else if (rIsGameOver) {
+                runnerPlayer.draw();
+                rObstacles.forEach(obs => obs.draw());
+                drawScore();
+            } else {
+                runnerPlayer.draw();
+            }
+        }
+
+        // --- GLOBAL KEY LISTENERS ---
+        document.addEventListener("keydown", (e) => {
+            const key = e.keyCode;
+            const code = e.code;
+
+            // Snake Controls
+            if (key == 37 && sD != "RIGHT") sD = "LEFT";
+            else if (key == 38 && sD != "DOWN") sD = "UP";
+            else if (key == 39 && sD != "LEFT") sD = "RIGHT";
+            else if (key == 40 && sD != "UP") sD = "DOWN";
+
+            if([37, 38, 39, 40].indexOf(key) > -1) {
+                e.preventDefault();
+            }
+
+            // Runner Controls
+            if (code === 'Space') {
+                e.preventDefault();
+                if (!rIsStarted) {
+                    rIsStarted = true;
+                    rUi.style.display = 'none';
+                    animateRunner();
+                } else if (rIsGameOver) {
+                    rIsGameOver = false;
+                    rScore = 0;
+                    rGameSpeed = 6;
+                    rObstacles = [];
+                    runnerPlayer.y = 300;
+                    runnerPlayer.dy = 0;
+                    rFrameCount = 0;
+                    rUi.style.display = 'none';
+                    animateRunner();
+                } else {
+                    runnerPlayer.jump();
+                }
+            }
+        });
+
+        // Initialize Games
+        resetSnake();
+        drawEnv();
+        runnerPlayer.draw();
     </script>
 </body>
 </html>
