@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis de Cores Sophisticated Tech */
+        :root {
+            --bg-body: #020617;       /* Azul Oxford profundo */
+            --bg-card: #0f172a;       /* Azul ardósia escuro */
+            --primary: #38bdf8;       /* Ciano/Sky Blue vibrante */
+            --secondary: #1d4ed8;     /* Azul Royal */
+            --accent: #818cf8;        /* Índigo suave */
+            --text-main: #f8fafc;     /* Branco neve */
+            --text-muted: #94a3b8;    /* Cinza azulado */
+            --border-color: #1e293b;  /* Borda sutil */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+            background-attachment: fixed;
+        }
+
+        /* --- Header & Navegação --- */
+        header {
+            background-color: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+        }
+
+        /* --- Seções Gerais --- */
+        section {
+            padding: 120px 10% 80px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* --- Seção Projetos (Cards) --- */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #1e293b, #334155);
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Seção Quem Sou --- */
+        #sobre {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+            background-color: rgba(15, 23, 42, 0.3);
+            border-radius: 24px;
+            margin: 40px 0;
+            padding: 60px;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            transition: 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+        }
+
+        /* --- Redes Sociais --- */
+        .social-links {
+            text-align: center;
+            background: linear-gradient(180deg, transparent, var(--bg-card));
+            padding: 80px 0;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 28px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: 0.3s;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: var(--bg-body);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            #sobre { 
+                padding: 40px 20px;
+                text-align: center;
+                flex-direction: column;
+            }
+            header { padding: 0 20px; }
+            section { padding: 100px 5% 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/Logo_Luiz.png" alt="Logo Luiz" style="height: 80px; vertical-align: middle;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Quem sou</a></li>
+                <li><a href="#certificados">Certificados</a></li>
+                <li><a href="#curriculo">Currículo</a></li>
+                <li><a href="#contato">Redes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="img/aprenda.png" alt="Projeto 1" class="project-img">
+                <div class="project-info">
+                    <h3>Desenvolvimento de Landing Page e Rastreamento de Conversões</h3>
+                    <p>
+Criação de uma Landing Page responsiva e interativa para a comercialização de um curso, desenvolvida com HTML, CSS e JavaScript. O projeto incluiu a configuração estratégica do Meta Pixel e Google Tags (GTM) para monitoramento de tráfego, análise de métricas de conversão e otimização de campanhas de tráfego pago.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="img/agenteIA.png" alt="Projeto 2" class="project-img">
+                <div class="project-info">
+                    <h3>Desenvolvimento de Agente de IA e Automação de Vendas</h3>
+                    <p>
+Criação e treinamento de um Agente de Inteligência Artificial voltado para o ecossistema da Hotmart, atuando no suporte e conversão de clientes. O projeto contemplou também o desenvolvimento Front-End de uma Landing Page customizada (HTML, CSS e JavaScript), com integração direta entre o agente inteligente e o fluxo de checkout para venda do produto digital.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="img/blindagem.png" alt="Projeto 3" class="project-img">
+                <div class="project-info">
+                    <h3>Configuração de Infraestrutura Web e Apontamento DNS</h3>
+                    <p>Gerenciamento e configuração de infraestrutura web para o lançamento de um curso digital de Recuperação Judicial. O projeto envolveu o registro de domínio na HostGator e a configuração técnica avançada da Zona DNS, realizando os apontamentos de registros tipo A e CNAME para integrar e rotear o tráfego com segurança para a plataforma de hospedagem da Hotmart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <img src="https://via.placeholder.com/300" alt="Minha Foto" class="profile-img">
+        <div class="about-content">
+            <h2>Quem Sou</h2>
+            <p>Estudante de Engenharia de Software (4º semestre) com sólida base analítica advinda da Engenharia Aeroespacial que cursei na Faculdade Federal de Brasília - UnB. Sou um desenvolvedor versátil, com experiência prática em Python, C++ e Java, especializado em traduzir lógica matemática complexa — como simulações físicas — em código eficiente.</p>
+            <br>
+            <p>enho vivência autônoma no desenvolvimento web (HTML/CSS/JS), modelagem de bancos de dados (SQL/NoSQL) e análise de métricas digitais. Movido pela resolução de problemas difíceis, busco integrar a equipe de Tecnologia da Joinrs para aplicar meu foco em Inteligência Artificial e Análise de Dados, contribuindo para soluções que geram impacto social real na carreira de milhões de jovens.</p>
+        </div>
+    </section>
+
+    <section id="certificados">
+        <h2>Meus Certificados</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Certificado 1" class="project-img">
+                <div class="project-info">
+                    <h3>Certificação Especialista</h3>
+                    <p>Instituição de Ensino - Detalhes do curso e competências adquiridas.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Certificado 2" class="project-img">
+                <div class="project-info">
+                    <h3>Desenvolvimento Web Full Stack</h3>
+                    <p>Plataforma Online - Foco em HTML5, CSS3 e lógica de programação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculo">
+        <h2>Meu Currículo</h2>
+        <div style="text-align: center; background: rgba(15, 23, 42, 0.3); border-radius: 24px; padding: 60px; border: 1px solid var(--border-color);">
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">
+                Deseja conhecer mais detalhes sobre minha formação acadêmica e experiências profissionais? Acesse meu currículo completo abaixo.
+            </p>
+            <div class="social-icons">
+                <a href="#" target="_blank" style="background: linear-gradient(90deg, var(--primary), var(--secondary)); color: var(--text-main); border: none;">Currículo (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="social-links">
+        <h2>Conecte-se Comigo</h2>
+        <p>Estou sempre aberto a novos projetos e parcerias.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/luiz-henrique-lamim-a72631326/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/LuizLamim" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+</body>
+</html>
