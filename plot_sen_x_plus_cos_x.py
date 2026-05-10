@@ -7,3 +7,7 @@ x = np.linspace(0, 4 * np.pi, 400)
 
 # 2. Calcular os valores de y
 y = np.sin(x) + np.cos(x)
+
+# 3. Criar a figura e o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label=r'$f(x) = \sin(x) + \cos(x)$', color='blue', linewidth=2)
