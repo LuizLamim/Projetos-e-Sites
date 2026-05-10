@@ -19,3 +19,6 @@ plt.ylabel('f(x)')
 plt.axhline(0, color='black', linewidth=0.8, linestyle='--')  # Linha do horizonte
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.legend()
+
+# 5. Exibir o gráfico
+plt.show()
