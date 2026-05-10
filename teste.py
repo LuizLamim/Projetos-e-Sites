@@ -1,0 +1,1 @@
+def multiplo_de(numero, multiplo):
