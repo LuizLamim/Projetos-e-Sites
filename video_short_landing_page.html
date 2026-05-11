@@ -4,6 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominando Vídeos Curtos - O Curso Definitivo</title>
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #111;
+        }
+
+        /* Cabeçalho / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Seção de Vídeos Shorts */
+        .video-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: -40px;
+        }
+
+        .video-wrapper {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .video-wrapper h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Iframe do Short (Proporção 9:16) */
+        iframe.short-video {
+            width: 315px;
+            height: 560px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* Seção de Benefícios */
+        .benefits {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .benefits h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: #764ba2;
+        }
+
+        /* Botão de Chamada para Ação (CTA) */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 50px 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 400px) {
+            iframe.short-video {
+                width: 100%;
+                height: 450px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Cabeçalho Principal -->
