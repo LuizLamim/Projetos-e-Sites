@@ -243,20 +243,39 @@
         <p>&copy; 2026 Dominando Vídeos Curtos. Todos os direitos reservados.</p>
     </footer>
     <script>
-        async function carregarProduto(idProduto) {
-    const url = `https://api.mercadolibre.com/items/${idProduto}`;
-    const response = await fetch(url);
-    const data = await response.json();
+        // No seu arquivo script.js
+const produtos = [
+    {
+        nome: "Base Líquida Matte",
+        preco: "49,90",
+        imagem: "img/base-matte.jpg",
+        link: "https://mercadolivre.com/sec/seu_link_afiliado_1"
+    },
+    {
+        nome: "Paleta de Sombras Pro",
+        preco: "89,00",
+        imagem: "https://http2.mlstatic.com/D_NQ_NP_...jpg", // Você pode usar a URL da imagem do ML
+        link: "https://mercadolivre.com/sec/seu_link_afiliado_2"
+    }
+];
 
-    document.getElementById('vitrine').innerHTML += `
-        <div class="card-maquiagem">
-            <img src="${data.thumbnail}" alt="${data.title}">
-            <h3>${data.title}</h3>
-            <p>R$ ${data.price}</p>
-            <a href=" meli.la/1u75oBP" target="_blank">Comprar no Mercado Livre</a>
-        </div>
-    `;
+// Função para renderizar a vitrine automaticamente
+function renderizarVitrine() {
+    const container = document.getElementById('vitrine-maquiagem');
+    
+    produtos.forEach(produto => {
+        container.innerHTML += `
+            <div class="produto-card">
+                <img src="${produto.imagem}" alt="${produto.nome}">
+                <h3>${produto.nome}</h3>
+                <p class="preco">R$ ${produto.preco}</p>
+                <a href="${produto.link}" target="_blank" class="btn-comprar">Ver no Mercado Livre</a>
+            </div>
+        `;
+    });
 }
+
+window.onload = renderizarVitrine;
     </script>
 </body>
 </html>
