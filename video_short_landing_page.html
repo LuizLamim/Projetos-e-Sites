@@ -223,5 +223,21 @@
     <footer>
         <p>&copy; 2026 Dominando Vídeos Curtos. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        async function carregarProduto(idProduto) {
+    const url = `https://api.mercadolibre.com/items/${idProduto}`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    document.getElementById('vitrine').innerHTML += `
+        <div class="card-maquiagem">
+            <img src="${data.thumbnail}" alt="${data.title}">
+            <h3>${data.title}</h3>
+            <p>R$ ${data.price}</p>
+            <a href=" meli.la/1u75oBP" target="_blank">Comprar no Mercado Livre</a>
+        </div>
+    `;
+}
+    </script>
 </body>
 </html>
