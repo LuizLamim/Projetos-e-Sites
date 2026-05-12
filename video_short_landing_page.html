@@ -164,6 +164,25 @@
                 width: 100%;
                 height: 450px;
             }
+
+        .vitrine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            }
+
+        .card-maquiagem {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+            }
+
+        .card-maquiagem:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
         }
     </style>
 </head>
