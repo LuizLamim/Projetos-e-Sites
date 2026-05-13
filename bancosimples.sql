@@ -17,3 +17,6 @@ INSERT INTO Pessoas (nome_completo, email) VALUES
 ('Mariana Oliveira', 'mari.oli@email.com'),
 ('Carlos Andrade Silva', 'carlos.a@email.com'),
 ('Beatriz Souza', 'bea.souza@email.com');
+
+-- Criar um índice no campo nome para acelerar as buscas
+--CREATE INDEX idx_nome ON Pessoas(nome_completo);
