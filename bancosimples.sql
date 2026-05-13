@@ -20,3 +20,9 @@ INSERT INTO Pessoas (nome_completo, email) VALUES
 
 -- Criar um índice no campo nome para acelerar as buscas
 --CREATE INDEX idx_nome ON Pessoas(nome_completo);
+
+--Útil para encontrar um registro específico.
+--SELECT * FROM Pessoas WHERE nome_completo = 'Ana Maria Silva';
+
+-- Busca nomes que começam com "Mar"
+--SELECT * FROM Pessoas WHERE nome_completo LIKE 'Mar%';
