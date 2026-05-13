@@ -1,0 +1,96 @@
+\documentclass[10pt]{beamer}
+\usetheme{metropolis} % Requer o tema metropolis instalado, ou troque por 'Madrid'
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\title{Implementação de Pós-Graduação}
+\subtitle{Status do Projeto, Viabilidade Financeira e Tomada de Decisão}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Slide 1: Status de Implementação
+\begin{frame}{Status de Implementação}
+    \begin{block}{Bloco 1: Infraestrutura (Concluído)}
+        \begin{itemize}
+            \item \textbf{Hospedagem Live:} Vimeo ✅
+            \item \textbf{Pagamentos:} Hotmart ✅
+            \item \textbf{Interface do Aluno:} Área de Membros ✅
+            \item \textbf{Emissão de Notas:} Hotmart ✅
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Bloco 2: Integração (Concluído)}
+        \begin{itemize}
+            \item Conexão simultânea com a plataforma \textbf{Focus} ✅
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 2: O Desafio do Parcelamento
+\begin{frame}{O Desafio Estratégico}
+    \begin{alertblock}{Requisito Pendente}
+        \textbf{Parcelamento em 24x:} Não disponível nas integrações atuais. ❌
+    \end{alertblock}
+
+    \vspace{0.5cm}
+    \textbf{Impacto:} 
+    A ausência do parcelamento estendido exige uma reavaliação imediata da estratégia de precificação ou do modelo tecnológico para evitar barreiras de conversão.
+\end{frame}
+
+% Slide 3: Caminhos Estratégicos
+\begin{frame}{Caminhos para Decisão}
+    \begin{table}[]
+        \centering
+        \small
+        \begin{tabular}{lp{3cm}p{3.5cm}}
+            \toprule
+            \textbf{Opção} & \textbf{Estratégia} & \textbf{Avaliação} \\ \midrule
+            \textbf{A} & 12x R\$ 600,00 & Mais rápida; resolve o problema de conversão. \\ \midrule
+            \textbf{B} & Sistema Próprio & Flexível; exige alto investimento e fluxo de caixa. \\ \midrule
+            \textbf{C} & 12x R\$ 1.200,00 & Alto ticket; elevado risco de não vender. \\ \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+% Slide 4: Análise Financeira (Break-even)
+\begin{frame}{Análise Financeira: Ponto de Equilíbrio}
+    \textbf{Custos Fixos (Docentes):}
+    \begin{equation*}
+        300h \times R\$ 200,00/h = R\$ 60.000,00
+    \end{equation*}
+
+    \textbf{Custos Variáveis:}
+    \begin{itemize}
+        \item Taxa administrativa por aluno: $R\$ 500,00$
+    \end{itemize}
+
+    \textbf{Meta para Iniciar Turma (Ticket R\$ 7.200):}
+    \begin{itemize}
+        \item Para 9 alunos: $R\$ 64.500,00$ de custo total.
+        \item \textbf{Ponto de Equilíbrio:} 10 alunos ($R\$ 72.000,00$).
+    \end{itemize}
+\end{frame}
+
+% Slide 5: Projeção de Escala
+\begin{frame}{Projeção de Escala (30 Alunos)}
+    Considerando uma turma com 30 alunos matriculados:
+
+    \begin{itemize}
+        \item \textbf{Faturamento Bruto:} $R\$ 216.000,00$
+        \item \textbf{Impostos (10\%):} $- R\$ 21.600,00$
+        \item \textbf{Faturamento Líquido Apurado:} \textbf{R\$ 194.400,00}
+    \end{itemize}
+
+    \vfill
+    \begin{center}
+        \textbf{Resultado:} Margem operacional saudável para o projeto.
+    \end{center}
+\end{frame}
+
+\end{document}
