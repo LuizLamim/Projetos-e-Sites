@@ -9,3 +9,11 @@ CREATE TABLE Pessoas (
     email VARCHAR(100),
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 3. Inserir dados para teste
+INSERT INTO Pessoas (nome_completo, email) VALUES 
+('Ana Maria Silva', 'ana.silva@email.com'),
+('João Pedro Santos', 'joao.ps@email.com'),
+('Mariana Oliveira', 'mari.oli@email.com'),
+('Carlos Andrade Silva', 'carlos.a@email.com'),
+('Beatriz Souza', 'bea.souza@email.com');
