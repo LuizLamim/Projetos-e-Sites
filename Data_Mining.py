@@ -33,7 +33,7 @@ def realizar_mineracao_dados():
     # 5. Visualização dos Clusters
     plt.figure(figsize=(8, 6))
     cores = ['red', 'green', 'blue']
-
+    
     for i in range(3):
         cluster = df[df['Grupo'] == i]
         plt.scatter(cluster['Cliques'], cluster['Conversoes'], 
