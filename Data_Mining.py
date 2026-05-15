@@ -33,3 +33,18 @@ def realizar_mineracao_dados():
     # 5. Visualização dos Clusters
     plt.figure(figsize=(8, 6))
     cores = ['red', 'green', 'blue']
+
+    for i in range(3):
+        cluster = df[df['Grupo'] == i]
+        plt.scatter(cluster['Cliques'], cluster['Conversoes'], 
+                    c=cores[i], label=f'Grupo {i}', alpha=0.6, edgecolors='w', s=100)
+
+    plt.title('Mineração de Dados: Agrupamento de Desempenho')
+    plt.xlabel('Número de Cliques')
+    plt.ylabel('Número de Conversões')
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.show()
+
+if __name__ == "__main__":
+    realizar_mineracao_dados()
