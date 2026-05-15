@@ -15,3 +15,8 @@ def realizar_mineracao_dados():
     
     print("Visualização dos 5 primeiros registros:")
     print(df.head(), "\n")
+
+    # 2. Pré-processamento: Padronização dos dados
+    # É crucial em mineração de dados colocar as variáveis na mesma escala
+    scaler = StandardScaler()
+    dados_escalados = scaler.fit_transform(df)
