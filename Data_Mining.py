@@ -29,3 +29,7 @@ def realizar_mineracao_dados():
     # 4. Análise dos Resultados
     print("Média de Cliques e Conversões por Grupo:")
     print(df.groupby('Grupo').mean(), "\n")
+
+    # 5. Visualização dos Clusters
+    plt.figure(figsize=(8, 6))
+    cores = ['red', 'green', 'blue']
