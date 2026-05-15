@@ -25,3 +25,7 @@ def realizar_mineracao_dados():
     # Vamos pedir para o algoritmo encontrar 3 grupos distintos (clusters)
     kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
     df['Grupo'] = kmeans.fit_predict(dados_escalados)
+
+    # 4. Análise dos Resultados
+    print("Média de Cliques e Conversões por Grupo:")
+    print(df.groupby('Grupo').mean(), "\n")
