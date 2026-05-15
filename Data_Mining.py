@@ -20,3 +20,8 @@ def realizar_mineracao_dados():
     # É crucial em mineração de dados colocar as variáveis na mesma escala
     scaler = StandardScaler()
     dados_escalados = scaler.fit_transform(df)
+
+    # 3. Aplicação do Algoritmo K-Means
+    # Vamos pedir para o algoritmo encontrar 3 grupos distintos (clusters)
+    kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+    df['Grupo'] = kmeans.fit_predict(dados_escalados)
