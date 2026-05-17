@@ -7,8 +7,20 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
 
-\title{\textbf{Arquitetura de Integração: Inteligência Artificial e WhatsApp}\\ \large Curadoria Diária de Notícias sobre Recuperação Judicial}
+% Redefinir o estilo 'plain' para que o \maketitle o utilize com a logo
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{\includegraphics[width=2cm]{img/Logo_Luiz.png}}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% Garantir que as outras páginas não tenham cabeçalho (se desejar)
+\pagestyle{empty}
+
+\title{\vspace{-1.5cm}\vspace{2cm}\textbf{Arquitetura de Integração: Inteligência Artificial e WhatsApp}\\ \large Curadoria Diária de Notícias sobre Recuperação Judicial}
 \author{\textbf{Luiz Henrique Lamim}}
 \date{\today}
 
