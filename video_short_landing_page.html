@@ -419,5 +419,29 @@
     <footer>
         <p>&copy; 2026 Dominando Vídeos Curtos. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script para Animação ao Rolar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach((el, index) => {
+                // Adiciona um pequeno atraso escalonado para um efeito mais elegante
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
