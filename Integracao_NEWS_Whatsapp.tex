@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=25mm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\title{\textbf{Arquitetura de Integração: Inteligência Artificial e WhatsApp}\\ \large Curadoria Diária de Notícias sobre Recuperação Judicial}
+\author{\textbf{Proposta de Projeto Técnico}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento apresenta a estruturação de caminhos tecnológicos para a criação de uma automação dedicada à curadoria, formatação e disparo diário de notícias sobre recuperação judicial em comunidades do WhatsApp. O foco principal reside na modelagem de um projeto próprio e customizado, avaliando também alternativas low-code para validação ágil.
+\end{abstract}
+
+\section{Introdução}
+Criar uma automação para curadoria e disparo de notícias sobre recuperação judicial é uma excelente iniciativa técnica. Como a prioridade é desenvolver uma solução própria, o foco está em arquiteturas que oferecem controle total sobre o código, a infraestrutura e a lógica de negócios.
+
+\section{Caminho 1: Projeto Próprio (Desenvolvimento Customizado)}
+A construção de um sistema do zero oferece a maior flexibilidade para moldar o formato das postagens e gerenciar a base de contatos de forma independente.
+
+\subsection{Backend em Python + WhatsApp Cloud API (Oficial Meta)}
+Consiste em estruturar um servidor utilizando frameworks modernos como \texttt{FastAPI} ou \texttt{Flask} para orquestrar as tarefas diárias.
+\begin{itemize}[label=\textbullet]
+    \item \textbf{A Engrenagem:} O sistema busca as notícias da manhã, envia os textos brutos para a API de uma IA (como OpenAI ou o próprio Gemini) solicitando um resumo analítico focado no cenário de administração judicial, e aciona a API do Meta para o disparo final.
+    \item \textbf{Vantagens:} Estabilidade máxima de infraestrutura, documentação extensa fornecida pela Meta e risco zero de banimento do número telefônico, já que utiliza a rota oficial de comunicação.
+    \item \textbf{Ponto de Atenção:} A API oficial possui regras estritas de aprovação de templates e pode apresentar limitações para enviar mensagens diretamente dentro de \textit{grupos} comuns de WhatsApp. Ela performa melhor para listas de transmissão (\textit{broadcast}) ou conversas individuais onde o usuário realizou o \textit{opt-in}.
+\end{itemize}
+
+\subsection{Evolution API ou Baileys (APIs Não-Oficiais)}
+Estas ferramentas de código aberto emulam o funcionamento do WhatsApp Web e são amplamente utilizadas no ecossistema de desenvolvimento para interações em comunidades.
+\begin{itemize}[label=\textbullet]
+    \item \textbf{A Engrenagem:} A \textit{Evolution API} é uma API robusta que pode ser hospedada em um servidor próprio (ex: VPS, Docker). O seu código em Python realiza requisições HTTP (REST) para ela. Recomenda-se integrar um banco de dados SQL simples para registrar os links das notícias enviadas, garantindo que a IA não gere postagens duplicadas na comunidade.
+    \item \textbf{Vantagens:} Permite o envio direto de mensagens para grupos e comunidades de forma nativa e flexível, simulando a ação de um usuário humano, sem custos por mensagem enviada à Meta.
+    \item \textbf{Ponto de Atenção:} Existe um risco associado de banimento do número caso o algoritmo do WhatsApp detecte comportamento classificado como \textit{spam}. No entanto, para um único disparo diário com conteúdo legítimo e bem formatado, este risco é estatisticamente muito baixo.
+\end{itemize}
+
+\section{A Fonte de Dados para a IA}
+Para que o projeto próprio funcione de forma 100\% autônoma, a inteligência artificial precisa ser alimentada confiavelmente com as atualizações diárias. Isto pode ser implementado de duas formas principais:
+\begin{itemize}[label=\textbullet]
+    \item \textbf{Leitura de RSS / Google Alerts:} Configuração de alertas de busca precisos para os termos ``recuperação judicial'' ou ``falência'', criando um \textit{script} em Python que consome o feed XML dessas notícias diariamente.
+    \item \textbf{Web Scraping Direcionado:} Desenvolvimento de raspadores de dados (\textit{crawlers}) utilizando bibliotecas como \texttt{BeautifulSoup} ou \texttt{Scrapy} para extrair as manchetes e o conteúdo principal de portais jurídicos específicos (como Migalhas, ConJur) ou diários oficiais.
+\end{itemize}
+
+\section{Caminho 2: Soluções de Mercado (Baixo Código / Low-Code)}
+Caso decida testar o conceito ou o engajamento da comunidade rapidamente antes de investir tempo no desenvolvimento de um \textit{backend} completo, as ferramentas visuais são excelentes opções.
+
+\subsection{n8n ou Make (antigo Integromat)}
+Plataformas de automação baseadas em nós (\textit{nodes}) que permitem conectar diversos serviços com pouca necessidade de codificação direta.
+\begin{itemize}[label=\textbullet]
+    \item \textbf{A Engrenagem:} Cria-se um fluxo visual onde o gatilho (\textit{trigger}) cronometrado é agendado para todas as manhãs. O fluxo consome um feed RSS de notícias jurídicas, passa o texto por um módulo integrado da IA (onde o \textit{prompt} formata o texto com emojis e tópicos limpos) e encaminha para um serviço de disparo de WhatsApp de terceiros (como Z-API ou Chatwoot).
+    \item \textbf{Vantagens:} Velocidade de implantação (\textit{time-to-market}) extremamente reduzida. O \textit{n8n} possui ainda a vantagem de ser \textit{open-source}, permitindo a auto-hospedagem (\textit{self-hosting}) gratuita no seu próprio servidor, mantendo a independência tecnológica.
+\end{itemize}
+
+\end{document}
