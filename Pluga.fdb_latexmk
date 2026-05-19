@@ -1,6 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1779204864.08035 "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex" "Pluga.pdf" "Pluga" 1779204865.71627 2
+["pdflatex"] 1779204928.07149 "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex" "Pluga.pdf" "Pluga" 1779204929.71058 0
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779035166 122702 2e59968a358ad0878fedb741313dbbc2 ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1765560549 28976 1fbe6f8795d91639913fb88ef0c44875 ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1747787485 31952 07d48bcf76b04c97b742b8a55e21c487 ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1765560552 49100 c06f1f4c82a683b110610ec51da387ae ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk" 1765560548 26228 7ff0884e4b229e8a727033c6a080fd57 ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1765560550 28440 d08d88bfc54cb4052cd27703b8b39306 ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk" 1765560547 35204 14a98cf56973299ea674fbe66de7a35f ""
+  "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1765560543 12668 c6e687c3772155ab14da21063bb20629 ""
   "C:/Users/luizb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1746574261 13157681 2378aee56ff1a7770df671ad3f1ae249 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1095.tfm" 993061956 3228 aacd2ac2d814480e4422ad7e830fd2d4 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1200.tfm" 993061958 3200 b8d69bc738e5ef3e08cefeef3109ff56 ""
@@ -142,9 +149,10 @@
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Pluga.aux" 1779204865 886 32b54b6340257a0364b9f18ce3179438 "pdflatex"
-  "Pluga.tex" 1779204860 4245 01a0b49ea09c5a82f6d6fc1ca0c7d326 ""
-  "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex" 1779204860 4245 01a0b49ea09c5a82f6d6fc1ca0c7d326 ""
+  "Pluga.aux" 1779204929 1060 c44d15e95d2ec21f711bfb2e247a1ab3 "pdflatex"
+  "Pluga.out" 1779204929 1136 cf14c766ec1cd309eeec66511c4fca88 "pdflatex"
+  "Pluga.tex" 1779204925 4647 e4cc925e03d55400a6af0376aeaaaf6f ""
+  "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex" 1779204925 4647 e4cc925e03d55400a6af0376aeaaaf6f ""
   "img/Logo_Luiz.png" 1747938008 1587497 bbe2008ad02cf9d2d82d7fec1223408f ""
   (generated)
   "Pluga.aux"

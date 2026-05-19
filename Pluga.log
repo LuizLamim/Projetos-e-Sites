@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.6)  19 MAY 2026 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.6)  19 MAY 2026 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -515,8 +515,10 @@ Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
 )) (C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count333
+) (Pluga.aux
+Package babel Info: 'portuguese' activates 'portuges' shorthands.
+(babel)             Reported  on input line 9.
 )
-No file Pluga.aux.
 \openout1 = `Pluga.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -537,8 +539,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
-Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported  on input line 49.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -574,10 +575,11 @@ Package babel Info: 'portuguese' activates 'portuges' shorthands.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 49.
+(Pluga.out) (Pluga.out)
 \@outlinefile=\write4
 \openout4 = `Pluga.out'.
 
-(C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count334
 \scratchdimen=\dimen283
@@ -596,67 +598,45 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex:61: Undefined control sequence.
-<argument> \titrule 
-                    [0.5pt]
-l.61 ...on{Como a Engrenagem Funciona na Prática}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (5.95042pt too wide) in paragraph at lines 69--70
 []\T1/cmr/bx/n/10.95 Gatilho na Hot-mart: \T1/cmr/m/n/10.95 "Venda apro-vada", "Venda ge-rada"(aguardando pa-ga-mento) ou "Venda
  []
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/Pluga.tex:80: Undefined control sequence.
-<argument> \titrule 
-                    [0.5pt]
-l.80 \section{O Passo a Passo da Configuração}
-                                                
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
-
-<img/Logo_Luiz.png, id=6, 1027.84pt x 1027.84pt>
+<img/Logo_Luiz.png, id=26, 1027.84pt x 1027.84pt>
 File: img/Logo_Luiz.png Graphic file (type png)
 <use img/Logo_Luiz.png>
-Package pdftex.def Info: img/Logo_Luiz.png  used on input line 86.
+Package pdftex.def Info: img/Logo_Luiz.png  used on input line 87.
 (pdftex.def)             Requested size: 1027.8375pt x 1027.8375pt.
 [1
 
-{C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/Logo_Luiz.png>])
-Runaway argument?
-{"Disparar essa automação apenas se o 
-! File ended while scanning use of \textit .
-<inserted text> 
-                \par 
-<*> ...rea de Trabalho/Projetos e Sites/Pluga.tex"
-                                                  
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+{C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/Logo_Luiz.png>]
 
-! Emergency stop.
-<*> ...rea de Trabalho/Projetos e Sites/Pluga.tex"
-                                                  
-*** (job aborted, no legal \end found)
-
- 
+File: img/Logo_Luiz.png Graphic file (type png)
+<use img/Logo_Luiz.png>
+Package pdftex.def Info: img/Logo_Luiz.png  used on input line 92.
+(pdftex.def)             Requested size: 1027.8375pt x 1027.8375pt.
+[2] (Pluga.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-04-14>
+ ***********
+Package rerunfilecheck Info: File `Pluga.out' has not changed.
+(rerunfilecheck)             Checksum: CF14C766EC1CD309EEEC66511C4FCA88;1136.
+ ) 
 Here is how much of TeX's memory you used:
- 22854 strings out of 469940
- 421972 string characters out of 5469410
- 801556 words of memory out of 5000000
- 49302 multiletter control sequences out of 15000+600000
+ 22885 strings out of 469940
+ 422717 string characters out of 5469410
+ 802726 words of memory out of 5000000
+ 49319 multiletter control sequences out of 15000+600000
  632792 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,101p,506b,870s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 99i,12n,101p,506b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\luizb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
+Output written on Pluga.pdf (2 pages, 1847610 bytes).
+PDF statistics:
+ 273 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+
