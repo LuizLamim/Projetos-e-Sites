@@ -27,7 +27,7 @@ def plotar_exponencial():
         
         # Configuração do gráfico
         plt.figure(figsize=(10, 6))
-        plt.plot(x, y, label=f'$y = {a}^x$', color='darkorange', linewidth=2)
+        plt.plot(x, y, label=f'$y = {a}^x$', color='blue', linewidth=2)
         
         # Elementos visuais e estilização
         plt.title(f'Gráfico da Função Exponencial $y = {a}^x$', fontsize=14)
