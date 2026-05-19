@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% Configuração da Marca d'Água
+\backgroundsetup{
+    scale=0.5,
+    color=black,
+    opacity=0.1,
+    angle=0,
+    position=current page.center,
+    vshift=0pt,
+    hshift=0pt,
+    contents={\includegraphics{img/Logo_Luiz.png}}
+}
+
+
+% Configuração das margens da página
+\geometry{a4paper, margin=25mm}
+
+% Definição de Cores Corporativas/Profissionais
+\definecolor{primary}{RGB}{31, 78, 121}    % Azul Escuro
+\definecolor{secondary}{RGB}{90, 140, 180}  % Azul Suave
+\definecolor{lightgray}{RGB}{245, 247, 250} % Fundo Cinza Claro
+
+% Formatação de parágrafos
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% Estilização dos Títulos
+\titleformat{\section}
+  {\color{primary}\normalfont\large\bfseries}
+  {\thesection}{1em}{}[{\titrule[0.5pt]}]
+\titleformat{\subsection}
+  {\color{secondary}\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{primary} Como Funciona a Pluga com Hotmart e Asaas} \\[0.3cm]
+    {\large Guia de Integração e Automatização de Fluxos} \\[0.5cm]
+    \rule{\linewidth}{0.5mm}
+\end{center}
+
+A Pluga funciona como uma "ponte" inteligente e sem código (\textit{no-code}) que conecta a \textbf{Hotmart} ao \textbf{Asaas}. O objetivo principal desta integração é automatizar processos financeiros e de faturação sempre que uma ação acontece na sua plataforma de vendas.
+
+O funcionamento baseia-se na lógica de \textbf{Gatilhos (o que acontece na origem)} e \textbf{Ações (o que é feito no destino)}.
+
+\section{Como a Engrenagem Funciona na Prática}
+Quando realiza uma venda ou gere assinaturas na Hotmart, a Pluga captura esse evento em tempo real e envia os dados diretamente para o Asaas realizar uma tarefa financeira automática.
+
+Aqui estão os fluxos mais comuns que pode configurar:
+
+\subsection{1. De Hotmart (Origem) para Asaas (Destino)}
+O fluxo padrão serve para espelhar as vendas da Hotmart dentro do seu painel financeiro do Asaas para emissão de notas fiscais, controlo de fluxo de caixa ou gestão de clientes.
+\begin{itemize}[label=\textbullet, leftmargin=*]
+    \item \textbf{Gatilho na Hotmart:} "Venda aprovada", "Venda gerada" (aguardando pagamento) ou "Venda reembolsada/estornada".
+    \item \textbf{Ação no Asaas:} A Pluga cria automaticamente um \textbf{novo cliente} (com nome, e-mail, CPF/CNPJ capturados no checkout) e gera uma \textbf{cobrança} ou regista o pagamento correspondente.
+\end{itemize}
+
+\subsection{2. Gestão de Assinaturas e Inadimplência}
+Se vende um produto de recorrência (mensalidade/clube de membros), a Pluga ajuda a manter os dois lados sincronizados.
+\begin{itemize}[label=\textbullet, leftmargin=*]
+    \item \textbf{Gatilho na Hotmart:} "Assinatura cancelada" ou "Atraso no pagamento".
+    \item \textbf{Ação no Asaas:} Alterar o status do cliente, suspender uma cobrança recorrente espelhada ou registar o alerta para a sua equipa financeira.
+\end{itemize}
+
+\section{O Passo a Passo da Configuração}
+Não precisa de programar nada ou interagir com APIs complexas. O processo na Pluga leva poucos minutos:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Escolha o modelo (Na Pluga):} Aceda ao catálogo da Pluga, selecione a combinação \textbf{Hotmart + Asaas} e escolha o modelo de automatização desejado (ex: \textit{"A cada venda aprovada na Hotmart, criar uma cobrança no Asaas"}).
+    \item \textbf{Conecte as contas (Autenticação segura):} Insira as chaves de acesso. Para a Hotmart, usará o Token do Webhook (disponível no menu de ferramentas da Hotmart). Para o Asaas, basta gerar e colar uma chave de API que fica nas configurações do seu perfil.
+    \item \textbf{Defina filtros (Opcional):} Pode configurar regras específicas. Por exemplo: \textit{"Disparar essa automação apenas se o
