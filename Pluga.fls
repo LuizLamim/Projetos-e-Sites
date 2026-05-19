@@ -146,6 +146,9 @@ INPUT C:\Users\luizb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\luizb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\luizb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\Pluga.aux
+INPUT .\Pluga.aux
+INPUT Pluga.aux
 OUTPUT Pluga.aux
 OUTPUT Pluga.out
 OUTPUT Pluga.pdf
