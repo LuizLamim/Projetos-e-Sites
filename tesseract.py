@@ -23,3 +23,13 @@ for i in range(16):
 fig = plt.figure(figsize=(8, 8), facecolor='black')
 ax = fig.add_subplot(111, projection='3d')
 ax.set_facecolor('black')
+
+# Remover eixos para um visual mais limpo
+ax.axis('off')
+ax.set_xlim([-2, 2])
+ax.set_ylim([-2, 2])
+ax.set_zlim([-2, 2])
+
+# Inicializar as linhas (arestas) e os pontos (vértices)
+lines = [ax.plot([], [], [], color='cyan', lw=1.5, alpha=0.8)[0] for _ in edges]
+scatter = ax.scatter([], [], [], color='magenta', s=40)
