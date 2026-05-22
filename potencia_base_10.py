@@ -19,3 +19,7 @@ def calcular_potencia_base_10():
             
     except ValueError:
         print("\nErro: Por favor, digite um número válido.")
+
+# Executa a função principal
+if __name__ == "__main__":
+    calcular_potencia_base_10()
