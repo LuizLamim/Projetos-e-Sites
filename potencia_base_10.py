@@ -10,3 +10,12 @@ def calcular_potencia_base_10():
         
         # Calcula a potência
         resultado = 10 ** expoente
+
+        # Formata a saída para ficar mais limpa se o número for inteiro
+        if expoente.is_integer():
+            print(f"\nResultado: 10^{int(expoente)} = {int(resultado)}")
+        else:
+            print(f"\nResultado: 10^{expoente} = {resultado}")
+            
+    except ValueError:
+        print("\nErro: Por favor, digite um número válido.")
