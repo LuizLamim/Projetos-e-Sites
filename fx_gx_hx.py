@@ -30,3 +30,24 @@ plt.plot(x, h, label="h(x) = 1 / cos(x)", color="crimson", linewidth=2)
 plt.title("Gráfico das Funções: f(x), g(x) e h(x)", fontsize=14, fontweight="bold")
 plt.xlabel("Eixo X", fontsize=12)
 plt.ylabel("Eixo Y", fontsize=12)
+
+# Limita o eixo Y para que a função h(x) não estoure a escala visual do gráfico
+plt.ylim(-4, 4)
+
+# Adiciona linhas de referência nos eixos zero (X e Y)
+plt.axhline(0, color="black", linewidth=0.8, linestyle="--")
+plt.axvline(0, color="black", linewidth=0.8, linestyle="--")
+
+# Ajusta os marcadores do eixo X para mostrar termos em função de Pi (opcional, melhora a leitura)
+plt.xticks(
+    [-3 * np.pi, -2 * np.pi, -np.pi, 0, np.pi, 2 * np.pi, 3 * np.pi],
+    [r"$-3\pi$", r"$-2\pi$", r"$-\pi$", "0", r"$\pi$", r"$2\pi$", r"$3\pi$"],
+)
+
+# Adiciona a legenda e a grade ao fundo
+plt.legend(loc="upper right", fontsize=11)
+plt.grid(True, linestyle=":", alpha=0.6)
+
+# 5. Exibe o gráfico na tela
+plt.tight_layout()
+plt.show()
