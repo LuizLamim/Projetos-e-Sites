@@ -20,3 +20,8 @@ h[abs(cos_x) < 0.05] = np.nan
 
 # 3. Configurando a figura do gráfico
 plt.figure(figsize=(12, 6))
+
+# Plota cada uma das funções com cores e rótulos específicos
+plt.plot(x, f, label="f(x) = cos(x)", color="blue", linewidth=2)
+plt.plot(x, g, label="g(x) = sen(x) / x", color="darkorange", linewidth=2)
+plt.plot(x, h, label="h(x) = 1 / cos(x)", color="crimson", linewidth=2)
