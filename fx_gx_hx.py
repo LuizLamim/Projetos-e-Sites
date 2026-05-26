@@ -23,7 +23,7 @@ plt.figure(figsize=(12, 6))
 
 # Plota cada uma das funções com cores e rótulos específicos
 plt.plot(x, f, label="f(x) = cos(x)", color="blue", linewidth=2)
-plt.plot(x, g, label="g(x) = sen(x) / x", color="darkorange", linewidth=2)
+plt.plot(x, g, label="g(x) = sen(x) / x", color="red", linewidth=2)
 plt.plot(x, h, label="h(x) = 1 / cos(x)", color="green", linewidth=2)
 
 # 4. Customização estética do gráfico
