@@ -25,3 +25,8 @@ plt.figure(figsize=(12, 6))
 plt.plot(x, f, label="f(x) = cos(x)", color="blue", linewidth=2)
 plt.plot(x, g, label="g(x) = sen(x) / x", color="darkorange", linewidth=2)
 plt.plot(x, h, label="h(x) = 1 / cos(x)", color="crimson", linewidth=2)
+
+# 4. Customização estética do gráfico
+plt.title("Gráfico das Funções: f(x), g(x) e h(x)", fontsize=14, fontweight="bold")
+plt.xlabel("Eixo X", fontsize=12)
+plt.ylabel("Eixo Y", fontsize=12)
