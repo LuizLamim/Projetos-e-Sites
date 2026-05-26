@@ -17,3 +17,6 @@ cos_x = np.cos(x)
 h = 1 / cos_x
 # Mascaramos os valores onde cos(x) é muito próximo de zero para evitar linhas verticais feias ligando +infinito a -infinito
 h[abs(cos_x) < 0.05] = np.nan
+
+# 3. Configurando a figura do gráfico
+plt.figure(figsize=(12, 6))
