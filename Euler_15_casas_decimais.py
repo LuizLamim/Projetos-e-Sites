@@ -14,5 +14,5 @@ def calcular_euler(casas_decimais):
     return format(e, f'.{casas_decimais}f')
 
 # Execução
-resultado = calcular_euler(15)
-print(f"O valor de e com 15 casas decimais é: {resultado}")
+resultado = calcular_euler(20)
+print(f"O valor de e com 20 casas decimais é: {resultado}")
