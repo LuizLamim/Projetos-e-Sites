@@ -19,3 +19,13 @@ def eh_primo(n):
             return False
             
     return True
+
+# Exemplo de uso
+try:
+    num = int(input("Digite um número inteiro: "))
+    if eh_primo(num):
+        print(f"{num} é um número primo.")
+    else:
+        print(f"{num} não é um número primo.")
+except ValueError:
+    print("Por favor, digite um número inteiro válido.")
