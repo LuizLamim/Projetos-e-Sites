@@ -36,7 +36,7 @@ ax.grid(True, linestyle='--', alpha=0.5)
 
 # Instanciando as linhas do gráfico que serão animadas
 line_real, = ax.plot([], [], label='Parte Real $\Re(\Psi)$', color='#0078D7', alpha=0.7)
-line_imag, = ax.plot([], [], label='Parte Imaginária $\Im(\Psi)$', color='#FF8C00', alpha=0.7)
+line_imag, = ax.plot([], [], label='Parte Imaginária $\Im(\Psi)$', color="#00B7FF", alpha=0.7)
 line_prob, = ax.plot([], [], label='Densidade de Probabilidade $|\Psi|^2$', color='#E81123', linewidth=2.5)
 ax.legend(loc='upper right')
 
