@@ -8,7 +8,7 @@ x = np.linspace(0.1, 10, 400)
 # 2. Calcular o logaritmo na base 2
 y = np.log2(x)
 
-plt.figure(figsize=(9, 5))
+plt.figure(figsize=(9, 6))
 plt.plot(x, y, label=r'$f(x) = \log_2(x)$', color='blue', linewidth=2)
 
 
