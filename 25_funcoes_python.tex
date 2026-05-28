@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=20mm}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% Definição de Cores
+\definecolor{primarycolor}{RGB}{0, 51, 102}
+\definecolor{secondarycolor}{RGB}{70, 130, 180}
+
+% Configuração de Títulos
+\titleformat{\section}
+  {\color{primarycolor}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}[{\titlerule[0.5pt]}]
+
+\title{\textbf{\color{primarycolor}Guia de Referência: 25 Funções Essenciais em Python}}
+\author{\textbf{Dicionário de Funções Embutidas (Built-in)}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Para programar em Python com fluidez, desde a criação de scripts simples até o desenvolvimento de redes neurais, conhecer as funções embutidas (\textit{built-in functions}) é essencial. Elas estão sempre disponíveis no escopo global, eliminando a necessidade de importar módulos externos. Este guia prático descreve 25 das funções mais importantes e amplamente utilizadas, organizadas por categorias lógicas de utilidade.
+\end{abstract}
+
+\vspace{0.5cm}
+
+\section{Entrada, Saída e Investigação}
+\begin{enumerate}[label=\arabic*., leftmargin=*]
+    \item \textbf{\texttt{print()}}: Exibe informações na tela (no console). É a sua principal ferramenta para visualizar saídas e depurar o comportamento do código.
+    \item \textbf{\texttt{input()}}: Pausa a execução do programa e aguarda que o utilizador digite um dado no teclado, retornando esse valor como uma string.
+    \item \textbf{\texttt{help()}}: Invoca o sistema de ajuda integrado do Python. Ao passar um objeto, módulo ou função como argumento, ela exibe a sua documentação oficial.
+    \item \textbf{\texttt{dir()}}: Retorna uma lista com todos os atributos e métodos válidos associados a um determinado objeto, permitindo inspecionar o que ele ``tem'' e o que ``sabe fazer''.
+\end{enumerate}
+
+\section{Tipos de Dados e Conversões}
+\begin{enumerate}[label=\arabic*., leftmargin=*, resume]
+    \item \textbf{\texttt{type()}}: Revela o tipo de dado de um objeto (se é uma string, um número inteiro, uma lista, etc.). Útil para validações e depuração de erros.
+    \item \textbf{\texttt{isinstance()}}: Verifica se um objeto pertence a um tipo específico ou a uma subclasse dele (ex: verifica se uma variável é uma lista), retornando \texttt{True} ou \texttt{False}.
+    \item \textbf{\texttt{int()}}: Converte ou trunca um valor (como um texto \texttt{"10"} ou um número decimal \texttt{3.14}) para um número inteiro (\texttt{10} e \texttt{3}, respectivamente).
+    \item \textbf{\texttt{float()}}: Converte um número ou uma string de formato numérico compatível em um número decimal (ponto flutuante).
+    \item \textbf{\texttt{str()}}: Converte qualquer objeto ou valor na sua representação textual (string).
+    \item \textbf{\texttt{list()}}: Cria uma nova lista vazia ou converte uma coleção iterável (como uma tupla ou um texto) numa lista mutável.
+    \item \textbf{\texttt{dict()}}: Cria um dicionário, que é uma estrutura de dados flexível que armazena informações no formato de chave-valor.
+    \item \textbf{\texttt{set()}}: Cria um conjunto (set). Uma das suas propriedades mais importantes é remover automaticamente qualquer item duplicado da coleção recebida.
+    \item \textbf{\texttt{tuple()}}: Cria uma tupla, que se comporta como uma lista, porém de forma imutável (os seus valores não podem ser alterados após a criação).
+\end{enumerate}
+
+\section{Matemática Básica e Medidas}
+\begin{enumerate}[label=\arabic*., leftmargin=*, resume]
+    \item \textbf{\texttt{len()}}: Abreviação de \textit{length}. Retorna a quantidade de itens presentes numa coleção (como o tamanho de uma lista ou o número de caracteres de um texto).
+    \item \textbf{\texttt{sum()}}: Realiza a soma aritmética de todos os elementos numéricos contidos dentro de um iterável (como uma lista ou tupla).
+    \item \textbf{\texttt{min()}}: Analisa uma coleção ou conjunto de argumentos e retorna o menor valor encontrado.
+    \item \textbf{\texttt{max()}}: Analisa uma coleção ou conjunto de argumentos e retorna o maior valor encontrado.
+    \item \textbf{\texttt{abs()}}: Retorna o valor absoluto (módulo) de um número, desconsiderando o sinal negativo (ex: \texttt{abs(-5)} resulta em \texttt{5}).
+    \item \textbf{\texttt{round()}}: Arredonda um número decimal para o número inteiro mais próximo ou para uma quantidade específica de casas decimais definida pelo utilizador.
+\end{enumerate}
+
+\section{Manipulação e Organização de Coleções}
+\begin{enumerate}[label=\arabic*., leftmargin=*, resume]
+    \item \textbf{\texttt{range()}}: Gera uma sequência aritmética de números em formato imutável (ex: de 0 a 9). É massivamente utilizada para controlar o número de repetições em laços \texttt{for}.
+    \item \textbf{\texttt{sorted()}}: Recebe um iterável desorganizado e retorna uma \textit{nova} lista contendo os mesmos elementos ordenados de forma crescente ou alfabética.
+    \item \textbf{\texttt{enumerate()}}: Recebe uma coleção e retorna um iterador que fornece pares contendo o índice posicional e o respetivo item (ex: \texttt{0: "Maçã", 1: "Banana"}).
+    \item \textbf{\texttt{zip()}}: Combina os elementos de duas ou mais coleções lado a lado, aglutinando-os em pares como um fecho de correr (junta o primeiro elemento de cada lista, depois o segundo, e assim por diante).
+\end{enumerate}
+
+\section{Programação Funcional (Transformações)}
+\begin{enumerate}[label=\arabic*., leftmargin=*, resume]
+    \item \textbf{\texttt{map()}}: Aplica uma função específica a cada um dos itens de uma coleção, gerando um novo iterador contendo os resultados dessas transformações.
+    \item \textbf{\texttt{filter()}}: Filtra os elementos de uma coleção com base numa função de teste. Retorna apenas os itens que atendem ao critério (ou seja, onde o teste retorna \texttt{True}).
+\end{enumerate}
+
+\end{document}
