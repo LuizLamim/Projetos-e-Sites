@@ -4,3 +4,4 @@ def calcular_raiz_quinta(numero):
 
 # Solicitar número:
 num = float(input("Digite um número para calcular a raiz quinta: "))
+resultado = calcular_raiz_quinta(num)
