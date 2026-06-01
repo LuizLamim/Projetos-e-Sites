@@ -20,3 +20,6 @@ def organizar_planilha(caminho_entrada, caminho_saida, coluna_ordenacao):
 
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
+
+# Exemplo de uso
+organizar_planilha('dados_brutos.xlsx', 'dados_organizados.xlsx', 'Nome')
