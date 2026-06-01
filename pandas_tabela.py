@@ -17,3 +17,6 @@ def organizar_planilha(caminho_entrada, caminho_saida, coluna_ordenacao):
         # 4. Salvar o resultado
         df.to_excel(caminho_saida, index=False)
         print(f"Sucesso! Arquivo organizado salvo em: {caminho_saida}")
+
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
