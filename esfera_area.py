@@ -8,3 +8,9 @@ def calcular_area_esfera(raio):
 # Entrada do usuário
 try:
     raio_input = float(input("Digite o raio da esfera: "))
+
+    if raio_input < 0:
+        print("O raio não pode ser negativo.")
+    else:
+        resultado = calcular_area_esfera(raio_input)
+        print(f"A área da superfície da esfera com raio {raio_input} é: {resultado:.2f}")
