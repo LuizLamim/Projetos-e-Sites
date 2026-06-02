@@ -14,3 +14,6 @@ try:
     else:
         resultado = calcular_area_esfera(raio_input)
         print(f"A área da superfície da esfera com raio {raio_input} é: {resultado:.2f}")
+
+except ValueError:
+    print("Por favor, digite um valor numérico válido.")
