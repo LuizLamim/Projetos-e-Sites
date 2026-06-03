@@ -14,3 +14,4 @@ try:
     else:
         resultado = calcular_volume_esfera(r)
         print(f"O volume da esfera com raio {r} é: {resultado:.2f}")b
+except ValueError:
