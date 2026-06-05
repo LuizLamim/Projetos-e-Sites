@@ -4,3 +4,6 @@ app = express()
 app.get('/setcookie',(req,res)=>{
     res.cookie('Acessado em ${new Date()}');
     res.send('cookie salvo');
+}};
+
+app.listen(3000,()=>console.log('servidor executado'));
