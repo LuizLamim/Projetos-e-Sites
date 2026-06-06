@@ -18,3 +18,8 @@ app.get('/api/usuario', (req, res) => {
     cargo: 'IA Assistente'
   });
 });
+
+// Iniciar o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
