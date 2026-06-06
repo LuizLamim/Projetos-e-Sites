@@ -4,3 +4,8 @@ const PORT = 3000;
 
 // Middleware para entender JSON no corpo da requisição
 app.use(express.json());
+
+// Rota GET: A página inicial
+app.get('/', (req, res) => {
+  res.send('<h1>Olá! Servidor Node.js rodando com sucesso.</h1>');
+});
