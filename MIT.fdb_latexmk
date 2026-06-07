@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1780843715.05634 "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/MIT.tex" "MIT.pdf" "MIT" 1780843715.73245 0
+["pdflatex"] 1780844084.75406 "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/MIT.tex" "MIT.pdf" "MIT" 1780844085.51096 0
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779035166 122702 2e59968a358ad0878fedb741313dbbc2 ""
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1765560545 25420 a3cbccc34dfe19a3a9f9ae9295afb8f8 ""
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1747787488 40136 184ff8b68a3312a5da2ff338ed507943 ""
@@ -46,10 +46,10 @@
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "MIT.aux" 1780843715 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "MIT.out" 1780843715 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "MIT.tex" 1780843714 3123 777d874575da4793ac6f96531f34732b ""
-  "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/MIT.tex" 1780843714 3123 777d874575da4793ac6f96531f34732b ""
+  "MIT.aux" 1780844085 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "MIT.out" 1780844085 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "MIT.tex" 1780844083 3511 b20db7b3bc75574062e9e8f450a2e4c2 ""
+  "c:/Users/luizb/OneDrive/Área de Trabalho/Projetos e Sites/MIT.tex" 1780844083 3511 b20db7b3bc75574062e9e8f450a2e4c2 ""
   (generated)
   "MIT.aux"
   "MIT.log"
