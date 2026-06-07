@@ -1,0 +1,40 @@
+latex_content = r"""
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section*{Onde as áreas se convergem}
+\begin{itemize}
+    \item \textbf{IA para Gestão de Constelações de Satélites:} Otimizar rotas, consumo de energia e transmissão de dados em redes de satélites (como Starlink ou futuras redes de órbita baixa) é um problema massivo de computação que a IA está resolvendo agora.
+    \item \textbf{Comunicações Quânticas via Satélite:} O uso de satélites para distribuição de chaves quânticas (QKD) é a fronteira da segurança de dados global. O MIT tem pesquisas ativas em sistemas fotônicos e comunicações ópticas espaciais.
+    \item \textbf{Computação Quântica em Ambientes de Radiação:} Simular como qubits se comportam no vácuo e sob radiação espacial é um nicho técnico de alto valor.
+\end{itemize}
+
+\section*{Caminhos Recomendados dentro do MIT}
+Para alguém com o seu histórico, os programas que mais fazem sentido são:
+\begin{itemize}
+    \item \textbf{M.Sc./Ph.D. no Departamento de AeroAstro:} Se você quer focar no hardware/sistema espacial, mas usando IA como ferramenta.
+    \item \textbf{M.Sc. em Computer Science (EECS):} Se o seu foco for o desenvolvimento dos algoritmos quânticos ou modelos de IA, aplicando-os posteriormente a problemas do setor espacial.
+    \item \textbf{System Design \& Management (SDM):} Este é um mestrado conjunto entre a Escola de Engenharia e a Sloan School of Management. É ideal para quem já tem experiência profissional e quer liderar projetos complexos que unem tecnologia avançada e estratégia de negócio.
+\end{itemize}
+
+\section*{Estrutura do Candidato de Elite para o MIT}
+Para se destacar em áreas tão técnicas e competitivas, seu planejamento deve seguir este ciclo de preparação:
+\begin{itemize}
+    \item \textbf{Experiência Prática (Projetos):} Como você já trabalha com software, tente migrar partes da sua atuação profissional para lógica de processamento de sinais ou automação. Se possível, contribua para projetos de código aberto relacionados a SpaceTech ou bibliotecas de Quantum Computing (como a Qiskit da IBM).
+    \item \textbf{Publicações e Conferências:} No mundo acadêmico de elite, ser autor ou coautor de artigos em conferências relevantes (mesmo que nacionais ou de nicho em IA) conta muito mais do que apenas ter notas altas.
+    \item \textbf{Networking:} Comece a acompanhar os papers publicados pelos professores do MIT CSAIL (Computer Science and Artificial Intelligence Laboratory). Eles são os mesmos que decidem quem entra no mestrado/doutorado.
+\end{itemize}
+
+\section*{Dica de Ouro: O "Pulo do Gato"}
+Dado o seu interesse em Satélites, pesquise sobre o MIT Space Systems Laboratory (SSL). Eles desenvolvem pequenos satélites (CubeSats) e sistemas de controle. Analise os projetos atuais deles para ver qual tecnologia eles estão usando para automação — isso pode ser o tema central da sua carta de intenção (Statement of Objectives).
+
+\end{document}
+"""
+
+with open("mit_roadmap.tex", "w", encoding="utf-8") as f:
+    f.write(latex_content)
