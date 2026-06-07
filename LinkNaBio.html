@@ -153,6 +153,22 @@ body {
     transform: translateY(-5px) scale(1.1);
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
 }
+
+/* Animação de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
 </style>
 </head>
 <body>
@@ -164,7 +180,7 @@ body {
         </header>
 
         <main class="links">
-            <a href="#" target="_blank" class="link-btn">Pós-graduação</a>
+            <a href="#" target="_blank" class="link-btn" style="animation: pulse 2s infinite ease-in-out; animation-delay: 1s;">Pós-graduação</a>
             <a href="https://abajud.com/aprenda-recuperacao-judicial-gravado" target="_blank" class="link-btn">Aprenda Recuperação Judicial</a>
             <a href="https://abajud.com/administrador-judicial-ia" target="_blank" class="link-btn">Agente de I.A RJ.</a>
             <a href="https://hotmart.com/pt-br/marketplace/produtos/hagsxd-coletanea-artigos-juridicos-recuperacao-judicial-desafios-e-perspectivas-no-direito-empresarial-viz7e/H103806060H" target="_blank" class="link-btn">Livro Físico - Coletânea Artigos Jurídicos - RJ</a>
