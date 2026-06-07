@@ -120,6 +120,22 @@ body {
     transform: translateY(0);
 }
 
+/* Estilo específico para o primeiro botão (Pós-graduação) */
+.links .link-btn:first-child {
+    background-color: var(--gold);
+    color: var(--bg-color);
+    font-weight: 600;
+}
+
+.links .link-btn:first-child::before {
+    background-color: var(--text-color);
+}
+
+.links .link-btn:first-child:hover {
+    color: var(--bg-color);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+}
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -148,6 +164,7 @@ body {
         </header>
 
         <main class="links">
+            <a href="#" target="_blank" class="link-btn">Pós-graduação</a>
             <a href="https://abajud.com/aprenda-recuperacao-judicial-gravado" target="_blank" class="link-btn">Aprenda Recuperação Judicial</a>
             <a href="https://abajud.com/administrador-judicial-ia" target="_blank" class="link-btn">Agente de I.A RJ.</a>
             <a href="https://hotmart.com/pt-br/marketplace/produtos/hagsxd-coletanea-artigos-juridicos-recuperacao-judicial-desafios-e-perspectivas-no-direito-empresarial-viz7e/H103806060H" target="_blank" class="link-btn">Livro Físico - Coletânea Artigos Jurídicos - RJ</a>
