@@ -1,7 +1,7 @@
 import random
 
 def gerar_numero():
-    return random.randint(0, 100)
+    return random.randint(0, 200)
 
 
 # Exemplo de uso:
