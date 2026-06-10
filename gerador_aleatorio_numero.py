@@ -6,3 +6,4 @@ def gerar_numero():
 
 # Exemplo de uso:
 numero = gerar_numero()
+print(f"O número aleatório gerado é: {numero}")
