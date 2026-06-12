@@ -3,5 +3,18 @@ using System;
 class Program
 {
     static void Main()
+    {
+        double x1 = 1, y1 = 2;
+        double x2 = 3, y2 = 6;
 
+        if (x1 == x2)
+        {
+            Console.WriteLine("Erro: Divisão por zero. A reta é vertical.");
+        }
+        else
+        {
+            double m = (y2 - y1) / (x2 - x1);
+            Console.WriteLine($"O coeficiente angular é: {m}");
+        }
+    }
 }
