@@ -1,12 +1,16 @@
 import secrets
 import string
 
+
 def gerar_texto_aleatorio(tamanho):
+    # Define o pool de caracteres: letras maiúsculas, minúsculas e números
+    # Se quiser incluir símbolos, adicione `+ string.punctuation`
+    caracteres = string.ascii_letters + string.digits
+
+    # Gera o texto aleatório com o tamanho escolhido
     texto = "".join(secrets.choice(caracteres) for _ in range(tamanho))
     return texto
 
-    texto = "".join(secrets.choice(caracteres) for _ in range(tamanho))
-    return texto
 
 # Programa principal
 try:
@@ -20,7 +24,5 @@ try:
         print(resultado)
         print("--------------------")
 
-
-
-except
+except ValueError:
     print("Erro: Por favor, digite apenas números inteiros.")
