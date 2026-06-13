@@ -11,4 +11,6 @@ def gerar_texto_aleatorio(tamanho):
 # Programa principal
 try:
 
-    
+
+
+except
