@@ -93,3 +93,34 @@ void arctan_series(int *res, int k, int factor) {
     free(term);
     free(current_term);
 }
+
+int main() {
+    int *pi = (int *)malloc(DIGITS * sizeof(int));
+    int *term239 = (int *)malloc(DIGITS * sizeof(int));
+    
+    for (int i = 0; i < DIGITS; i++) {
+        pi[i] = 0;
+        term239[i] = 0;
+    }
+    
+    // Pi = 4 * [ 4 * arctan(1/5) - arctan(1/239) ]
+    // Que é o mesmo que: 16 * arctan(1/5) - 4 * arctan(1/239)
+    
+    arctan_series(pi, 5, 16);
+    arctan_series(term239, 239, 4);
+    
+    sub_arr(pi, term239);
+    
+    // Imprime o resultado formatado
+    printf("PI com 100 casas decimais:\n");
+    printf("%d.", pi[0]);
+    for (int i = 1; i <= 100; i++) {
+        printf("%d", pi[i]);
+        if (i % 10 == 0 && i < 100) printf(" "); // Espaço a cada 10 dígitos para facilitar a leitura
+    }
+    printf("\n");
+    
+    free(pi);
+    free(term239);
+    return 0;
+}
