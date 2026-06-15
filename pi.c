@@ -53,3 +53,43 @@ int is_zero(int *arr) {
     }
     return 1;
 }
+
+// Calcula a série de Taylor para arctan(1/k) multiplicada por um fator
+void arctan_series(int *res, int k, int factor) {
+    int *term = (int *)malloc(DIGITS * sizeof(int));
+    int *current_term = (int *)malloc(DIGITS * sizeof(int));
+    
+    // Primeiro termo: factor * (1/k)
+    set_val(term, factor);
+    div_arr(term, k);
+    
+    // Adiciona o primeiro termo ao resultado
+    add_arr(res, term);
+    
+    int n = 3;
+    int sign = -1;
+    
+    while (1) {
+        // Próxima potência: divide o termo anterior por k^2
+        div_arr(term, k);
+        div_arr(term, k);
+        
+        if (is_zero(term)) break;
+        
+        // Copia o termo atual para dividir pelo divisor da série (3, 5, 7...)
+        for (int i = 0; i < DIGITS; i++) current_term[i] = term[i];
+        div_arr(current_term, n);
+        
+        if (sign == 1) {
+            add_arr(res, current_term);
+        } else {
+            sub_arr(res, current_term);
+        }
+        
+        sign = -sign;
+        n += 2;
+    }
+    
+    free(term);
+    free(current_term);
+}
