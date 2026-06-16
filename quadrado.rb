@@ -4,3 +4,5 @@ print "Digite um número: "
 numero = gets.chomp.to_f
 
 resultado = numero ** 2
+
+puts "O quadrado de #{numero} é #{resultado}"
