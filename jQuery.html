@@ -22,6 +22,33 @@
     <button id="calcular">Calcular</button>
 
     <h2 id="resultado">Resultado: -</h2>
-     
+
+    <script>
+        $(document).ready(function() {
+            $('#calcular').click(function() {
+                // Captura os valores
+                var x1 = parseFloat($('#x1').val());
+                var y1 = parseFloat($('#y1').val());
+                var x2 = parseFloat($('#x2').val());
+                var y2 = parseFloat($('#y2').val());
+
+                // Verifica se os valores são numéricos
+                if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+                    $('#resultado').text("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                // Validação para divisão por zero (reta vertical)
+                if (x2 - x1 === 0) {
+                    $('#resultado').text("Resultado: Reta vertical (coeficiente indefinido).");
+                } else {
+                    // Cálculo do coeficiente angular
+                    var m = (y2 - y1) / (x2 - x1);
+                    $('#resultado').text("Resultado: m = " + m.toFixed(2));
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
