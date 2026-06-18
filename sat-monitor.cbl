@@ -66,3 +66,11 @@ IDENTIFICATION DIVISION.
            ELSE
                DISPLAY "TEMP. DO PAINEL  : " TEMP-PAINEL " C - ESTÁVEL"
            END-IF.
+
+           3000-STATUS-GERAL.
+           DISPLAY "--------------------------------------------------"
+           IF STATUS-SISTEMA = "OK"
+               DISPLAY "STATUS GERAL     : SISTEMAS NOMINAIS"
+           ELSE
+               DISPLAY "STATUS GERAL     : ATENÇÃO! ANOMALIA DETECTADA!"
+           END-IF.
