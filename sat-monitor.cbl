@@ -48,3 +48,12 @@ IDENTIFICATION DIVISION.
            DISPLAY "    FIM DO PROCESSAMENTO DE TELEMETRIA             "
            DISPLAY "=================================================="
            STOP RUN.
+
+           1000-VERIFICAR-BATERIA.
+           IF STATUS-BATERIA < LIM-BATERIA-MIN
+               MOVE "BATERIA CRÍTICA! NÍVEL ABAIXO DE 20%" TO MSG-ALERTA
+               DISPLAY LINHA-ALERTA
+               MOVE "AL" TO STATUS-SISTEMA
+           ELSE
+               DISPLAY "STATUS BATERIA   : " STATUS-BATERIA "% - NORMAL"
+           END-IF.
