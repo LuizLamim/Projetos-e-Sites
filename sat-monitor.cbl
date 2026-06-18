@@ -14,3 +14,37 @@ IDENTIFICATION DIVISION.
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
+
+       Mercedes-Benz dos Satélites - Dados de Entrada (Fictícios)
+       01  REGISTRO-TELEMETRIA.
+           05  ID-SATELITE        PIC X(08)   VALUE "ALFA-001".
+           05  STATUS-BATERIA     PIC 9(03)   VALUE 085.
+           05  TEMP-PAINEL        PIC S9(03)  VALUE +045.
+           05  STATUS-SISTEMA     PIC X(02)   VALUE "OK".
+
+        Variáveis de Controle e Limites Operacionais
+       01  LIMITES-OPERACIONAIS.
+           05  LIM-BATERIA-MIN    PIC 9(03)   VALUE 020.
+           05  LIM-TEMP-MAX       PIC S9(03)  VALUE +080.
+           05  LIM-TEMP-MIN       PIC S9(03)  VALUE -040.
+
+        Variáveis de Formatação para o Relatório
+       01  LINHA-ALERTA.
+           05  FILLER             PIC X(15)   VALUE " >>> ALERTA: ".
+           05  MSG-ALERTA         PIC X(40).
+
+       PROCEDITION DIVISION.
+       0000-PRINCIPAL.
+           DISPLAY "=================================================="
+           DISPLAY "    INICIANDO MONITORAMENTO DE TELEMETRIA          "
+           DISPLAY "    SATÉLITE: " ID-SATELITE
+           DISPLAY "=================================================="
+           
+           PERFORM 1000-VERIFICAR-BATERIA
+           PERFORM 2000-VERIFICAR-TEMPERATURA
+           PERFORM 3000-STATUS-GERAL
+           
+           DISPLAY "=================================================="
+           DISPLAY "    FIM DO PROCESSAMENTO DE TELEMETRIA             "
+           DISPLAY "=================================================="
+           STOP RUN.
