@@ -33,3 +33,13 @@
                MOVE VALOR-BRUTO TO VALOR-FINAL
                MOVE 0 TO DESCONTO
            END-IF.
+
+           *> Exibição dos resultados
+           DISPLAY "--- RECIBO DE PAGAMENTO ---"
+           DISPLAY "ID CLIENTE : " ID-CLIENTE
+           DISPLAY "VALOR BRUTO: " VALOR-BRUTO
+           DISPLAY "DESCONTO   : " DESCONTO
+           DISPLAY "VALOR FINAL: " VALOR-FINAL
+           DISPLAY MSG-SUCESSO.
+
+           STOP RUN.
