@@ -3,11 +3,11 @@
        AUTHOR. Luiz Lamim
        DATE-WRITTEN. 2026-06-18.
       *----------------------------------------------------------------*
-      * PROGRAMA QUE SIMULA O PROCESSAMENTO DE DADOS DE TELEMETRIA      *
+      * PROGRAMA QUE SIMULA O PROCESSAMENTO DE DADOS DE TELEMETRIA     *
       * DE UM SATÉLITE EM ÓRBITA.                                      *
       *----------------------------------------------------------------*
 
-      ENVIRONMENT DIVISION.
+       ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
        SPECIAL-NAMES.
            DECIMAL-POINT IS COMMA.
