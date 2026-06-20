@@ -31,3 +31,32 @@ _start:
     
     ; Simula a recuperação: reduz a carga limpando tarefas inúteis
     mov word [cpu_load], 45
+
+.engine_check:
+    mov edx, msg_ok
+    call print_string
+
+    ; --- 3. LOOP DE CONTROLE DO RCS (Atitude da Nave) ---
+    ; O AGC lia os giroscópios e corrigia a posição acionando os propulsores a jato.
+ .rcs_loop:
+    mov ax, [pitch_error]
+    cmp ax, 0                   ; O erro foi zerado?
+    je .stable_orbit            ; Se sim, nave estabilizada
+
+    ; Se o erro for grande, dispara o RCS
+    mov edx, msg_rcs_fire
+    call print_string
+
+    ; Simula a correção diminuindo o erro (15 -> 10 -> 5 -> 0)
+    sub word [pitch_error], 5
+    jmp .rcs_loop               ; Repete até estabilizar
+
+    ; --- 4. POUSO SEGURO ---
+ .stable_orbit:
+    mov edx, msg_stable
+    call print_string
+
+    ; --- 5. FINALIZAR PROGRAMA (Syscall exit) ---
+    mov eax, 1                  ; sys_exit
+    xor ebx, ebx                ; status 0
+    int 0x80
