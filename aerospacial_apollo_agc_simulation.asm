@@ -30,9 +30,9 @@ _start:
     call print_string
     
     ; Simula a recuperação: reduz a carga limpando tarefas inúteis
-    mov word [cpu_load], 45
+    mov word [cpu_load], 45     
 
-.engine_check:
+ .engine_check:
     mov edx, msg_ok
     call print_string
 
@@ -60,3 +60,32 @@ _start:
     mov eax, 1                  ; sys_exit
     xor ebx, ebx                ; status 0
     int 0x80
+
+; --- FUNÇÃO AUXILIAR PARA IMPRIMIR STRING (Linux x86) ---
+print_string:
+    push eax
+    push ebx
+    push ecx
+    push edx
+
+    ; Calcula o tamanho da string (busca pelo byte 0)
+    mov ecx, edx                ; Endereço da string em ECX
+    mov ebx, edx
+ .find_len:
+    cmp byte [ebx], 0
+    je .found
+    inc ebx
+    jmp .find_len
+ .found:
+    sub ebx, ecx                ; EBX agora tem o tamanho da string
+    mov edx, ebx                ; Tamanho em EDX
+
+    mov eax, 4                  ; sys_write
+    mov ebx, 1                  ; stdout
+    int 0x80
+
+    pop edx
+    pop ecx
+    pop ebx
+    pop eax
+    ret
