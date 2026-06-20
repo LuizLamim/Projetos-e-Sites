@@ -12,3 +12,22 @@ section .data
 
 section .text
     global _start
+
+_start:
+    ; --- 1. BOOT DO COMPUTADOR ---
+    mov edx, msg_boot
+    call print_string
+
+    ; --- 2. VERIFICAÇÃO DE SOBRECARGA (O famoso Alarme 1202) ---
+    ; No AGC real, o radar de aproximação mandava dados demais, gerando o erro 1202.
+    ; O software executava o "Executive", que deletava tarefas de baixa prioridade.
+    mov ax, [cpu_load]
+    cmp ax, 90                  ; Se a carga for maior que 90%...
+    jl .engine_check            ; Se não, pula para o próximo passo
+
+    ; Dispara Alarme 1202
+    mov edx, msg_warn
+    call print_string
+    
+    ; Simula a recuperação: reduz a carga limpando tarefas inúteis
+    mov word [cpu_load], 45
