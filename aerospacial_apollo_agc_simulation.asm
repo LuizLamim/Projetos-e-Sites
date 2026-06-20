@@ -9,3 +9,6 @@ section .data
     ; Variáveis de estado da simulação
     cpu_load      dw 95          ; Carga da CPU em % (Simulando radar de pouso inundando a memória)
     pitch_error   dw 15          ; Erro de inclinação da nave (em graus)
+
+section .text
+    global _start
