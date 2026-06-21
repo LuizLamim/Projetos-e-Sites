@@ -27,3 +27,12 @@ def calcular_campo_carga(q, pos_carga, X, Y):
     Ey = K * q * Ry / (R * R2)
     
     return Ex, Ey
+
+# --- Configuração do Gráfico ---
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.set_xlim(-5, 5)
+ax.set_ylim(-5, 5)
+ax.set_aspect('equal')
+ax.set_title("Simulação Dinâmica de Campo Elétrico", fontsize=14)
+ax.set_xlabel("Eixo X")
+ax.set_ylabel("Eixo Y")
