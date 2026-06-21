@@ -36,3 +36,12 @@ ax.set_aspect('equal')
 ax.set_title("Simulação Dinâmica de Campo Elétrico", fontsize=14)
 ax.set_xlabel("Eixo X")
 ax.set_ylabel("Eixo Y")
+
+# Elementos visuais que serão atualizados
+# quiver: plota os vetores (setas) do campo
+quiver = ax.quiver(X, Y, np.zeros_like(X), np.zeros_like(Y), color='white', scale=20)
+# Desenho das cargas (esferas coloridas)
+carga_pos_plot, = ax.plot([], [], 'ro', markersize=12, label='Carga + (Proton)')
+carga_neg_plot, = ax.plot([], [], 'bo', markersize=12, label='Carga - (Elétron)')
+ax.legend(loc='upper right')
+ax.set_facecolor('#111111') # Fundo escuro para destacar as setas
