@@ -45,3 +45,44 @@ carga_pos_plot, = ax.plot([], [], 'ro', markersize=12, label='Carga + (Proton)')
 carga_neg_plot, = ax.plot([], [], 'bo', markersize=12, label='Carga - (Elétron)')
 ax.legend(loc='upper right')
 ax.set_facecolor('#111111') # Fundo escuro para destacar as setas
+
+# --- Função de Animação ---
+def atualizar(frame):
+    # Define o movimento das cargas ao longo do tempo (usando seno e cosseno)
+    # A carga positiva orbita e a negativa se move em linha reta
+    pos_positiva = [2 * np.cos(frame * 0.05), 2 * np.sin(frame * 0.05)]
+    pos_negativa = [-2 * np.cos(frame * 0.03), 0]
+    
+    # Valores das cargas (em Coulombs arbitrários)
+    q_positiva = 5.0
+    q_negativa = -5.0
+    
+    # Calcula o campo de cada uma
+    Ex1, Ey1 = calcular_campo_carga(q_positiva, pos_positiva, X, Y)
+    Ex2, Ey2 = calcular_campo_carga(q_negativa, pos_negativa, X, Y)
+    
+    # Princípio da Superposição: o campo total é a soma dos campos individuais
+    Ex_total = Ex1 + Ex2
+    Ey_total = Ey1 + Ey2
+    
+    # Normaliza os vetores para que todas as setas tenham o mesmo tamanho,
+    # mudando apenas a direção (torna o gráfico mais limpo)
+    magnitude = np.sqrt(Ex_total**2 + Ey_total**2)
+    magnitude[magnitude == 0] = 1e-6
+    Ex_norm = Ex_total / magnitude
+    Ey_norm = Ey_total / magnitude
+    
+    # Atualiza as posições dos desenhos das cargas
+    carga_pos_plot.set_data([pos_positiva[0]], [pos_positiva[1]])
+    carga_neg_plot.set_data([pos_negativa[0]], [pos_negativa[1]])
+    
+    # Atualiza as setas do campo elétrico
+    quiver.set_UVC(Ex_norm, Ey_norm)
+    
+    return quiver, carga_pos_plot, carga_neg_plot
+
+# --- Executa a Animação ---
+# frames: número de iterações, interval: tempo em milissegundos entre frames
+anim = FuncAnimation(fig, atualizar, frames=200, interval=30, blit=True)
+
+plt.show()
