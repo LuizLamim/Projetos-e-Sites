@@ -55,3 +55,59 @@
        01  TELA-MENSAGEM.
            05 LINE 15 COL 15 PIC X(40) FROM WS-MENSAGEM FOREGROUND-COLOR 2.
            05 LINE 17 COL 15 VALUE "PRESSIONE ENTER PARA CONTINUAR...".
+
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           PERFORM UNTIL WS-OPCAO = "9"
+               DISPLAY TELA-PRINCIPAL
+               ACCEPT TELA-PRINCIPAL
+               
+               EVALUATE WS-OPCAO
+                   WHEN "1"
+                       PERFORM DO-SALDO
+                   WHEN "2"
+                       PERFORM DO-DEPOSITO
+                   WHEN "3"
+                       PERFORM DO-SAQUE
+                   WHEN "9"
+                       DISPLAY "OBRIGADO POR UTILIZAR NOSSO BANCO!"
+                   WHEN OTHER
+                       MOVE "OPCAO INVALIDA!" TO WS-MENSAGEM
+                       PERFORM MOSTRA-MENSAGEM
+               END-EVALUATE
+           END-PERFORM.
+           STOP RUN.
+
+       DO-SALDO.
+           DISPLAY TELA-SALDO.
+           ACCEPT WS-OPCAO.
+
+       DO-DEPOSITO.
+           MOVE ZERO TO WS-VALOR-INPUT.
+           DISPLAY TELA-DEPOSITO.
+           ACCEPT TELA-DEPOSITO.
+           
+           IF WS-VALOR-INPUT > ZERO
+               ADD WS-VALOR-INPUT TO WS-SALDO
+               MOVE "DEPOSITO REALIZADO COM SUCESSO!" TO WS-MENSAGEM
+           ELSE
+               MOVE "VALOR INVALIDO PARA DEPOSITO!" TO WS-MENSAGEM
+           END-IF.
+           PERFORM MOSTRA-MENSAGEM.
+
+       DO-SAQUE.
+           MOVE ZERO TO WS-VALOR-INPUT.
+           DISPLAY TELA-SAQUE.
+           ACCEPT TELA-SAQUE.
+           
+           IF WS-VALOR-INPUT > WS-SALDO
+               MOVE "SALDO INSUFICIENTE!" TO WS-MENSAGEM
+           ELSE
+               IF WS-VALOR-INPUT > ZERO
+                   SUBTRACT WS-VALOR-INPUT FROM WS-SALDO
+                   MOVE "SAQUE REALIZADO COM SUCESSO!" TO WS-MENSAGEM
+               ELSE
+                   MOVE "VALOR INVALIDO PARA SAQUE!" TO WS-MENSAGEM
+               END-IF
+           END-IF.
+           PERFORM MOSTRA-MENSAGEM.
