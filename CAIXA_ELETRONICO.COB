@@ -111,3 +111,8 @@
                END-IF
            END-IF.
            PERFORM MOSTRA-MENSAGEM.
+
+       MOSTRA-MENSAGEM.
+           DISPLAY TELA-MENSAGEM.
+           ACCEPT WS-OPCAO.
+           MOVE SPACES TO WS-MENSAGEM.
