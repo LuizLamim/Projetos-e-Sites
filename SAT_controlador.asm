@@ -29,3 +29,8 @@ loop_controle:
     ; 3. OPERAÇÃO NORMAL
     ; (Aqui o satélite coletaria dados ou transmitiria sinal)
     jmp ciclo_concluido
+
+
+; ----------------------------------------------------
+; SUBROTINAS DEAÇÃO (ATUADORES)
+; ----------------------------------------------------
