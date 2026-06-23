@@ -9,3 +9,23 @@ section .data
 
 section .text
     global _start
+
+_start:
+    ; ----------------------------------------------------
+    ; LOOP PRINCIPAL DE CONTROLE DO SATÉLITE
+    ; ----------------------------------------------------
+loop_controle:
+
+    ; 1. VERIFICAÇÃO DE ALTITUDE (Controle de Órbita)
+    mov ax, [altitude]
+    cmp ax, [ALTITUDE_CRITICA]
+    jl  corrigir_orbita         ; Se altitude < crítica, liga propulsores
+
+    ; 2. VERIFICAÇÃO DE ENERGIA (Subsistema de Potência)
+    mov bl, [energia]
+    cmp bl, [BATERIA_BAIXA]
+    jl  modo_economia           ; Se bateria < baixa, entra em modo de segurança
+
+    ; 3. OPERAÇÃO NORMAL
+    ; (Aqui o satélite coletaria dados ou transmitiria sinal)
+    jmp ciclo_concluido
