@@ -39,3 +39,35 @@ public:
         altitude += 15.0; // Eleva a órbita
     }
 };
+
+// --- COMPUTADOR DE BORDO PRINCIPAL (OBC) ---
+class SateliteOBC {
+private:
+    SistemaEnergia energia;
+    SistemaPropulsao propulsao;
+    bool modoSeguranca = false;
+
+public:
+    void loopPrincipal() {
+        int ciclos = 0;
+        
+        // Loop de execução contínua (Simulando o RTOS - Sistema Operacional de Tempo Real)
+        while (ciclos < 10) { 
+            std::cout << "\n--- CICLO DE TELEMETRIA #" << ciclos + 1 << " ---\n";
+            
+            // Atualiza o estado físico do satélite
+            energia.atualizar();
+            propulsao.atualizar();
+
+            // Exibe a telemetria na tela
+            std::cout << "Altitude: " << propulsao.altitude << " km\n";
+            std::cout << "Bateria: " << energia.nivelBateria << " %\n";
+
+            // FDIR (Failure Detection, Isolation, and Recovery - Algoritmo de Segurança Espacial)
+            executarFDIR();
+
+            // Simula o intervalo de tempo do relógio de bordo (1 segundo por ciclo)
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            ciclos++;
+        }
+    }
