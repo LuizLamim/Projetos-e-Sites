@@ -24,3 +24,18 @@ public:
         std::cout << "[ENERGIA] Alerta! Modo de economia ativado. Desligando carga útil.\n";
     }
 };
+
+// --- SUBSISTEMA DE PROPULSÃO E ÓRBITA ---
+class SistemaPropulsao {
+public:
+    double altitude = 500.0; // Altitude em km (Órbita Baixa)
+
+    void atualizar() {
+        altitude -= 0.5; // Decaimento orbital natural devido ao arrasto atmosférico
+    }
+
+    void dispararPropulsores() {
+        std::cout << "[PROPULSÃO] Disparando propulsores iônicos! Elevando altitude...\n";
+        altitude += 15.0; // Eleva a órbita
+    }
+};
