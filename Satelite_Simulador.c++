@@ -19,3 +19,8 @@ public:
         if (nivelBateria > 100.0) nivelBateria = 100.0;
         if (nivelBateria < 0.0) nivelBateria = 0.0;
     }
+
+    void desativarSistemasNaoEssenciais() {
+        std::cout << "[ENERGIA] Alerta! Modo de economia ativado. Desligando carga útil.\n";
+    }
+};
