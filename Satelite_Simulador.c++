@@ -71,3 +71,40 @@ public:
             ciclos++;
         }
     }
+
+    private:
+    // Rotina de segurança essencial em qualquer satélite
+    void ejecutarFDIR() {
+        // 1. Verificação de Altitude Crítica
+        if (propulsao.altitude < 498.0) {
+            std::cout << "[FDIR] Altitude abaixo do limite de segurança!\n";
+            if (energia.nivelBateria > 20.0) {
+                propulsao.dispararPropulsores();
+                energia.nivelBateria -= 5.0; // Disparo gasta muita energia
+            } else {
+                std::cout << "[FDIR] ERRO CRÍTICO: Altitude baixa, mas bateria insuficiente para manobra!\n";
+            }
+        }
+
+        // 2. Verificação de Energia Crítica
+        if (energia.nivelBateria < 95.0 && !modoSeguranca) { // Limiar alto para o teste rodar rápido
+            modoSeguranca = true;
+            energia.desativarSistemasNaoEssenciais();
+        } else if (energia.nivelBateria >= 98.0 && modoSeguranca) {
+            modoSeguranca = false;
+            std::cout << "[ENERGIA] Bateria recuperada. Retornando operações normais.\n";
+        }
+    }
+};
+
+// --- PONTO DE ENTRADA DO SISTEMA ---
+int main() {
+    std::cout << "Inicializando Computador de Bordo do Satélite...\n";
+    std::cout << "Sistemas NOMINAIS.\n";
+    
+    SateliteOBC obc;
+    obc.loopPrincipal(); // Inicia o controle do satélite
+    
+    std::cout << "\nSimulação encerrada.\n";
+    return 0;
+}
