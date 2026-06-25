@@ -22,4 +22,6 @@ def calcular_x_vertice():
     except ValueError:
         print("\nErro: Por favor, digite apenas números válidos.")
 
-    
+# Executa o programa
+if __name__ == "__main__":
+    calcular_x_vertice()
