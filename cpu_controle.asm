@@ -22,3 +22,9 @@ section .data
     IR_op resb 1 ; Instruction Register (Opcode)
     IR_oprd resb 1; Instruction Register (Operando)
     ACC resb 1   ; Acumulador (Registrador de dados principal)
+
+section .text
+inicio:
+    ; Inicializa o Program Counter no início do vetor 'programa'
+    mov word [PC], 0
+    mov byte [ACC], 0
