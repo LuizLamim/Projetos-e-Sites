@@ -58,3 +58,37 @@ ciclo_cpu:
     je exec_store     ; Se Opcode == 3 (STORE)
     
     jmp ciclo_cpu     ; Instrução inválida ignora e continua
+
+    ; --- 3. EXECUÇÃO (EXECUTE) ---
+
+exec_load:
+    ; Busca o valor na RAM usando o operando como índice
+    movzx bx, byte [IR_oprd]
+    mov al, [memoria + bx]
+    mov [ACC], al             ; ACC = Memória[operando]
+    jmp ciclo_cpu
+
+exec_add:
+    ; Soma o valor da RAM ao Acumulador
+    movzx bx, byte [IR_oprd]
+    mov al, [memoria + bx]
+    add [ACC], al             ; ACC = ACC + Memória[operando]
+    jmp ciclo_cpu
+
+exec_store:
+    ; Salva o valor do Acumulador na RAM
+    movzx bx, byte [IR_oprd]
+    mov al, [ACC]
+    mov [memoria + bx], al    ; Memória[operando] = ACC
+    jmp ciclo_cpu
+
+halt_cpu:
+    ; --- FIM DO CICLO ---
+    ; Exibe mensagem no console (Interrupção DOS)
+    mov dx, msg_sucesso
+    mov ah, 09h
+    int 21h
+
+    ; Finaliza o programa
+    mov ah, 4Ch
+    int 21h
