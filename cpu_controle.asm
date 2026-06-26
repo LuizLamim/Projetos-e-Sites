@@ -15,3 +15,10 @@ section .data
 
     ; Mensagem de sucesso
     msg_sucesso db "Execucao concluida! Resultado salvo na memoria[2].", 13, 10, "$"
+
+    section .bss
+    ; Registradores internos da nossa CPU simulada
+    PC  resw 1    ; Program Counter (Ponteiro de Instrução)
+    IR_op resb 1 ; Instruction Register (Opcode)
+    IR_oprd resb 1; Instruction Register (Operando)
+    ACC resb 1   ; Acumulador (Registrador de dados principal)
