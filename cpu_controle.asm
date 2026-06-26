@@ -1,0 +1,1 @@
+org 100h          ; Padrão para executáveis .COM (DOS)
