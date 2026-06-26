@@ -28,3 +28,33 @@ inicio:
     ; Inicializa o Program Counter no início do vetor 'programa'
     mov word [PC], 0
     mov byte [ACC], 0
+
+ciclo_cpu:
+    ; --- 1. BUSCA (FETCH) ---
+    mov si, [PC]
+    
+    ; Lê o Opcode e o Operando da memória de programa
+    mov al, [programa + si]
+    mov [IR_op], al
+    mov al, [programa + si + 1]
+    mov [IR_oprd], al
+    
+    ; Incrementa o PC para a próxima instrução (2 bytes por instrução)
+    add word [PC], 2
+
+    ; --- 2. DECODIFICAÇÃO (DECODE) ---
+    mov al, [IR_op]
+    
+    cmp al, 0
+    je halt_cpu       ; Se Opcode == 0 (HALT)
+    
+    cmp al, 1
+    je exec_load      ; Se Opcode == 1 (LOAD)
+    
+    cmp al, 2
+    je exec_add       ; Se Opcode == 2 (ADD)
+    
+    cmp al, 3
+    je exec_store     ; Se Opcode == 3 (STORE)
+    
+    jmp ciclo_cpu     ; Instrução inválida ignora e continua
