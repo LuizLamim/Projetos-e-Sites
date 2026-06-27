@@ -11,4 +11,6 @@ int main() {
     resultado = std::cbrt(numero);
 
     std::cout << "A raiz cubica de " << numero << " e: " << resultado << std::endl;
+
+    return 0;
 }
