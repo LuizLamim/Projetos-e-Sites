@@ -9,4 +9,6 @@ int main() {
 
     // Calcula a raiz cúbica
     resultado = std::cbrt(numero);
+
+    std::cout << "A raiz cubica de " << numero << " e: " << resultado << std::endl;
 }
