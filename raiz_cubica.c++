@@ -2,5 +2,5 @@
 #include <cmath> // Biblioteca necessária para a função cbrt
 
 int main{
-    
+    double numero, resultado;
 }
