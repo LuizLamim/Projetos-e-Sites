@@ -10,3 +10,9 @@ def eh_primo(n):
 # Lista para armazenar os números primos encontrados
 numeros_primos = []
 numero_atual = 2
+
+# Loop continua até a lista ter 100 elementos
+while len(numeros_primos) < 100:
+    if eh_primo(numero_atual):
+        numeros_primos.append(numero_atual)
+    numero_atual += 1
