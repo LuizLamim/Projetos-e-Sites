@@ -6,3 +6,7 @@ def eh_primo(n):
         if n % i == 0:
             return False
         return True
+    
+# Lista para armazenar os números primos encontrados
+numeros_primos = []
+numero_atual = 2
