@@ -16,3 +16,8 @@ while len(numeros_primos) < 100:
     if eh_primo(numero_atual):
         numeros_primos.append(numero_atual)
     numero_atual += 1
+
+# Exibe o resultado formatado
+print("Os 100 primeiros números primos são:")
+for idx, primo in enumerate(numeros_primos, 1):
+    print(f"{idx}º: {primo}")
