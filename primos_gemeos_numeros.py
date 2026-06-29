@@ -6,3 +6,7 @@ def eh_primo(n):
         if n % i == 0:
             return False
     return True
+
+def encontrar_primos_gemeos(limite):
+    """Encontra todos os pares de primos gêmeos até o limite estipulado."""
+    primos_gemeos = []
