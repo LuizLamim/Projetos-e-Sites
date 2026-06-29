@@ -10,3 +10,10 @@ def eh_primo(n):
 def encontrar_primos_gemeos(limite):
     """Encontra todos os pares de primos gêmeos até o limite estipulado."""
     primos_gemeos = []
+
+    # Começamos do 3, pois o único primo par é 2, e ele não forma gêmeo com ninguém acima de 3.
+    for n in range(3, limite - 1, 2):
+        if eh_primo(n) and eh_primo(n + 2):
+            primos_gemeos.append((n, n + 2))
+            
+    return primos_gemeos
