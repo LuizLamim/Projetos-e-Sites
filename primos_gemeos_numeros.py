@@ -17,3 +17,13 @@ def encontrar_primos_gemeos(limite):
             primos_gemeos.append((n, n + 2))
             
     return primos_gemeos
+
+# --- Execução do Programa ---
+if __name__ == "__main__":
+    limite_usuario = int(input("Digite o limite máximo para buscar primos gêmeos: "))
+    
+    resultado = encontrar_primos_gemeos(limite_usuario)
+    
+    print(f"\nEncontrados {len(resultado)} pares de primos gêmeos até {limite_usuario}:")
+    for par in resultado:
+        print(f"{par[0]} e {par[1]}")
