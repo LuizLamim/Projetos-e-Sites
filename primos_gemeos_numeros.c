@@ -17,3 +17,7 @@ bool eh_primo(int n) {
     }
     return true;
 }
+
+int main() {
+
+}
