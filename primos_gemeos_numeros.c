@@ -19,5 +19,7 @@ bool eh_primo(int n) {
 }
 
 int main() {
+    int limite;
+    int contador = 0;
 
 }
