@@ -43,4 +43,5 @@ int main() {
     printf("-----------------------------------\n");
     printf("Total de pares encontrados: %d\n", contador);
 
+    return 0;
 }
