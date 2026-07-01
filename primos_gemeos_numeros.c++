@@ -19,3 +19,19 @@ bool isPrime(int n) {
     }
     return true;
 }
+
+// Função para encontrar e imprimir primos gêmeos até um limite
+void findTwinPrimes(int limit) {
+    std::cout << "\nPares de primos gemeos ate " << limit << ":\n";
+    std::cout << "-----------------------------------\n";
+    
+    bool found = false;
+    
+    // Começamos do 3, pois o par (2, 4) não é válido (4 não é primo)
+    // Incrementamos de 2 em 2, pois primos maiores que 2 são ímpares
+    for (int i = 3; i <= limit - 2; i += 2) {
+        if (isPrime(i) && isPrime(i + 2)) {
+            std::cout << "(" << i << ", " << i + 2 << ")\n";
+            found = true;
+        }
+    }
