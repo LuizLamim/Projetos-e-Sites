@@ -35,7 +35,7 @@ void findTwinPrimes(int limit) {
             found = true;
         }
     }
-
+    
     if (!found) {
         std::cout << "Nenhum par de primos gemeos encontrado nesse intervalo.\n";
     }
