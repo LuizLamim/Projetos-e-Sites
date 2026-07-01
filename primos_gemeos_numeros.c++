@@ -40,3 +40,19 @@ void findTwinPrimes(int limit) {
         std::cout << "Nenhum par de primos gemeos encontrado nesse intervalo.\n";
     }
 }
+
+int main() {
+    int limite;
+    
+    std::cout << "Digite o limite maximo para buscar primos gemeos: ";
+    std::cin >> limite;
+
+    // Garante que o usuário não digite um número negativo
+    if (limite < 5) {
+        std::cout << "O limite deve ser pelo menos 5 para encontrar o primeiro par (3, 5).\n";
+    } else {
+        findTwinPrimes(limite);
+    }
+
+    return 0;
+}
