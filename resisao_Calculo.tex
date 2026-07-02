@@ -30,3 +30,107 @@
 \title{\Huge \textbf{Roteiro Estruturado de Estudos Matemáticos}\\ \vspace{0.3cm} \large Conectando Cálculo, Álgebra Linear e EDOs para Física Moderna, IA e Computação Quântica}
 \author{\textbf{Louise}}
 \date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento estabelece uma trilha de interdependência e um cronograma estratégico de estudos focado na revisão profunda das bases matemáticas e na preparação para tópicos avançados de Física 4 (Mecânica Quântica e Relatividade Geral), Inteligência Artificial (Redes Neurais e Otimização) e Computação Quântica. A bibliografia de suporte baseia-se nas obras de James Stewart, Gilbert Strang e Boyce \& DiPrima.
+\end{abstract}
+
+\vspace{0.5cm}
+
+\section{Introdução e Filosofia de Estudo}
+Estudar estas disciplinas de forma puramente sequencial pode camuflar as conexões profundas que existem entre elas. A proposta deste roteiro é quebrar as barreiras artificiais entre o Cálculo Multivariável, a Álgebra Linear e as Equações Diferenciais, permitindo enxergar como as estruturas matemáticas da Inteligência Artificial e os formalismos da Física Moderna compartilham do mesmo núcleo operacional.
+
+---
+
+\section{Cronograma de Estudos: Trilha de Interdependência}
+
+\subsection{Fase 1: A Base Dupla (Stewart Vol. 1 + Gilbert Strang)}
+\textbf{Objetivo:} Domínio da fluência em uma dimensão e consolidação da estrutura de espaços vetoriais.
+
+Nesta primeira fase, o estudo deve ocorrer em paralelo. A Álgebra Linear do prof. Strang servirá como a linguagem fundamental para os saltos tecnológicos e físicos subsequentes.
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textbf{1.1}] \textbf{Stewart Volume 1 (Revisão Focada):} 
+    \begin{itemize}
+        \item Foco em automação de limites, derivadas avançadas e técnicas de integração.
+        \item Estudo exaustivo de \textbf{Sequências e Séries Infinitas} (Séries de potências e de Taylor), preparando o terreno para a resolução de equações diferenciais por séries.
+    \end{itemize}
+    
+    \item[\textbf{1.2}] \textbf{Gilbert Strang (Álgebra Linear):}
+    \begin{itemize}
+        \item \textbf{Coração da Computação Quântica:} Espaços vetoriais, transformações lineares complexas (Espaços de Hilbert) e matrizes unitárias (portas quânticas).
+        \item \textbf{Coração da Inteligência Artificial:} Operações massivas de matrizes e tensores.
+        \item \textbf{Tópicos Críticos:} Subespaços fundamentais, ortogonalidade, determinantes, \textbf{Autovalores e Autovetores} e a Decomposição em Valores Singulares (SVD).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Fase 2: Expansão Multidimensional (Stewart Vol. 2)}
+\textbf{Objetivo:} Transição da reta real para o espaço n-dimensional e introdução à geometria do espaço-tempo.
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textbf{2.1}] \textbf{Derivadas Parciais e Otimização:} 
+    Estudo de funções de várias variáveis, limites multidimensionais e o vetor gradiente. O conceito de gradiente é a engrenagem matemática por trás do algoritmo de \textit{Gradient Descent} utilizado para o treinamento de Redes Neurais em IA.
+    
+    \item[\textbf{2.2}] \textbf{Integrais Múltiplas e Mudança de Coordenadas:}
+    Cálculo de integrais duplas e triplas. O estudo do Jacobiano para transformações de coordenadas estabelece a primeira intuição sobre tensores métricos.
+    
+    \item[\textbf{2.3}] \textbf{Cálculo Vetorial e a Conexão com Relatividade Geral:}
+    Campos vetoriais, parametrização de superfícies, divergente, rotacional e os grandes teoremas (Green, Stokes e Gauss). Esta base de cálculo vetorial clássico precede o entendimento de variedades diferenciáveis necessárias para a Equação de Campo de Einstein:
+    \begin{equation}
+        G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+    \end{equation}
+\end{itemize}
+
+\subsection{Fase 3: A Dinâmica dos Sistemas (Boyce \& DiPrima)}
+\textbf{Objetivo:} Modelagem de sistemas evolutivos no tempo e operadores lineares diferenciais.
+
+A entrada no livro de EDOs exige a maturidade algébrica construída com o Strang e as ferramentas de cálculo do Stewart.
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textbf{3.1}] \textbf{Equações de Primeira e Segunda Ordem:}
+    Modelagem de sistemas dinâmicos lineares e não-lineares, métodos de coeficientes indeterminados e variação de parâmetros.
+    
+    \item[\textbf{3.2}] \textbf{Sistemas de Equações Diferenciais Lineares:}
+    Aplicação direta e pura de matrizes, autovalores e autovetores para determinar o comportamento e estabilidade de sistemas de equações acopladas.
+    
+    \item[\textbf{3.3}] \textbf{A Conexão com a Mecânica Quântica:}
+    Embora a Equação de Schrödinger seja uma Equação Diferencial Parcial (EDP):
+    \begin{equation}
+        i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)
+    \end{equation}
+    O \textit{Boyce \& DiPrima} constrói a base fundamental por meio do método de separação de variáveis (que reduz EDPs em EDOs) e do entendimento de operadores lineares e funções de onda.
+\end{itemize}
+
+---
+
+\section{Intersecções Teóricas Fundamentais}
+O quadro abaixo resume como as três grandes frentes matemáticas interagem diretamente para formar as tecnologias e teorias físicas pretendidas:
+
+\vspace{0.3cm}
+\begin{table}[h!]
+\centering
+\caption{Conexões Interdisciplinares da Matemática Avançada}
+\vspace{0.2cm}
+\begin{tabular}{lll}
+\toprule
+\textbf{Conceito Matemático} & \textbf{Origem Bibliográfica} & \textbf{Aplicação Direta} \\ \midrule
+Autovalores e Autovetores & Gilbert Strang & Estados Quânticos e Sistemas de EDOs \\
+Vetor Gradiente & Stewart Vol. 2 & Otimização de Redes Neurais (IA) \\
+Transformações Lineares / SVD & Gilbert Strang & Compressão de Dados e Algoritmos Quânticos \\
+Soluções por Séries & Stewart / Boyce \& DiPrima & Soluções da Eq. de Schrödinger \\
+Mudanças de Coordenadas & Stewart Vol. 2 & Introdução a Métricas da Relatividade \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Orientações Práticas para o Estudo}
+\begin{enumerate}
+    \item \textbf{Não estude de forma estática:} Ao aprender um conceito no Strang (ex: autovalores), busque como o Boyce utiliza isso no Capítulo 7 (Sistemas Lineares). 
+    \item \textbf{Foco na Intuição Geométrica:} Utilize o Stewart para visualizar o espaço tridimensional sempre que a álgebra do Strang parecer abstrata demais.
+    \item \textbf{Aproveite o histórico:} Como você já passou pelo rigor do Leithold no passado, use o Stewart para ganhar velocidade e intuição física/visual, focando no \textit{significado} das equações.
+\end{enumerate}
+
+\end{document}
