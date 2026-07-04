@@ -6,3 +6,6 @@ print("--- Calculadora de Área do Trapézio ---")
 base_maior = float(input("Digite o comprimento da base maior (B): "))
 base_menor = float(input("Digite o comprimento da base menor (b): "))
 altura = float(input("Digite a altura do trapézio (h): "))
+
+# Aplicando a fórmula: A = ((B + b) * h) / 2
+area = ((base_maior + base_menor) * altura) / 2
