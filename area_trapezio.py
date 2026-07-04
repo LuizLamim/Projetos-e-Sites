@@ -9,3 +9,8 @@ altura = float(input("Digite a altura do trapézio (h): "))
 
 # Aplicando a fórmula: A = ((B + b) * h) / 2
 area = ((base_maior + base_menor) * altura) / 2
+
+# Exibindo o resultado
+print("-" * 38)
+print(f"A área do trapézio é: {area:.2f}")
+print("-" * 38)
