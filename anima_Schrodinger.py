@@ -59,3 +59,16 @@ def animate(t):
     line_imag.set_data(x, imag_part)
     
     return line_prob, line_real, line_imag
+
+# Criando a animação
+# frames: valores de tempo (t), interval: tempo entre frames em ms
+ani = FuncAnimation(
+    fig, animate, 
+    frames=np.linspace(0, 4 * np.pi, 200),
+    init_func=init, 
+    blit=True, 
+    interval=40
+)
+
+# Exibindo o resultado
+plt.show()
