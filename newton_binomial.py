@@ -1,7 +1,6 @@
 import math
 
 def binomio_newton(n, var1='x', var2='y'):
-
     """
     Gera e exibe a expansão do Binômio de Newton para (var1 + var2)^n
     """
@@ -12,7 +11,7 @@ def binomio_newton(n, var1='x', var2='y'):
         return "1"
     
     termos = []
-
+    
     for k in range(n + 1):
         # Calcula o coeficiente binomial: n! / (k! * (n-k)!)
         coeficiente = math.comb(n, k)
@@ -37,8 +36,8 @@ def binomio_newton(n, var1='x', var2='y'):
             termo_atual = f"{coeficiente}{str_var1}{str_var2}"
             
         termos.append(termo_atual)
-
-        # Une todos os termos com o sinal de adição
+        
+    # Une todos os termos com o sinal de adição
     expansao = " + ".join(termos)
     return expansao
 
