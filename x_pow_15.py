@@ -16,3 +16,12 @@ plt.plot(x, y, label='$y = x^{15}$', color='blue', linewidth=2)
 plt.title('Gráfico da Equação $y = x^{15}$')
 plt.xlabel('x')
 plt.ylabel('y')
+
+# Adicionando linhas de grade e eixos centrais
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.axhline(0, color='black', linewidth=1) # Eixo X
+plt.axvline(0, color='black', linewidth=1) # Eixo Y
+
+# 5. Exibindo a legenda e o gráfico final
+plt.legend()
+plt.show()
