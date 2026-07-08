@@ -11,3 +11,8 @@ y = x**15
 # 3. Configurando a figura
 plt.figure(figsize=(8, 6))
 plt.plot(x, y, label='$y = x^{15}$', color='blue', linewidth=2)
+
+# 4. Personalizando o gráfico (títulos e eixos)
+plt.title('Gráfico da Equação $y = x^{15}$')
+plt.xlabel('x')
+plt.ylabel('y')
