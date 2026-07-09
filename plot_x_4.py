@@ -11,3 +11,8 @@ y = x**4
 # 3. Configurar a figura do gráfico
 plt.figure(figsize=(8, 6))
 plt.plot(x, y, label='$y = x^4$', color='blue', linewidth=2)
+
+# 4. Adicionar detalhes visuais (título, rótulos e grade)
+plt.title('Gráfico da Função $y = x^4$', fontsize=14)
+plt.xlabel('Eixo X', fontsize=12)
+plt.ylabel('Eixo Y', fontsize=12)
