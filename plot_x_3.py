@@ -22,3 +22,5 @@ plt.axvline(0, color='black',linewidth=1) # Linha do eixo Y
 plt.grid(color='gray', linestyle='--', linewidth=0.5)
 plt.legend()
 
+# 5. Exibe o gráfico na tela
+plt.show()
