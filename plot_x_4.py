@@ -16,3 +16,12 @@ plt.plot(x, y, label='$y = x^4$', color='blue', linewidth=2)
 plt.title('Gráfico da Função $y = x^4$', fontsize=14)
 plt.xlabel('Eixo X', fontsize=12)
 plt.ylabel('Eixo Y', fontsize=12)
+
+# Adiciona uma linha de grade para facilitar a leitura
+plt.grid(True, linestyle='--', alpha=0.7)
+
+# Adiciona a legenda
+plt.legend(fontsize=12)
+
+# 5. Exibir o gráfico na tela
+plt.show()
