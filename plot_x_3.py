@@ -13,3 +13,12 @@ y = x**3
 # 3. Configura e plota o gráfico
 plt.plot(x, y, label='$f(x) = x^3$', color='blue', linewidth=2)
 
+# 4. Adiciona título, rótulos e grade para deixar o visual mais profissional
+plt.title('Gráfico da Função Cúbica', fontsize=14)
+plt.xlabel('Eixo X', fontsize=12)
+plt.ylabel('Eixo Y', fontsize=12)
+plt.axhline(0, color='black',linewidth=1) # Linha do eixo X
+plt.axvline(0, color='black',linewidth=1) # Linha do eixo Y
+plt.grid(color='gray', linestyle='--', linewidth=0.5)
+plt.legend()
+
