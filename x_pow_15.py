@@ -9,7 +9,7 @@ x = np.linspace(-1.5, 1.5, 400)
 y = x**15
 
 # 3. Configurando a figura
-plt.figure(figsize=(9, 6))
+plt.figure(figsize=(9, 8))
 plt.plot(x, y, label='$y = x^{15}$', color='blue', linewidth=2)
 
 # 4. Personalizando o gráfico (títulos e eixos)
