@@ -18,7 +18,7 @@ plt.xlabel('x')
 plt.ylabel('y')
 
 # Adicionando linhas de grade e eixos centrais
-plt.grid(True, linestyle='--', alpha=0.6)
+plt.grid(True, linestyle='--', alpha=0.7)
 plt.axhline(0, color='black', linewidth=1) # Eixo X
 plt.axvline(0, color='black', linewidth=1) # Eixo Y
 
