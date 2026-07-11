@@ -19,7 +19,7 @@ def obter_primeiros_primos(quantidade):
         
     return primos
 
-# Definindo a quantidade desejada
+# Definindo a quantidade desejada. Eram 15 primos.
 n = 16
 resultado = obter_primeiros_primos(n)
 
