@@ -20,7 +20,7 @@ def obter_primeiros_primos(quantidade):
     return primos
 
 # Definindo a quantidade desejada
-n = 15
+n = 16
 resultado = obter_primeiros_primos(n)
 
 print(f"Os {n} primeiros números primos são:")
