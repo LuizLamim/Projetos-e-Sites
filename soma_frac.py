@@ -20,3 +20,7 @@ def somar_fracoes():
 
     except ValueError:
         print("\nErro: Formato inválido. Por favor, insira as frações no formato correto (ex: 1/2, 3/4).")
+    
+# Executa o programa
+if __name__ == "__main__":
+    somar_fracoes()
