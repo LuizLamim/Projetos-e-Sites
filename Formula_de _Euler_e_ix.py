@@ -11,3 +11,6 @@ y = np.exp(1j * x)
 # 3. Separar as partes real e imaginária
 parte_real = np.real(y)  # Equivalente a cos(x)
 parte_imag = np.imag(y)  # Equivalente a sin(x)
+
+# 4. Configurar e plotar o gráfico
+plt.figure(figsize=(10, 5))
