@@ -20,3 +20,12 @@ _start:
     sub rax, 5       ; Subtração: RAX = RAX - 5 (25 - 5 = 20)
     inc rax          ; Incremento: Soma 1 a RAX (20 + 1 = 21)
     dec rbx          ; Decremento: Subtrai 1 de RBX (10 - 1 = 9)
+
+    ; ==========================================
+    ; 3. OPERAÇÕES LÓGICAS (ALU)
+    ; ==========================================
+    ; XOR em um registrador com ele mesmo é a forma mais rápida e otimizada de zerá-lo.
+    xor rcx, rcx     ; RCX = 0 
+    
+    ; Operação AND (mantém os bits que são 1 em ambos)
+    and rax, 0xFF    ; Aplica uma máscara de 8 bits em RAX
