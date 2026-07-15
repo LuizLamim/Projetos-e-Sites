@@ -29,3 +29,20 @@ _start:
     
     ; Operação AND (mantém os bits que são 1 em ambos)
     and rax, 0xFF    ; Aplica uma máscara de 8 bits em RAX
+
+    ; ==========================================
+    ; 4. CHAMADA DE SISTEMA (Syscall) - Imprimir texto
+    ; ==========================================
+    ; O processador delega a tarefa de I/O (tela) para o Sistema Operacional
+    mov rax, 1       ; Número da syscall para 'sys_write' no Linux x86_64
+    mov rdi, 1       ; File descriptor 1 (stdout - saída padrão)
+    mov rsi, msg     ; Ponteiro para a mensagem que criamos na seção .data
+    mov rdx, len     ; Tamanho da mensagem
+    syscall          ; Interrompe a CPU e pede para o Linux executar a ação
+
+    ; ==========================================
+    ; 5. ENCERRAMENTO DO PROGRAMA (Syscall - Exit)
+    ; ==========================================
+    mov rax, 60      ; Número da syscall para 'sys_exit'
+    mov rdi, 0       ; Código de saída 0 (indica que o programa rodou sem erros)
+    syscall          ; Interrompe a CPU e encerra o processo
