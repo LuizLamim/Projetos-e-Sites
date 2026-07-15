@@ -5,3 +5,6 @@ def desenhar_hectagono(tamanho):
     tela = turtle.Screen()
     tela.title("Desenho de um Hectágono")
     tartaruga = turtle.Turtle()
+
+    # Velocidade máxima para desenhar rápido
+    tartaruga.speed(0)
