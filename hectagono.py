@@ -8,3 +8,8 @@ def desenhar_hectagono(tamanho):
 
     # Velocidade máxima para desenhar rápido
     tartaruga.speed(0)
+
+    # Um hectágono possui 100 lados
+    lados = 100
+    # O ângulo externo de um polígono regular é 360/n
+    angulo = 360 / lados
