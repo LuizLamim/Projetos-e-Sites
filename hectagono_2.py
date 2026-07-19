@@ -14,3 +14,18 @@ y = np.sin(angulos)
 
 # Criando a figura
 plt.figure(figsize=(6, 6))
+
+# Plotando as linhas do hectágono e destacando os vértices em vermelho
+plt.plot(x, y, color="blue", linewidth=1.5, label="Lados (100)")
+plt.scatter(
+    x[:-1], y[:-1], color="red", s=10, zorder=3, label="Vértices (100)"
+)
+
+# Ajustes estéticos para o gráfico ficar bonito e centralizado
+plt.title("Gráfico de um Hectágono Regular", fontsize=14, fontweight="bold")
+plt.axis("equal")  # Garante que o polígono não fique achatado (proporção 1:1)
+plt.grid(True, linestyle="--", alpha=0.5)
+plt.legend(loc="upper right")
+
+# Exibindo o gráfico
+plt.show()
