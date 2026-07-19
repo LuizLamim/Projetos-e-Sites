@@ -11,3 +11,6 @@ angulos = np.linspace(0, 2 * np.pi, lados + 1)
 # Calculando as coordenadas X e Y usando o círculo unitário (raio = 1)
 x = np.cos(angulos)
 y = np.sin(angulos)
+
+# Criando a figura
+plt.figure(figsize=(6, 6))
