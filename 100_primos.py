@@ -18,6 +18,6 @@ while len(numeros_primos) < 500:
     numero_atual += 1
 
 # Exibe o resultado formatado
-print("Os 1000 primeiros números primos são:")
+print("Os 500 primeiros números primos são:")
 for idx, primo in enumerate(numeros_primos, 1):
     print(f"{idx}º: {primo}")
