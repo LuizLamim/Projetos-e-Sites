@@ -12,7 +12,7 @@ numeros_primos = []
 numero_atual = 2
 
 # Loop continua até a lista ter 100 elementos
-while len(numeros_primos) < 1000:
+while len(numeros_primos) < 500:
     if eh_primo(numero_atual):
         numeros_primos.append(numero_atual)
     numero_atual += 1
