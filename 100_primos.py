@@ -11,7 +11,7 @@ def eh_primo(n):
 numeros_primos = []
 numero_atual = 2
 
-# Loop continua até a lista ter 100 elementos
+# Loop continua até a lista ter 500 elementos
 while len(numeros_primos) < 500:
     if eh_primo(numero_atual):
         numeros_primos.append(numero_atual)
