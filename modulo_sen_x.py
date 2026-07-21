@@ -16,3 +16,14 @@ plt.plot(x, y, label=r'$f(x) = |\sin(x)|$', color='blue', linewidth=2)
 plt.title('Gráfico da função f(x) = |sen(x)|', fontsize=14, pad=15)
 plt.xlabel('x (radianos)', fontsize=12)
 plt.ylabel('f(x)', fontsize=12)
+
+# Destacar os eixos X e Y
+plt.axhline(0, color='black', linewidth=1)
+plt.axvline(0, color='black', linewidth=1)
+
+# Adicionar uma grade de fundo e a legenda
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend(fontsize=12)
+
+# 5. Exibir o gráfico na tela
+plt.show()
