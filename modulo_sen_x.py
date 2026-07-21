@@ -11,3 +11,8 @@ y = np.abs(np.sin(x))
 # 3. Criar e configurar o gráfico
 plt.figure(figsize=(10, 5))  # Define o tamanho da janela
 plt.plot(x, y, label=r'$f(x) = |\sin(x)|$', color='blue', linewidth=2)
+
+# 4. Adicionar detalhes visuais para facilitar a leitura
+plt.title('Gráfico da função f(x) = |sen(x)|', fontsize=14, pad=15)
+plt.xlabel('x (radianos)', fontsize=12)
+plt.ylabel('f(x)', fontsize=12)
