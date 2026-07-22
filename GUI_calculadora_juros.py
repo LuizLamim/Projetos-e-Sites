@@ -23,3 +23,9 @@ root = tk.Tk()
 root.title("Calculadora de %")
 root.geometry("320x220")
 root.resizable(False, False) # Impede que a janela seja redimensionada
+
+# 2. Configuração de Estilo (Deixa os botões e textos mais bonitos)
+style = ttk.Style()
+style.configure("TLabel", font=("Segoe UI", 11))
+style.configure("TButton", font=("Segoe UI", 11, "bold"))
+style.configure("Title.TLabel", font=("Segoe UI", 14, "bold"))
