@@ -37,3 +37,24 @@ frame.pack(fill=tk.BOTH, expand=True)
 # 4. Criação dos Elementos (Widgets)
 titulo = ttk.Label(frame, text="Descubra a Porcentagem", style="Title.TLabel")
 titulo.grid(row=0, column=0, columnspan=2, pady=(0, 15))
+
+# Campo: Porcentagem
+ttk.Label(frame, text="Qual a porcentagem? (%)").grid(row=1, column=0, sticky="w", pady=5)
+entry_porcentagem = ttk.Entry(frame, width=12)
+entry_porcentagem.grid(row=1, column=1, pady=5)
+
+# Campo: Valor Total
+ttk.Label(frame, text="Do valor total:").grid(row=2, column=0, sticky="w", pady=5)
+entry_valor = ttk.Entry(frame, width=12)
+entry_valor.grid(row=2, column=1, pady=5)
+
+# Botão de Calcular
+btn_calcular = ttk.Button(frame, text="Calcular", command=calcular)
+btn_calcular.grid(row=3, column=0, columnspan=2, pady=15, ipadx=10)
+
+# Texto do Resultado
+label_resultado = ttk.Label(frame, text="Resultado: ---", font=("Segoe UI", 12, "bold"), foreground="#005a9e")
+label_resultado.grid(row=4, column=0, columnspan=2)
+
+# 5. Inicia o loop do aplicativo
+root.mainloop()
