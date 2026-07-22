@@ -29,3 +29,7 @@ style = ttk.Style()
 style.configure("TLabel", font=("Segoe UI", 11))
 style.configure("TButton", font=("Segoe UI", 11, "bold"))
 style.configure("Title.TLabel", font=("Segoe UI", 14, "bold"))
+
+# 3. Criação do Frame (Contêiner principal)
+frame = ttk.Frame(root, padding="20")
+frame.pack(fill=tk.BOTH, expand=True)
