@@ -33,3 +33,7 @@ style.configure("Title.TLabel", font=("Segoe UI", 14, "bold"))
 # 3. Criação do Frame (Contêiner principal)
 frame = ttk.Frame(root, padding="20")
 frame.pack(fill=tk.BOTH, expand=True)
+
+# 4. Criação dos Elementos (Widgets)
+titulo = ttk.Label(frame, text="Descubra a Porcentagem", style="Title.TLabel")
+titulo.grid(row=0, column=0, columnspan=2, pady=(0, 15))
