@@ -17,3 +17,9 @@ def calcular():
     except ValueError:
         # Mostra um alerta se o usuário não digitar um número válido
         messagebox.showerror("Erro de Digitação", "Por favor, insira apenas números válidos.")
+
+# 1. Configuração da Janela Principal
+root = tk.Tk()
+root.title("Calculadora de %")
+root.geometry("320x220")
+root.resizable(False, False) # Impede que a janela seja redimensionada
