@@ -16,3 +16,15 @@ plt.xticks(
     [-2 * np.pi, -np.pi, 0, np.pi, 2 * np.pi],
     [r'$-2\pi$', r'$-\pi$', '0', r'$\pi$', r'$2\pi$']
 )
+
+# 5. Adicionar títulos, rótulos e grade
+plt.title("Gráfico da Função Valor Absoluto do Cosseno", fontsize=14)
+plt.xlabel("Eixo x (radianos)", fontsize=12)
+plt.ylabel("Eixo y", fontsize=12)
+plt.axhline(0, color='black', linewidth=1) # Linha do eixo x
+plt.axvline(0, color='black', linewidth=1) # Linha do eixo y
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend(fontsize=12)
+
+# 6. Exibir o gráfico
+plt.show()
