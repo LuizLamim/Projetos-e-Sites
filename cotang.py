@@ -15,3 +15,7 @@ with np.errstate(divide='ignore'):
 limite = 10
 y[y > limite] = np.nan
 y[y < -limite] = np.nan
+
+# 4. Criar e configurar o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label=r'$\cot(x)$', color='blue', linewidth=2)
