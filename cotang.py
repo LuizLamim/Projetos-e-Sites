@@ -9,3 +9,9 @@ x = np.linspace(-2 * np.pi, 2 * np.pi, 1000)
 # Usamos um pequeno aviso de ignorar divisão por zero para evitar poluir o terminal
 with np.errstate(divide='ignore'):
     y = 1 / np.tan(x)
+
+# 3. Lidar com as assíntotas
+# Cortamos os valores que explodem para o infinito para não estragar o gráfico
+limite = 10
+y[y > limite] = np.nan
+y[y < -limite] = np.nan
