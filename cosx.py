@@ -10,3 +10,9 @@ y = np.abs(np.cos(x))
 # 3. Criar e configurar o gráfico
 plt.figure(figsize=(10, 5))
 plt.plot(x, y, color='blue', linewidth=2, label=r'$y = |\cos(x)|$')
+
+# 4. Formatar os eixos para mostrar valores em múltiplos de π
+plt.xticks(
+    [-2 * np.pi, -np.pi, 0, np.pi, 2 * np.pi],
+    [r'$-2\pi$', r'$-\pi$', '0', r'$\pi$', r'$2\pi$']
+)
