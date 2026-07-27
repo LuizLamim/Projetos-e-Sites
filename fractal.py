@@ -25,3 +25,7 @@ def gerar_mandelbrot(xmin, xmax, ymin, ymax, largura, altura, max_iter):
         fractal[mascara] = i
         
     return fractal
+
+# 1. Definindo a "janela da câmera"
+xmin, xmax = -2.0, 1.0
+ymin, ymax = -1.5, 1.5
