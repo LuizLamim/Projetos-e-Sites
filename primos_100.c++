@@ -27,3 +27,17 @@ int main() {
         }
         num++;
     }
+
+    // Exibe os resultados
+    std::cout << "Os primeiros 100 números primos sao:\n\n";
+    for (size_t i = 0; i < primes.size(); i++) {
+        std::cout << primes[i] << "\t";
+        
+        // Quebra a linha a cada 10 números para facilitar a leitura
+        if ((i + 1) % 10 == 0) {
+            std::cout << "\n";
+        }
+    }
+
+    return 0;
+}
