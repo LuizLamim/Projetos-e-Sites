@@ -6,3 +6,7 @@ def gerar_mandelbrot(xmin, xmax, ymin, ymax, largura, altura, max_iter):
     r1 = np.linspace(xmin, xmax, largura)
     r2 = np.linspace(ymin, ymax, altura)
     X, Y = np.meshgrid(r1, r2)
+
+    # C é o nosso ponto no plano (Parte Real + Parte Imaginária)
+    C = X + 1j * Y
+    Z = np.zeros_like(C)
