@@ -15,3 +15,15 @@ bool isPrime(int n) {
     }
     return true;
 }
+
+int main() {
+    std::vector<int> primes; // Vetor para armazenar os primos encontrados
+    int num = 2;             // O primeiro número primo a ser testado
+
+    // Continua buscando até encontrarmos exatamente 100 números primos
+    while (primes.size() < 100) {
+        if (isPrime(num)) {
+            primes.push_back(num);
+        }
+        num++;
+    }
