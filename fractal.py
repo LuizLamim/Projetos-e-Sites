@@ -29,3 +29,7 @@ def gerar_mandelbrot(xmin, xmax, ymin, ymax, largura, altura, max_iter):
 # 1. Definindo a "janela da câmera"
 xmin, xmax = -2.0, 1.0
 ymin, ymax = -1.5, 1.5
+
+print("Calculando o fractal... isso pode levar um ou dois segundos.")
+# 2. Gerando a matriz (1000x1000 pixels, 100 iterações de profundidade)
+matriz_fractal = gerar_mandelbrot(xmin, xmax, ymin, ymax, 1000, 1000, 100)
