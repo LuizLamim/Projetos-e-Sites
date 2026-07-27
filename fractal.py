@@ -6,11 +6,11 @@ def gerar_mandelbrot(xmin, xmax, ymin, ymax, largura, altura, max_iter):
     r1 = np.linspace(xmin, xmax, largura)
     r2 = np.linspace(ymin, ymax, altura)
     X, Y = np.meshgrid(r1, r2)
-
+    
     # C é o nosso ponto no plano (Parte Real + Parte Imaginária)
     C = X + 1j * Y
     Z = np.zeros_like(C)
-
+    
     # Matriz para armazenar a "cor" de cada pixel (número de iterações)
     fractal = np.zeros(C.shape, dtype=int)
     
@@ -33,3 +33,12 @@ ymin, ymax = -1.5, 1.5
 print("Calculando o fractal... isso pode levar um ou dois segundos.")
 # 2. Gerando a matriz (1000x1000 pixels, 100 iterações de profundidade)
 matriz_fractal = gerar_mandelbrot(xmin, xmax, ymin, ymax, 1000, 1000, 100)
+
+# 3. Plotando o gráfico
+plt.figure(figsize=(10, 10))
+plt.imshow(matriz_fractal, extent=(xmin, xmax, ymin, ymax), cmap='inferno')
+plt.colorbar(label='Número de Iterações')
+plt.title('O Conjunto de Mandelbrot')
+plt.xlabel('Eixo Real')
+plt.ylabel('Eixo Imaginário')
+plt.show()
