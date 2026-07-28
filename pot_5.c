@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int main() {
     double numero, resultado;
 
     // Solicita a entrada do usuário
@@ -13,4 +13,5 @@ int main(){
     // Exibe o resultado na tela com duas casas decimais
     printf("A quinta potência de %.2lf é: %.2lf\n", numero, resultado);
 
+    return 0;
 }
