@@ -65,3 +65,10 @@ int main() {
             nines = 0;
         }
     }
+    
+    // Imprime o último dígito restante no buffer
+    imprimir_digito(predigit);
+    printf("\n");
+    
+    return 0;
+}
