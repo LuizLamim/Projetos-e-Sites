@@ -1,6 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR"></html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Dark</title>
+    <style>
+        /* Reset de margens e configuração de fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fundo escuro e centralização do conteúdo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0a0a0a;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ffcc; /* Cor neon ciano */
+        }
+
+        /* Container principal do relógio */
+        .clock-container {
+            background-color: #141414;
+            padding: 50px 70px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.15), 
+                        inset 0 0 15px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border: 1px solid #1f1f1f;
+        }
+
+        /* Estilo das horas */
+        .time {
+            font-size: 6rem;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+        }
+
+        /* Estilo da data */
+        .date {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
 <body>
 
     <div class="clock-container">
@@ -32,6 +85,8 @@
         // Chama a função imediatamente para exibir a hora sem esperar 1 segundo
         updateClock();
     </script>
+
+
 
 </body>
 </html>
