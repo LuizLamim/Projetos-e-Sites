@@ -1,2 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR"></html>
+
+<body>
+
+    <div class="clock-container">
+        <div class="time" id="time">00:00:00</div>
+        <div class="date" id="date">Carregando...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const agora = new Date();
+            
+            // Pega horas, minutos e segundos, garantindo que sempre tenham 2 dígitos
+            const horas = String(agora.getHours()).padStart(2, '0');
+            const minutos = String(agora.getMinutes()).padStart(2, '0');
+            const segundos = String(agora.getSeconds()).padStart(2, '0');
+            
+            // Configura a formatação da data em português do Brasil
+            const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const stringData = agora.toLocaleDateString('pt-BR', opcoesData);
+
+            // Atualiza os elementos no HTML
+            document.getElementById('time').textContent = `${horas}:${minutos}:${segundos}`;
+            document.getElementById('date').textContent = stringData;
+        }
+
+        // Atualiza o relógio a cada 1000 milissegundos (1 segundo)
+        setInterval(updateClock, 1000);
+        
+        // Chama a função imediatamente para exibir a hora sem esperar 1 segundo
+        updateClock();
+    </script>
+
+</body>
+</html>
