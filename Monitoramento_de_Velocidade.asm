@@ -13,3 +13,18 @@ section .text
 
 _start:
     ; Ponto de entrada do sistema
+
+flight_control_loop:
+    ; 1. AQUISIÇÃO DE DADOS (Leitura do Sensor)
+    mov dx, PORT_PITOT      ; Carrega o endereço da porta do sensor no registrador de dados (DX)
+    in ax, dx               ; Lê o valor do hardware (velocidade atual) e salva no registrador AX
+
+    ; 2. LÓGICA DE CONTROLE (Comparação)
+    cmp ax, VNE_LIMIT       ; Compara a velocidade atual (AX) com o limite seguro (350 nós)
+    jge trigger_alarm       ; Se for Maior ou Igual (Jump if Greater or Equal), pula para o alarme
+
+    ; 3. ATUAÇÃO: ESTADO SEGURO
+    mov dx, PORT_ALARM      ; Aponta para a porta do alarme
+    mov al, 0               ; Prepara o sinal 0 (Desligado)
+    out dx, al              ; Envia o sinal para o hardware apagar a luz/som
+    jmp next_cycle          ; Pula a rotina de ativação do alarme
