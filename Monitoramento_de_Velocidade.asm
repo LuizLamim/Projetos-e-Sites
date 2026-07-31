@@ -28,3 +28,10 @@ flight_control_loop:
     mov al, 0               ; Prepara o sinal 0 (Desligado)
     out dx, al              ; Envia o sinal para o hardware apagar a luz/som
     jmp next_cycle          ; Pula a rotina de ativação do alarme
+
+
+trigger_alarm:
+    ; 4. ATUAÇÃO: ESTADO CRÍTICO
+    mov dx, PORT_ALARM      ; Aponta para a porta do alarme
+    mov al, 1               ; Prepara o sinal 1 (Ligado)
+    out dx, al              ; Envia o sinal para o hardware acender a luz/tocar o aviso sonoro
