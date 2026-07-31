@@ -35,3 +35,9 @@ trigger_alarm:
     mov dx, PORT_ALARM      ; Aponta para a porta do alarme
     mov al, 1               ; Prepara o sinal 1 (Ligado)
     out dx, al              ; Envia o sinal para o hardware acender a luz/tocar o aviso sonoro
+
+next_cycle:
+    ; 5. SINCRONIZAÇÃO
+    ; Em um sistema real, haveria uma interrupção de timer aqui 
+    ; para garantir que o loop rode a uma frequência exata (ex: 50Hz).
+    jmp flight_control_loop ; Reinicia o ciclo infinitamente
