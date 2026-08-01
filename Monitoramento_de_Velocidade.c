@@ -9,3 +9,5 @@
 // NUNCA otimizar essas variáveis, pois o valor pode ser alterado pelo hardware a qualquer momento.
 #define SENSOR_PITOT (*(volatile uint16_t*)0x0300)
 #define ALARME_PAINEL (*(volatile uint8_t*)0x0302)
+
+int main(void) {}
