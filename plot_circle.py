@@ -23,3 +23,10 @@ plt.ylabel("Eixo y")
 # Desenhar as linhas dos eixos x e y cruzando no zero
 plt.axhline(0, color='black', linewidth=1.2)
 plt.axvline(0, color='black', linewidth=1.2)
+
+# Adicionar uma grade para facilitar a visualização
+plt.grid(color='gray', linestyle='--', linewidth=0.5)
+
+# Garantir que a proporção dos eixos seja igual (1:1)
+# Sem isso, o círculo pareceria uma elipse achatada
+plt.axis('equal')
