@@ -19,3 +19,7 @@ plt.plot(x, y, label=r'$x^2 + y^2 = 25$', color='blue', linewidth=2)
 plt.title("Gráfico da Circunferência: $x^2 + y^2 = 25$", fontsize=14)
 plt.xlabel("Eixo x")
 plt.ylabel("Eixo y")
+
+# Desenhar as linhas dos eixos x e y cruzando no zero
+plt.axhline(0, color='black', linewidth=1.2)
+plt.axvline(0, color='black', linewidth=1.2)
