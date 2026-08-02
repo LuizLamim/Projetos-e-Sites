@@ -30,3 +30,11 @@ plt.grid(color='gray', linestyle='--', linewidth=0.5)
 # Garantir que a proporção dos eixos seja igual (1:1)
 # Sem isso, o círculo pareceria uma elipse achatada
 plt.axis('equal')
+
+# Limites do gráfico para dar uma margem visual
+plt.xlim(-6, 6)
+plt.ylim(-6, 6)
+
+# Mostrar a legenda e exibir o gráfico
+plt.legend()
+plt.show()
