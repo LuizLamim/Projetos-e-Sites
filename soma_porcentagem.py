@@ -1,2 +1,2 @@
 def calcular_soma_porcentagens():
-    print("--- Calculadora de Soma de Porcentagens ---\n")
+    print("--- Calculadora de Soma de Porcentagens ---\n"
