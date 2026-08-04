@@ -11,13 +11,13 @@ def eh_primo(n):
 numeros_primos = []
 numero_atual = 2
 
-# Loop continua até a lista ter 500 elementos
-while len(numeros_primos) < 500:
+# Loop continua até a lista ter 1000 elementos
+while len(numeros_primos) < 1000:
     if eh_primo(numero_atual):
         numeros_primos.append(numero_atual)
     numero_atual += 1
 
-# Exibe o resultado formatado
-print("Os 500 primeiros números primos são:")
+# Exibe o resultado formatado por 1000
+print("Os 1000 primeiros números primos são:")
 for idx, primo in enumerate(numeros_primos, 1):
     print(f"{idx}º: {primo}")
