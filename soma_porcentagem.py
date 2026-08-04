@@ -1,0 +1,1 @@
+def calcular_soma_porcentagens():
