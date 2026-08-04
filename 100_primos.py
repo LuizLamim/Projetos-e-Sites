@@ -17,7 +17,7 @@ while len(numeros_primos) < 1000:
         numeros_primos.append(numero_atual)
     numero_atual += 1
 
-# Exibe o resultado formatado
+# Exibe o resultado formatado por 1000
 print("Os 1000 primeiros números primos são:")
 for idx, primo in enumerate(numeros_primos, 1):
     print(f"{idx}º: {primo}")
