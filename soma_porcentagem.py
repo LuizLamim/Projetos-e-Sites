@@ -1,7 +1,7 @@
 def calcular_soma_porcentagens():
-    print("--- Calculadora de Soma de Porcentagens ---\n"
+    print("--- Calculadora de Soma de Porcentagens ---\n")
 
-          # Recebe as três porcentagens do usuário
+    # Recebe as três porcentagens do usuário
     try:
         p1 = float(input("Digite a primeira porcentagem (%): "))
         p2 = float(input("Digite a segunda porcentagem (%): "))
@@ -31,5 +31,6 @@ def calcular_soma_porcentagens():
             "\nErro: Por favor, digite apenas números válidos (use ponto para decimais, ex: 10.5)."
         )
 
-        # Executa o programa
+
+# Executa o programa
 calcular_soma_porcentagens()
