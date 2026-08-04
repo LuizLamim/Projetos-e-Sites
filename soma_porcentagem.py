@@ -30,3 +30,6 @@ def calcular_soma_porcentagens():
         print(
             "\nErro: Por favor, digite apenas números válidos (use ponto para decimais, ex: 10.5)."
         )
+
+        # Executa o programa
+calcular_soma_porcentagens()
